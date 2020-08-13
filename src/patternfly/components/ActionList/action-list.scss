@@ -1,0 +1,24 @@
+.pf-c-action-list {
+  --pf-c-action-list--spacer--base: var(--pf-global--spacer--2xl);
+  --pf-c-action-list__item--spacer: var(--pf-global--spacer--md);
+  --pf-c-action-list__group--spacer: var(--pf-global--spacer--2xl);
+  --pf-c-action-list__group--m-icon--spacer: 0;
+  --pf-c-action-list--m-vertical__item--spacer: var(--pf-global--spacer--sm);
+  --pf-c-action-list--m-vertical__group--spacer: var(--pf-global--spacer--lg);
+
+  flex-wrap: wrap;
+
+  &,
+  .pf-c-action-list__group {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.pf-c-action-list__item {
+  margin: 8px;
+}
+
+.pf-c-action-list__group {
+  margin: 24px;
+}
