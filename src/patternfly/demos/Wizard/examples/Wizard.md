@@ -33,67 +33,63 @@ wrapperTag: div
             {{/wizard-toggle-list}}
             {{> wizard-toggle-icon}}
           {{/wizard-toggle}}
-          {{#> wizard-outer-wrap}}
-            {{#> wizard-inner-wrap}}
-              {{#> wizard-nav}}
+          {{#> wizard-nav}}
+            {{#> wizard-nav-list}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link}}
+                  Information
+                {{/wizard-nav-link}}
+              {{/wizard-nav-item}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
+                  Configuration
+                {{/wizard-nav-link}}
                 {{#> wizard-nav-list}}
                   {{#> wizard-nav-item}}
                     {{#> wizard-nav-link}}
-                      Information
+                      Substep A
                     {{/wizard-nav-link}}
                   {{/wizard-nav-item}}
                   {{#> wizard-nav-item}}
-                    {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
-                      Configuration
+                    {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
+                      Substep B
                     {{/wizard-nav-link}}
-                    {{#> wizard-nav-list}}
-                      {{#> wizard-nav-item}}
-                        {{#> wizard-nav-link}}
-                          Substep A
-                        {{/wizard-nav-link}}
-                      {{/wizard-nav-item}}
-                      {{#> wizard-nav-item}}
-                        {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
-                          Substep B
-                        {{/wizard-nav-link}}
-                      {{/wizard-nav-item}}
-                      {{#> wizard-nav-item}}
-                        {{#> wizard-nav-link}}
-                          Substep C
-                        {{/wizard-nav-link}}
-                      {{/wizard-nav-item}}
-                    {{/wizard-nav-list}}
                   {{/wizard-nav-item}}
                   {{#> wizard-nav-item}}
                     {{#> wizard-nav-link}}
-                      Additional
-                    {{/wizard-nav-link}}
-                  {{/wizard-nav-item}}
-                  {{#> wizard-nav-item}}
-                    {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-disabled" wizard-nav-link--attribute='aria-disabled="true" tabindex="-1"'}}
-                      Review
+                      Substep C
                     {{/wizard-nav-link}}
                   {{/wizard-nav-item}}
                 {{/wizard-nav-list}}
-              {{/wizard-nav}}
-            {{#> wizard-main}}
-              <p>Wizard content goes here</p>
-            {{/wizard-main}}
-          {{/wizard-inner-wrap}}
-          {{#> wizard-footer}}
-            {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
-              Next
+              {{/wizard-nav-item}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link}}
+                  Additional
+                {{/wizard-nav-link}}
+              {{/wizard-nav-item}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-disabled" wizard-nav-link--attribute='aria-disabled="true" tabindex="-1"'}}
+                  Review
+                {{/wizard-nav-link}}
+              {{/wizard-nav-item}}
+            {{/wizard-nav-list}}
+          {{/wizard-nav}}
+        {{#> wizard-main}}
+          <p>Wizard content goes here</p>
+        {{/wizard-main}}
+        {{#> wizard-footer}}
+          {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
+            Next
+          {{/button}}
+          {{#> button button--modifier="pf-m-secondary"}}
+            Back
+          {{/button}}
+          {{#> wizard-footer-cancel}}
+            {{#> button button--modifier="pf-m-link"}}
+              Cancel
             {{/button}}
-            {{#> button button--modifier="pf-m-secondary"}}
-              Back
-            {{/button}}
-            {{#> wizard-footer-cancel}}
-              {{#> button button--modifier="pf-m-link"}}
-                Cancel
-              {{/button}}
-            {{/wizard-footer-cancel}}
-          {{/wizard-footer}}
-        {{/wizard-outer-wrap}}
+          {{/wizard-footer-cancel}}
+        {{/wizard-footer}}
       {{/wizard}}
     {{/modal-box}}
   {{/bullseye}}
@@ -128,67 +124,63 @@ wrapperTag: div
           {{/wizard-toggle-list}}
           {{> wizard-toggle-icon}}
         {{/wizard-toggle}}
-        {{#> wizard-outer-wrap}}
-          {{#> wizard-inner-wrap}}
-            {{#> wizard-nav}}
+        {{#> wizard-nav}}
+          {{#> wizard-nav-list}}
+            {{#> wizard-nav-item}}
+              {{#> wizard-nav-link}}
+                Information
+              {{/wizard-nav-link}}
+            {{/wizard-nav-item}}
+            {{#> wizard-nav-item}}
+              {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
+                Configuration
+              {{/wizard-nav-link}}
               {{#> wizard-nav-list}}
                 {{#> wizard-nav-item}}
                   {{#> wizard-nav-link}}
-                    Information
+                    Substep A
                   {{/wizard-nav-link}}
                 {{/wizard-nav-item}}
                 {{#> wizard-nav-item}}
-                  {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
-                    Configuration
+                  {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
+                    Substep B
                   {{/wizard-nav-link}}
-                  {{#> wizard-nav-list}}
-                    {{#> wizard-nav-item}}
-                      {{#> wizard-nav-link}}
-                        Substep A
-                      {{/wizard-nav-link}}
-                    {{/wizard-nav-item}}
-                    {{#> wizard-nav-item}}
-                      {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
-                        Substep B
-                      {{/wizard-nav-link}}
-                    {{/wizard-nav-item}}
-                    {{#> wizard-nav-item}}
-                      {{#> wizard-nav-link}}
-                        Substep C
-                      {{/wizard-nav-link}}
-                    {{/wizard-nav-item}}
-                  {{/wizard-nav-list}}
                 {{/wizard-nav-item}}
                 {{#> wizard-nav-item}}
                   {{#> wizard-nav-link}}
-                    Additional
-                  {{/wizard-nav-link}}
-                {{/wizard-nav-item}}
-                {{#> wizard-nav-item}}
-                  {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-disabled" wizard-nav-link--attribute='aria-disabled="true" tabindex="-1"'}}
-                    Review
+                    Substep C
                   {{/wizard-nav-link}}
                 {{/wizard-nav-item}}
               {{/wizard-nav-list}}
-            {{/wizard-nav}}
-            {{#> wizard-main}}
-              <p>Wizard content goes here</p>
-            {{/wizard-main}}
-          {{/wizard-inner-wrap}}
-          {{#> wizard-footer}}
-            {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
-              Next
+            {{/wizard-nav-item}}
+            {{#> wizard-nav-item}}
+              {{#> wizard-nav-link}}
+                Additional
+              {{/wizard-nav-link}}
+            {{/wizard-nav-item}}
+            {{#> wizard-nav-item}}
+              {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-disabled" wizard-nav-link--attribute='aria-disabled="true" tabindex="-1"'}}
+                Review
+              {{/wizard-nav-link}}
+            {{/wizard-nav-item}}
+          {{/wizard-nav-list}}
+        {{/wizard-nav}}
+        {{#> wizard-main}}
+          <p>Wizard content goes here</p>
+        {{/wizard-main}}
+        {{#> wizard-footer}}
+          {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
+            Next
+          {{/button}}
+          {{#> button button--modifier="pf-m-secondary"}}
+            Back
+          {{/button}}
+          {{#> wizard-footer-cancel}}
+            {{#> button button--modifier="pf-m-link"}}
+              Cancel
             {{/button}}
-            {{#> button button--modifier="pf-m-secondary"}}
-              Back
-            {{/button}}
-            {{#> wizard-footer-cancel}}
-              {{#> button button--modifier="pf-m-link"}}
-                Cancel
-              {{/button}}
-            {{/wizard-footer-cancel}}
-          {{/wizard-footer}}
-        {{/wizard-outer-wrap}}
+          {{/wizard-footer-cancel}}
+        {{/wizard-footer}}
       {{/wizard}}
     {{/modal-box}}
   {{/bullseye}}
@@ -269,67 +261,63 @@ wrapperTag: div
             {{/wizard-toggle-list}}
             {{> wizard-toggle-icon}}
           {{/wizard-toggle}}
-          {{#> wizard-outer-wrap}}
-            {{#> wizard-inner-wrap}}
-              {{#> wizard-nav}}
+          {{#> wizard-nav}}
+            {{#> wizard-nav-list}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link}}
+                  Information
+                {{/wizard-nav-link}}
+              {{/wizard-nav-item}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
+                  Configuration
+                {{/wizard-nav-link}}
                 {{#> wizard-nav-list}}
                   {{#> wizard-nav-item}}
                     {{#> wizard-nav-link}}
-                      Information
+                      Substep A
                     {{/wizard-nav-link}}
                   {{/wizard-nav-item}}
                   {{#> wizard-nav-item}}
-                    {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
-                      Configuration
+                    {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
+                      Substep B
                     {{/wizard-nav-link}}
-                    {{#> wizard-nav-list}}
-                      {{#> wizard-nav-item}}
-                        {{#> wizard-nav-link}}
-                          Substep A
-                        {{/wizard-nav-link}}
-                      {{/wizard-nav-item}}
-                      {{#> wizard-nav-item}}
-                        {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
-                          Substep B
-                        {{/wizard-nav-link}}
-                      {{/wizard-nav-item}}
-                      {{#> wizard-nav-item}}
-                        {{#> wizard-nav-link}}
-                          Substep C
-                        {{/wizard-nav-link}}
-                      {{/wizard-nav-item}}
-                    {{/wizard-nav-list}}
                   {{/wizard-nav-item}}
                   {{#> wizard-nav-item}}
                     {{#> wizard-nav-link}}
-                      Additional
-                    {{/wizard-nav-link}}
-                  {{/wizard-nav-item}}
-                  {{#> wizard-nav-item}}
-                    {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-disabled" wizard-nav-link--attribute='aria-disabled="true" tabindex="-1"'}}
-                      Review
+                      Substep C
                     {{/wizard-nav-link}}
                   {{/wizard-nav-item}}
                 {{/wizard-nav-list}}
-              {{/wizard-nav}}
-            {{#> wizard-main wizard-main--type="div"}}
-              <p>Wizard content goes here</p>
-            {{/wizard-main}}
-          {{/wizard-inner-wrap}}
-          {{#> wizard-footer}}
-            {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
-              Next
+              {{/wizard-nav-item}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link}}
+                  Additional
+                {{/wizard-nav-link}}
+              {{/wizard-nav-item}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-disabled" wizard-nav-link--attribute='aria-disabled="true" tabindex="-1"'}}
+                  Review
+                {{/wizard-nav-link}}
+              {{/wizard-nav-item}}
+            {{/wizard-nav-list}}
+          {{/wizard-nav}}
+        {{#> wizard-main wizard-main--type="div"}}
+          <p>Wizard content goes here</p>
+        {{/wizard-main}}
+        {{#> wizard-footer}}
+          {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
+            Next
+          {{/button}}
+          {{#> button button--modifier="pf-m-secondary"}}
+            Back
+          {{/button}}
+          {{#> wizard-footer-cancel}}
+            {{#> button button--modifier="pf-m-link"}}
+              Cancel
             {{/button}}
-            {{#> button button--modifier="pf-m-secondary"}}
-              Back
-            {{/button}}
-            {{#> wizard-footer-cancel}}
-              {{#> button button--modifier="pf-m-link"}}
-                Cancel
-              {{/button}}
-            {{/wizard-footer-cancel}}
-          {{/wizard-footer}}
-        {{/wizard-outer-wrap}}
+          {{/wizard-footer-cancel}}
+        {{/wizard-footer}}
       {{/wizard}}
     {{/page-main-wizard}}
   {{/page-main}}
@@ -410,67 +398,63 @@ wrapperTag: div
             {{/wizard-toggle-list}}
             {{> wizard-toggle-icon}}
           {{/wizard-toggle}}
-          {{#> wizard-outer-wrap}}
-            {{#> wizard-inner-wrap}}
-              {{#> wizard-nav}}
+          {{#> wizard-nav}}
+            {{#> wizard-nav-list}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link}}
+                  Information
+                {{/wizard-nav-link}}
+              {{/wizard-nav-item}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
+                  Configuration
+                {{/wizard-nav-link}}
                 {{#> wizard-nav-list}}
                   {{#> wizard-nav-item}}
                     {{#> wizard-nav-link}}
-                      Information
+                      Substep A
                     {{/wizard-nav-link}}
                   {{/wizard-nav-item}}
                   {{#> wizard-nav-item}}
-                    {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
-                      Configuration
+                    {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
+                      Substep B
                     {{/wizard-nav-link}}
-                    {{#> wizard-nav-list}}
-                      {{#> wizard-nav-item}}
-                        {{#> wizard-nav-link}}
-                          Substep A
-                        {{/wizard-nav-link}}
-                      {{/wizard-nav-item}}
-                      {{#> wizard-nav-item}}
-                        {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
-                          Substep B
-                        {{/wizard-nav-link}}
-                      {{/wizard-nav-item}}
-                      {{#> wizard-nav-item}}
-                        {{#> wizard-nav-link}}
-                          Substep C
-                        {{/wizard-nav-link}}
-                      {{/wizard-nav-item}}
-                    {{/wizard-nav-list}}
                   {{/wizard-nav-item}}
                   {{#> wizard-nav-item}}
                     {{#> wizard-nav-link}}
-                      Additional
-                    {{/wizard-nav-link}}
-                  {{/wizard-nav-item}}
-                  {{#> wizard-nav-item}}
-                    {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-disabled" wizard-nav-link--attribute='aria-disabled="true" tabindex="-1"'}}
-                      Review
+                      Substep C
                     {{/wizard-nav-link}}
                   {{/wizard-nav-item}}
                 {{/wizard-nav-list}}
-              {{/wizard-nav}}
-            {{#> wizard-main wizard-main--type="div"}}
-              <p>Wizard content goes here</p>
-            {{/wizard-main}}
-          {{/wizard-inner-wrap}}
-          {{#> wizard-footer}}
-            {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
-              Next
+              {{/wizard-nav-item}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link}}
+                  Additional
+                {{/wizard-nav-link}}
+              {{/wizard-nav-item}}
+              {{#> wizard-nav-item}}
+                {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-disabled" wizard-nav-link--attribute='aria-disabled="true" tabindex="-1"'}}
+                  Review
+                {{/wizard-nav-link}}
+              {{/wizard-nav-item}}
+            {{/wizard-nav-list}}
+          {{/wizard-nav}}
+        {{#> wizard-main wizard-main--type="div"}}
+          <p>Wizard content goes here</p>
+        {{/wizard-main}}
+        {{#> wizard-footer}}
+          {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
+            Next
+          {{/button}}
+          {{#> button button--modifier="pf-m-secondary"}}
+            Back
+          {{/button}}
+          {{#> wizard-footer-cancel}}
+            {{#> button button--modifier="pf-m-link"}}
+              Cancel
             {{/button}}
-            {{#> button button--modifier="pf-m-secondary"}}
-              Back
-            {{/button}}
-            {{#> wizard-footer-cancel}}
-              {{#> button button--modifier="pf-m-link"}}
-                Cancel
-              {{/button}}
-            {{/wizard-footer-cancel}}
-          {{/wizard-footer}}
-        {{/wizard-outer-wrap}}
+          {{/wizard-footer-cancel}}
+        {{/wizard-footer}}
       {{/wizard}}
     {{/page-main-wizard}}
   {{/page-main}}

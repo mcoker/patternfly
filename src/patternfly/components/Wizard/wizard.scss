@@ -1,6 +1,7 @@
 .pf-c-wizard {
   --pf-c-wizard--Height: 100%;
-  --pf-c-modal-box--c-wizard--FlexBasis: #{pf-size-prem(762px)}; // this is a specific height from design for the wizard in a modal
+  --pf-c-wizard--lg--GridTemplateColumns-nav: #{pf-size-prem(250px)};
+  --pf-c-modal-box--c-wizard--FlexBasis: #{pf-size-prem(762px)}; // this is a specific height from design for the wizard in a modal. rename to height at breaking change
 
   // Header
   --pf-c-wizard__header--BackgroundColor: var(--pf-global--BackgroundColor--dark-100);
@@ -101,7 +102,7 @@
   --pf-c-wizard__nav--BackgroundColor: var(--pf-global--BackgroundColor--100);
   --pf-c-wizard__nav--BoxShadow: var(--pf-global--BoxShadow--md-bottom);
   --pf-c-wizard__nav--Width: 100%;
-  --pf-c-wizard__nav--lg--Width: #{pf-size-prem(250px)};
+  --pf-c-wizard__nav--lg--Width: auto; // remove at breaking change
   --pf-c-wizard__nav--lg--BorderRightWidth: var(--pf-global--BorderWidth--sm);
   --pf-c-wizard__nav--lg--BorderRightColor: var(--pf-global--BorderColor--100);
 
@@ -140,10 +141,6 @@
 
   // Nav item
   --pf-c-wizard__nav-item--MarginTop: var(--pf-global--spacer--md);
-
-  // Outer wrap
-  --pf-c-wizard__outer-wrap--BackgroundColor: var(--pf-global--BackgroundColor--100);
-  --pf-c-wizard__outer-wrap--lg--PaddingLeft: var(--pf-c-wizard__nav--Width);
 
   // Main
   --pf-c-wizard__main--ZIndex: var(--pf-global--ZIndex--xs);
@@ -186,23 +183,36 @@
   }
 
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "toggle"
+    "main"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
   height: var(--pf-c-wizard--Height);
+
+  @media screen and (min-width: $pf-global--breakpoint--lg) {
+    grid-template-areas:
+      "header header"
+      "toggle toggle"
+      "nav main"
+      "footer footer";
+    grid-template-columns: var(--pf-c-wizard--lg--GridTemplateColumns-nav) 1fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
 
   // When the wizard is used in a modal
   .pf-c-modal-box & {
-    flex: 1 1 var(--pf-c-modal-box--c-wizard--FlexBasis);
+    flex: 1 1 auto;
+    height: var(--pf-c-modal-box--c-wizard--FlexBasis);
     min-height: 0;
-  }
-
-  > *:not(.pf-c-wizard__outer-wrap) {
-    flex-shrink: 0;
+    max-height: 100%;
   }
 
   &.pf-m-finished {
-    --pf-c-wizard__outer-wrap--lg--PaddingLeft: 0;
-
     .pf-c-wizard__nav,
     .pf-c-wizard__footer,
     .pf-c-wizard__toggle {
@@ -216,6 +226,7 @@
   @include pf-t-dark;
 
   position: relative;
+  grid-area: header;
   z-index: var(--pf-c-wizard__header--ZIndex);
   padding: var(--pf-c-wizard__header--PaddingTop) var(--pf-c-wizard__header--PaddingRight) var(--pf-c-wizard__header--PaddingBottom) var(--pf-c-wizard__header--PaddingLeft);
   background-color: var(--pf-c-wizard__header--BackgroundColor);
@@ -248,6 +259,7 @@
 
 .pf-c-wizard__toggle {
   position: relative;
+  grid-area: toggle;
   z-index: var(--pf-c-wizard__toggle--ZIndex);
   display: flex;
   justify-content: space-between;
@@ -306,37 +318,11 @@
   line-height: var(--pf-c-wizard__toggle-icon--LineHeight);
 }
 
-.pf-c-wizard__outer-wrap {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-height: 0;
-  background-color: var(--pf-c-wizard__outer-wrap--BackgroundColor);
-
-  @media screen and (min-width: $pf-global--breakpoint--lg) {
-    padding-left: var(--pf-c-wizard__outer-wrap--lg--PaddingLeft);
-  }
-}
-
-.pf-c-wizard__inner-wrap {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-height: 0;
-
-  @media screen and (min-width: $pf-global--breakpoint--lg) {
-    position: static;
-  }
-}
-
 .pf-c-wizard__nav {
-  position: absolute;
-  top: 0;
-  left: 0;
+  grid-area: main;
   z-index: var(--pf-c-wizard__nav--ZIndex);
   display: none;
+  align-self: start;
   width: var(--pf-c-wizard__nav--Width);
   max-height: 100%;
   overflow-y: auto;
@@ -352,7 +338,8 @@
 
   @media screen and (min-width: $pf-global--breakpoint--lg) {
     display: block;
-    height: 100%;
+    align-self: auto;
+    grid-area: nav;
     visibility: visible;
     border-right: var(--pf-c-wizard__nav--lg--BorderRightWidth) solid var(--pf-c-wizard__nav--lg--BorderRightColor);
   }
@@ -460,8 +447,8 @@
 }
 
 .pf-c-wizard__main {
+  grid-area: main;
   z-index: var(--pf-c-wizard__main--ZIndex);
-  flex: 1 1 auto;
   overflow-x: hidden;
   overflow-y: auto;
   word-break: break-word;
@@ -476,9 +463,9 @@
 }
 
 .pf-c-wizard__footer {
+  grid-area: footer;
   display: flex;
   flex-wrap: wrap;
-  flex-shrink: 0;
   padding: var(--pf-c-wizard__footer--PaddingTop) var(--pf-c-wizard__footer--PaddingRight) var(--pf-c-wizard__footer--PaddingBottom) var(--pf-c-wizard__footer--PaddingLeft);
 
   > * {

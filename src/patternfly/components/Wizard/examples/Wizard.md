@@ -33,67 +33,63 @@ import './Wizard.css'
       {{/wizard-toggle-list}}
       {{> wizard-toggle-icon}}
     {{/wizard-toggle}}
-    {{#> wizard-outer-wrap}}
-      {{#> wizard-inner-wrap}}
-        {{#> wizard-nav}}
+    {{#> wizard-nav}}
+      {{#> wizard-nav-list}}
+        {{#> wizard-nav-item}}
+          {{#> wizard-nav-link}}
+            Information
+          {{/wizard-nav-link}}
+        {{/wizard-nav-item}}
+        {{#> wizard-nav-item}}
+          {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
+            Configuration
+          {{/wizard-nav-link}}
           {{#> wizard-nav-list}}
             {{#> wizard-nav-item}}
               {{#> wizard-nav-link}}
-                Information
+                Substep A
               {{/wizard-nav-link}}
             {{/wizard-nav-item}}
             {{#> wizard-nav-item}}
-              {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
-                Configuration
+              {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
+                Substep B
               {{/wizard-nav-link}}
-              {{#> wizard-nav-list}}
-                {{#> wizard-nav-item}}
-                  {{#> wizard-nav-link}}
-                    Substep A
-                  {{/wizard-nav-link}}
-                {{/wizard-nav-item}}
-                {{#> wizard-nav-item}}
-                  {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
-                    Substep B
-                  {{/wizard-nav-link}}
-                {{/wizard-nav-item}}
-                {{#> wizard-nav-item}}
-                  {{#> wizard-nav-link}}
-                    Substep C
-                  {{/wizard-nav-link}}
-                {{/wizard-nav-item}}
-              {{/wizard-nav-list}}
             {{/wizard-nav-item}}
             {{#> wizard-nav-item}}
               {{#> wizard-nav-link}}
-                Additional
-              {{/wizard-nav-link}}
-            {{/wizard-nav-item}}
-            {{#> wizard-nav-item}}
-              {{#> wizard-nav-link wizard-nav-link--IsDisabled="true"}}
-                Review
+                Substep C
               {{/wizard-nav-link}}
             {{/wizard-nav-item}}
           {{/wizard-nav-list}}
-        {{/wizard-nav}}
-      {{#> wizard-main}}
-        <p>Wizard content goes here</p>
-      {{/wizard-main}}
-    {{/wizard-inner-wrap}}
-    {{#> wizard-footer}}
-      {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
-        Next
+        {{/wizard-nav-item}}
+        {{#> wizard-nav-item}}
+          {{#> wizard-nav-link}}
+            Additional
+          {{/wizard-nav-link}}
+        {{/wizard-nav-item}}
+        {{#> wizard-nav-item}}
+          {{#> wizard-nav-link wizard-nav-link--IsDisabled="true"}}
+            Review
+          {{/wizard-nav-link}}
+        {{/wizard-nav-item}}
+      {{/wizard-nav-list}}
+    {{/wizard-nav}}
+  {{#> wizard-main}}
+    <p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p>
+  {{/wizard-main}}
+  {{#> wizard-footer}}
+    {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
+      Next
+    {{/button}}
+    {{#> button button--modifier="pf-m-secondary"}}
+      Back
+    {{/button}}
+    {{#> wizard-footer-cancel}}
+      {{#> button button--modifier="pf-m-link"}}
+        Cancel
       {{/button}}
-      {{#> button button--modifier="pf-m-secondary"}}
-        Back
-      {{/button}}
-      {{#> wizard-footer-cancel}}
-        {{#> button button--modifier="pf-m-link"}}
-          Cancel
-        {{/button}}
-      {{/wizard-footer-cancel}}
-    {{/wizard-footer}}
-  {{/wizard-outer-wrap}}
+    {{/wizard-footer-cancel}}
+  {{/wizard-footer}}
 {{/wizard}}
 ```
 
@@ -122,67 +118,103 @@ import './Wizard.css'
     {{/wizard-toggle-list}}
     {{> wizard-toggle-icon}}
   {{/wizard-toggle}}
-  {{#> wizard-outer-wrap}}
-    {{#> wizard-inner-wrap}}
-      {{#> wizard-nav}}
+  {{#> wizard-nav}}
+    {{#> wizard-nav-list}}
+      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}    {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}   {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}
+      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
+          Configuration
+        {{/wizard-nav-link}}
         {{#> wizard-nav-list}}
           {{#> wizard-nav-item}}
             {{#> wizard-nav-link}}
-              Information
+              Substep A
             {{/wizard-nav-link}}
           {{/wizard-nav-item}}
           {{#> wizard-nav-item}}
-            {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current"}}
-              Configuration
+            {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
+              Substep B
             {{/wizard-nav-link}}
-            {{#> wizard-nav-list}}
-              {{#> wizard-nav-item}}
-                {{#> wizard-nav-link}}
-                  Substep A
-                {{/wizard-nav-link}}
-              {{/wizard-nav-item}}
-              {{#> wizard-nav-item}}
-                {{#> wizard-nav-link wizard-nav-link--modifier="pf-m-current" wizard-nav-link--IsCurrent="true"}}
-                  Substep B
-                {{/wizard-nav-link}}
-              {{/wizard-nav-item}}
-              {{#> wizard-nav-item}}
-                {{#> wizard-nav-link}}
-                  Substep C
-                {{/wizard-nav-link}}
-              {{/wizard-nav-item}}
-            {{/wizard-nav-list}}
           {{/wizard-nav-item}}
           {{#> wizard-nav-item}}
             {{#> wizard-nav-link}}
-              Additional
-            {{/wizard-nav-link}}
-          {{/wizard-nav-item}}
-          {{#> wizard-nav-item}}
-            {{#> wizard-nav-link wizard-nav-link--IsDisabled="true"}}
-              Review
+              Substep C
             {{/wizard-nav-link}}
           {{/wizard-nav-item}}
         {{/wizard-nav-list}}
-      {{/wizard-nav}}
-      {{#> wizard-main}}
-        <p>Wizard content goes here</p>
-      {{/wizard-main}}
-    {{/wizard-inner-wrap}}
-    {{#> wizard-footer}}
-      {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
-        Next
+      {{/wizard-nav-item}}
+      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Additional
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}
+      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link wizard-nav-link--IsDisabled="true"}}
+          Review
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}
+    {{/wizard-nav-list}}
+  {{/wizard-nav}}
+  {{#> wizard-main}}
+    <p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p><p>Wizard content goes here</p>
+  {{/wizard-main}}
+  {{#> wizard-footer}}
+    {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
+      Next
+    {{/button}}
+    {{#> button button--modifier="pf-m-secondary"}}
+      Back
+    {{/button}}
+    {{#> wizard-footer-cancel}}
+      {{#> button button--modifier="pf-m-link"}}
+        Cancel
       {{/button}}
-      {{#> button button--modifier="pf-m-secondary"}}
-        Back
-      {{/button}}
-      {{#> wizard-footer-cancel}}
-        {{#> button button--modifier="pf-m-link"}}
-          Cancel
-        {{/button}}
-      {{/wizard-footer-cancel}}
-    {{/wizard-footer}}
-  {{/wizard-outer-wrap}}
+    {{/wizard-footer-cancel}}
+  {{/wizard-footer}}
 {{/wizard}}
 ```
 
@@ -211,85 +243,81 @@ import './Wizard.css'
     {{/wizard-toggle-list}}
     {{> wizard-toggle-icon}}
   {{/wizard-toggle}}
-  {{#> wizard-outer-wrap}}
-    {{#> wizard-inner-wrap}}
-      {{#> wizard-nav}}
+  {{#> wizard-nav}}
+    {{#> wizard-nav-list}}
+      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Information
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}
+      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Configuration
+        {{/wizard-nav-link}}
         {{#> wizard-nav-list}}
           {{#> wizard-nav-item}}
             {{#> wizard-nav-link}}
-              Information
+              Substep A
             {{/wizard-nav-link}}
           {{/wizard-nav-item}}
           {{#> wizard-nav-item}}
             {{#> wizard-nav-link}}
-              Configuration
-            {{/wizard-nav-link}}
-            {{#> wizard-nav-list}}
-              {{#> wizard-nav-item}}
-                {{#> wizard-nav-link}}
-                  Substep A
-                {{/wizard-nav-link}}
-              {{/wizard-nav-item}}
-              {{#> wizard-nav-item}}
-                {{#> wizard-nav-link}}
-                  Substep B
-                {{/wizard-nav-link}}
-              {{/wizard-nav-item}}
-              {{#> wizard-nav-item}}
-                {{#> wizard-nav-link}}
-                  Substep C
-                {{/wizard-nav-link}}
-              {{/wizard-nav-item}}
-            {{/wizard-nav-list}}
-          {{/wizard-nav-item}}
-          {{#> wizard-nav-item}}
-            {{#> wizard-nav-link}}
-              Additional
+              Substep B
             {{/wizard-nav-link}}
           {{/wizard-nav-item}}
           {{#> wizard-nav-item}}
             {{#> wizard-nav-link}}
-              Review
+              Substep C
             {{/wizard-nav-link}}
           {{/wizard-nav-item}}
         {{/wizard-nav-list}}
-      {{/wizard-nav}}
-      {{#> wizard-main}}
-        {{#> bullseye}}
-          {{#> empty-state empty-state--modifier="pf-m-lg"}}
-            {{#> empty-state-icon empty-state-icon--type="cogs"}}{{/empty-state-icon}}
-            {{#> title titleType="h1" title--modifier="pf-m-lg"}}
-              Configuration in progress
-            {{/title}}
-            {{#> empty-state-body}}
-              {{#> progress progress__value="33" progress--modifier="pf-m-singleline" progress__id="progress-singleline-example"}}{{/progress}}
-            {{/empty-state-body}}
-            {{#> empty-state-body}}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pulvinar tortor. Maecenas sit amet pellentesque velit, eu eleifend mauris.
-            {{/empty-state-body}}
-            {{#> empty-state-secondary}}
-              {{#> button button--modifier="pf-m-link"}}
-                Cancel
-              {{/button}}
-            {{/empty-state-secondary}}
-          {{/empty-state}}
-        {{/bullseye}}
-      {{/wizard-main}}
-    {{/wizard-inner-wrap}}
-    {{#> wizard-footer}}
-      {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
-        Next
+      {{/wizard-nav-item}}
+      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Additional
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}
+      {{#> wizard-nav-item}}
+        {{#> wizard-nav-link}}
+          Review
+        {{/wizard-nav-link}}
+      {{/wizard-nav-item}}
+    {{/wizard-nav-list}}
+  {{/wizard-nav}}
+  {{#> wizard-main}}
+    {{#> bullseye}}
+      {{#> empty-state empty-state--modifier="pf-m-lg"}}
+        {{#> empty-state-icon empty-state-icon--type="cogs"}}{{/empty-state-icon}}
+        {{#> title titleType="h1" title--modifier="pf-m-lg"}}
+          Configuration in progress
+        {{/title}}
+        {{#> empty-state-body}}
+          {{#> progress progress__value="33" progress--modifier="pf-m-singleline" progress__id="progress-singleline-example"}}{{/progress}}
+        {{/empty-state-body}}
+        {{#> empty-state-body}}
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non pulvinar tortor. Maecenas sit amet pellentesque velit, eu eleifend mauris.
+        {{/empty-state-body}}
+        {{#> empty-state-secondary}}
+          {{#> button button--modifier="pf-m-link"}}
+            Cancel
+          {{/button}}
+        {{/empty-state-secondary}}
+      {{/empty-state}}
+    {{/bullseye}}
+  {{/wizard-main}}
+  {{#> wizard-footer}}
+    {{#> button button--modifier="pf-m-primary" button--IsSubmit="true"}}
+      Next
+    {{/button}}
+    {{#> button button--modifier="pf-m-secondary"}}
+      Back
+    {{/button}}
+    {{#> wizard-footer-cancel}}
+      {{#> button button--modifier="pf-m-link"}}
+        Cancel
       {{/button}}
-      {{#> button button--modifier="pf-m-secondary"}}
-        Back
-      {{/button}}
-      {{#> wizard-footer-cancel}}
-        {{#> button button--modifier="pf-m-link"}}
-          Cancel
-        {{/button}}
-      {{/wizard-footer-cancel}}
-    {{/wizard-footer}}
-  {{/wizard-outer-wrap}}
+    {{/wizard-footer-cancel}}
+  {{/wizard-footer}}
 {{/wizard}}
 ```
 
@@ -321,8 +349,6 @@ import './Wizard.css'
 | `.pf-c-wizard__toggle-num` | `<span>` | Initiates the step number. **Required** |
 | `.pf-c-wizard__toggle-separator` | `<i>` | Initiates the separator between steps. |
 | `.pf-c-wizard__toggle-icon` | `<span>` | Initiates the toggle icon wrapper. **Required** |
-| `.pf-c-wizard__outer-wrap` | `<div>` | Initiates the outer wrapper. **Required** |
-| `.pf-c-wizard__inner-wrap` | `<div>` | Initiates the inner wrapper. **Required** |
 | `.pf-c-wizard__nav` | `<nav>` | Initiates the steps nav. **Required** |
 | `.pf-c-wizard__nav-list` | `<ol>` | Initiates a list of steps. **Required** |
 | `.pf-c-wizard__nav-item` | `<li>` | Initiates a step list item. **Required** |
