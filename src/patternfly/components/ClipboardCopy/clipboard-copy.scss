@@ -3,6 +3,9 @@
   --pf-c-clipboard-copy__toggle-icon--Transition: .2s ease-in 0s;
   --pf-c-clipboard-copy--m-expanded__toggle-icon--Rotate: 90deg;
 
+  // Copy group
+  --pf-c-clipboard-copy__group__child--child--MarginLeft: calc(-1 * var(--pf-global--BorderWidth--sm));
+
   // Clipboard copy expanded content
   --pf-c-clipboard-copy__expandable-content--PaddingTop: var(--pf-global--spacer--md);
   --pf-c-clipboard-copy__expandable-content--PaddingRight: var(--pf-global--spacer--md);
@@ -16,10 +19,25 @@
   --pf-c-clipboard-copy__expandable-content--BorderColor: var(--pf-global--BorderColor--100);
   --pf-c-clipboard-copy__expandable-content--OutlineOffset: calc(-1 * var(--pf-global--spacer--xs));
 
+  // Inline
+  --pf-c-clipboard-copy--m-inline--BackgroundColor: var(--pf-global--BackgroundColor--200);
+
   // Toggle button expanded
   &.pf-m-expanded {
     .pf-c-clipboard-copy__toggle-icon {
       transform: rotate(var(--pf-c-clipboard-copy--m-expanded__toggle-icon--Rotate));
+    }
+  }
+
+  &.pf-m-inline {
+    --pf-c-clipboard-copy__group__child--child--MarginLeft: 0;
+
+    display: inline-block;
+    background-color: var(--pf-c-clipboard-copy--m-inline--BackgroundColor);
+
+    .pf-c-form-control {
+      background: transparent;
+      border: 0;
     }
   }
 }
@@ -28,7 +46,7 @@
   display: flex;
 
   > * + * {
-    margin-left: -1px;
+    margin-left: var(--pf-c-clipboard-copy__group__child--child--MarginLeft);
   }
 }
 

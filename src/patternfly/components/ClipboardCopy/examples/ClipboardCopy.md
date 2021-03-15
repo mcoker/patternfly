@@ -97,6 +97,19 @@ cssPrefix: pf-c-clipboard-copy
 {{/clipboard-copy}}
 ```
 
+### Inline
+```hbs
+{{#> clipboard-copy clipboard-copy--id="inline" clipboard-copy--IsInline="true"}}
+  {{#> clipboard-copy-group}}
+    {{#> form-control controlType="input" input="true" form-control--attribute=(concat 'type="text" value="This is inline" id="' clipboard-copy--id '-text-input" aria-label="Copyable input"')}}
+    {{/form-control}}
+    {{#> button button--modifier="pf-m-plain" button--attribute=(concat 'aria-label="Copy to clipboard" id="' clipboard-copy--id '-copy-button" aria-labelledby="' clipboard-copy--id '-copy-button ' clipboard-copy--id '-text-input"')}}
+      <i class="fas fa-copy" aria-hidden="true"></i>
+    {{/button}}
+  {{/clipboard-copy-group}}
+{{/clipboard-copy}}
+```
+
 ## Documentation
 ### Accessibility
 | Attribute | Applied to | Outcome |
