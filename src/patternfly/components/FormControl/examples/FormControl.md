@@ -32,6 +32,14 @@ import './FormControl.css'
 {{> form-control controlType="input" input="true" form-control--modifier="pf-m-icon" form-control--attribute='type="text" value="Custom icon" id="input-custom-icon" name="custom-icon" aria-label="Custom icon input example"'}}
 ```
 
+### Custom input
+```hbs
+{{#> form-control controlType="div" form-control--modifier="pf-m-custom"}}
+  {{#> form-control-text}}lora-network-server&nbsp;/&nbsp;{{/form-control-text}}
+  {{> form-control-input}}
+{{/form-control}}
+```
+
 ### Select
 ```hbs
 {{#> form-control controlType="select" form-control--modifier="pf-m-placeholder" form-control--attribute='id="select-standard" name="select-standard" aria-label="Standard select example"'}}

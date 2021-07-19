@@ -180,6 +180,17 @@ $pf-c-form-control--m-clock--Coordinates: "M256 8C119 8 8 119 8 256s111 248 248 
   // Textarea invalid
   --pf-c-form-control--textarea--invalid--BackgroundPositionY: var(--pf-c-form-control--PaddingLeft); // update to use --pf-c-form-control--inset--base at breaking change
 
+  // Custom
+  --pf-c-form-control--m-custom--PaddingRight: 0;
+
+  // Custom input
+  --pf-c-form-control__input--MarginTop: calc(var(--pf-c-form-control--PaddingTop) * -1);
+  --pf-c-form-control__input--MarginBottom: calc(var(--pf-c-form-control--PaddingBottom) * -1);
+  --pf-c-form-control__input--PaddingRight: var(var(--pf-c-form-control--inset--base));
+
+  // Custom text
+  --pf-c-form-control__text--Color: var(--pf-global--Color--200);
+
   // This component always needs to be light
   @include pf-t-light;
 
@@ -228,7 +239,8 @@ $pf-c-form-control--m-clock--Coordinates: "M256 8C119 8 8 119 8 256s111 248 248 
     --pf-c-form-control--BorderBottomColor: var(--pf-c-form-control--hover--BorderBottomColor);
   }
 
-  &:focus {
+  &:focus,
+  &.pf-m-custom:focus-within {
     --pf-c-form-control--BorderBottomColor: var(--pf-c-form-control--focus--BorderBottomColor);
 
     padding-bottom: var(--pf-c-form-control--focus--PaddingBottom); // Can't redefine --pf-c-form-control--PaddingBottom b/c the hover padding bottom uses the focus padding var to compute it's padding
@@ -385,4 +397,22 @@ $pf-c-form-control--m-clock--Coordinates: "M256 8C119 8 8 119 8 256s111 248 248 
   &.pf-m-resize-horizontal {
     resize: horizontal;
   }
+
+  &.pf-m-custom {
+    --pf-c-form-control--PaddingRight: var(--pf-c-form-control--m-custom--PaddingRight);
+
+    display: flex;
+  }
+}
+
+.pf-c-form-control__text {
+  color: var(--pf-c-form-control__text--Color);
+}
+
+.pf-c-form-control__input {
+  flex-grow: 1;
+  padding-right: var(--pf-c-form-control__input--PaddingRight);
+  margin-top: var(--pf-c-form-control__input--MarginTop);
+  margin-bottom: var(--pf-c-form-control__input--MarginBottom);
+  border: 0;
 }
