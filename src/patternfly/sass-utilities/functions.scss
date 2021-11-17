@@ -29,6 +29,12 @@
   @return #{$breakpoint-value};
 }
 
+@function pf-breakpoint-value-h($breakpoint, $breakpoint-map: $pf-global--breakpoint-name-map-h) {
+  $breakpoint-value: if(map-has-key($breakpoint-map, #{$breakpoint}), map-get($breakpoint-map, #{$breakpoint}), false);
+
+  @return #{$breakpoint-value};
+}
+
 // Build breakpoint map
 // Based on $pf-global--breakpoint-name-map
 @function build-breakpoint-map($map-items...) {
@@ -97,3 +103,23 @@
 
   @return $new-map;
 }
+
+// stylelint-disable max-nesting-depth
+@mixin breakpoints($obj) {
+  @each $mq, $map in $pf-c-page__section--sticky-map {
+    @if $mq == h {
+      @each $bp, $val in $pf-c-page__section--sticky-map {
+        @if $val {
+          @if $bp == "base" {
+            @content;
+          } @else {
+            @media (min-height: #{pf-breakpoint-value($bp)}) {
+              @content;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// stylelint-enable

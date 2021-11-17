@@ -1,4 +1,32 @@
 $pf-c-page--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
+// stylelint-disable
+$pf-c-page__section--sticky-map: (
+  h: (
+    base: true,
+    sm: true,
+    md: true,
+    lg: true,
+    xl: true,
+    2xl: true
+  ),
+  w: (
+    base: true,
+    sm: true,
+    md: true,
+    lg: true,
+    xl: true,
+    2xl: true
+  ),
+  hw: (
+    base: true,
+    sm: true,
+    md: true,
+    lg: true,
+    xl: true,
+    2xl: true
+  ),
+);
+// stylelint-enable
 
 // URL.com/guidelines#layout
 .pf-c-page {
@@ -475,35 +503,39 @@ $pf-c-page--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl",
 .pf-c-page__main-subnav {
   flex-shrink: 0;
 
-  &.pf-m-sticky-top {
-    position: sticky;
-    top: 0;
-    z-index: var(--pf-c-page--section--m-sticky-top--ZIndex);
-    box-shadow: var(--pf-c-page--section--m-sticky-top--BoxShadow);
-  }
+  /*
+  @include breakpoints($pf-c-page__section--sticky-map) {
+    &.pf-m-sticky-top {
+      position: sticky;
+      top: 0;
+      z-index: var(--pf-c-page--section--m-sticky-top--ZIndex);
+      box-shadow: var(--pf-c-page--section--m-sticky-top--BoxShadow);
+    }
 
-  &.pf-m-sticky-bottom {
-    position: sticky;
-    bottom: 0;
-    z-index: var(--pf-c-page--section--m-sticky-bottom--ZIndex);
-    box-shadow: var(--pf-c-page--section--m-sticky-bottom--BoxShadow);
-  }
+    &.pf-m-sticky-bottom {
+      position: sticky;
+      bottom: 0;
+      z-index: var(--pf-c-page--section--m-sticky-bottom--ZIndex);
+      box-shadow: var(--pf-c-page--section--m-sticky-bottom--BoxShadow);
+    }
 
-  &.pf-m-overflow-scroll {
-    position: relative;
-    flex-shrink: 1;
-    overflow: auto;
-  }
+    &.pf-m-overflow-scroll {
+      position: relative;
+      flex-shrink: 1;
+      overflow: auto;
+    }
 
-  &.pf-m-shadow-bottom {
-    z-index: var(--pf-c-page--section--m-shadow-bottom--ZIndex);
-    box-shadow: var(--pf-c-page--section--m-shadow-bottom--BoxShadow);
-  }
+    &.pf-m-shadow-bottom {
+      z-index: var(--pf-c-page--section--m-shadow-bottom--ZIndex);
+      box-shadow: var(--pf-c-page--section--m-shadow-bottom--BoxShadow);
+    }
 
-  &.pf-m-shadow-top {
-    z-index: var(--pf-c-page--section--m-shadow-top--ZIndex);
-    box-shadow: var(--pf-c-page--section--m-shadow-top--BoxShadow);
+    &.pf-m-shadow-top {
+      z-index: var(--pf-c-page--section--m-shadow-top--ZIndex);
+      box-shadow: var(--pf-c-page--section--m-shadow-top--BoxShadow);
+    }
   }
+  */
 }
 
 // Main & Drawer

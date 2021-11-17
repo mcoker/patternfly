@@ -158,13 +158,21 @@ $pf-global--ZIndex--lg: 400;
 $pf-global--ZIndex--xl: 500;
 $pf-global--ZIndex--2xl: 600;
 
-// Grid breakpoints
+// Width breakpoints
 $pf-global--breakpoint--xs: 0 !default;
 $pf-global--breakpoint--sm: 576px !default;
 $pf-global--breakpoint--md: 768px !default;
 $pf-global--breakpoint--lg: 992px !default;
 $pf-global--breakpoint--xl: 1200px !default;
 $pf-global--breakpoint--2xl: 1450px !default;
+
+// Height breakpoints
+$pf-global--breakpoint--height--xs: 0 !default;
+$pf-global--breakpoint--height--sm: 500px !default;
+$pf-global--breakpoint--height--md: 750px !default;
+$pf-global--breakpoint--height--lg: 1000px !default;
+$pf-global--breakpoint--height--xl: 1250px !default;
+$pf-global--breakpoint--height--2xl: 1500px !default;
 
 // Borders
 $pf-global--BorderWidth--sm:     1px !default;
@@ -276,6 +284,15 @@ $pf-global--breakpoint-name-map: (
   "lg": $pf-global--breakpoint--lg,
   "xl": $pf-global--breakpoint--xl,
   "2xl": $pf-global--breakpoint--2xl
+);
+
+// Height breakpoints
+$pf-global--breakpoint-name-map-h: (
+  "sm": $pf-global--breakpoint--height--sm,
+  "md": $pf-global--breakpoint--height--md,
+  "lg": $pf-global--breakpoint--height--lg,
+  "xl": $pf-global--breakpoint--height--xl,
+  "2xl": $pf-global--breakpoint--height--2xl
 );
 
 // Spacer properties
