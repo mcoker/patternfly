@@ -13,8 +13,11 @@ import './Card.css'
   {{#> card-title}}
     Title
   {{/card-title}}
-  {{#> card-body}}
-    Body
+  {{#> card-body card-icon--status="card-icon-success"}}
+    {{> (lookup . 'card-icon--status')}}
+  {{/card-body}}
+  {{#> card-body card-icon--status="card-icon-invalid"}}
+    {{> (lookup . 'card-icon--status')}}
   {{/card-body}}
   {{#> card-footer}}
     Footer
