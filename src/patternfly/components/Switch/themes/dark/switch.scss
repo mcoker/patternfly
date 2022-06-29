@@ -1,5 +1,3 @@
-@import "../../../../sass-utilities/themes/dark/all";
-
 @mixin pf-theme-dark-switch() {
   .pf-c-switch {
     --pf-c-switch__toggle-icon--Color: var(--pf-global--BackgroundColor--100);

@@ -1,5 +1,3 @@
-@import "../../../../sass-utilities/themes/dark/all";
-
 @mixin pf-theme-dark-skeleton() {
   .pf-c-skeleton {
     --pf-c-skeleton--BackgroundColor: var(--pf-global--palette--black-600);

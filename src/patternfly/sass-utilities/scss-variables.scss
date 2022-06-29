@@ -332,3 +332,7 @@ $pf-global--spacer-map: (
   "3xl": "var(--pf-global--spacer--3xl)",
   "4xl": "var(--pf-global--spacer--4xl)"
 );
+
+@import "themes/dark/scss-variables";
+
+@include pf-theme-dark-scss-variables;

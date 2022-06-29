@@ -80,3 +80,7 @@ $pf-color-red-300:               #7d1007 !default;
 $pf-color-red-400:               #470000 !default;
 $pf-color-red-500:               #2c0000 !default;
 $pf-color-white:                 #fff !default;
+
+@import "themes/dark/colors";
+
+@include pf-theme-dark-colors;

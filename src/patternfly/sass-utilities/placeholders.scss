@@ -92,3 +92,7 @@
     margin: 0;
   }
 }
+
+// stylelint-disable
+@import "themes/dark/placeholders";
+@include pf-theme-dark-placeholders;
