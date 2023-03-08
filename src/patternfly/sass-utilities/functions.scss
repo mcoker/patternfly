@@ -2,17 +2,22 @@
 // --------------------------------------------------
 @import "./div";
 
+// Create color function
+@function pf-color-function($base, $alpha: 1) {
+  @return rgb($base, $alpha);
+}
+
 // Transform px to rems
 @function pf-strip-unit($num) {
   @return div($num, ($num * 0 + 1));
 }
 
-@function pf-size-prem($pxval, $base: $pf-global--space-size-root) {
-  @return div(pf-strip-unit($pxval), $base) * 1rem;
+@function pf-size-prem($pxval, $base: var(--pf-global--space-size-root)) {
+  @return calc($pxval / $base * 1rem);
 }
 
 @function pf-font-prem($pxval, $base: $pf-global--font-size-root) {
-  @return div(pf-strip-unit($pxval), $base) * 1rem;
+  @return pf-size-prem($pxval, $base);
 }
 
 @function pf-bg-svg($svg-coordinates, $viewBox: "512", $svg-color: "currentColor") {
