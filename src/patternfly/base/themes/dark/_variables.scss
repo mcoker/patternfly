@@ -19,19 +19,19 @@
   --pf-global--palette--blue-300--base: 31, 167, 248; // #1fa7f8;
 
   // Colors
-  --pf-global--palette--black-50: #{pf-color(var(--pf-global--palette--black-50--base))};
-  --pf-global--palette--black-100: #{pf-color(var(--pf-global--palette--black-100--base))};
-  --pf-global--palette--black-200: #{pf-color(var(--pf-global--palette--black-200--base))};
-  --pf-global--palette--black-300: #{pf-color(var(--pf-global--palette--black-300--base))};
-  --pf-global--palette--black-400: #{pf-color(var(--pf-global--palette--black-400--base))};
-  --pf-global--palette--black-500: #{pf-color(var(--pf-global--palette--black-500--base))};
-  --pf-global--palette--black-600: #{pf-color(var(--pf-global--palette--black-600--base))};
-  --pf-global--palette--black-700: #{pf-color(var(--pf-global--palette--black-700--base))};
-  --pf-global--palette--black-800: #{pf-color(var(--pf-global--palette--black-800--base))};
-  --pf-global--palette--black-900: #{pf-color(var(--pf-global--palette--black-900--base))};
-  --pf-global--palette--red-9999: #{pf-color(var(--pf-global--palette--red-9999--base))};
-  --pf-global--palette--red-8888: #{pf-color(var(--pf-global--palette--red-8888--base))};
-  --pf-global--palette--blue-300: #{pf-color(var(--pf-global--palette--blue-300--base))};
+  --pf-global--palette--black-50: #{pf-color-function(var(--pf-global--palette--black-50--base))};
+  --pf-global--palette--black-100: #{pf-color-function(var(--pf-global--palette--black-100--base))};
+  --pf-global--palette--black-200: #{pf-color-function(var(--pf-global--palette--black-200--base))};
+  --pf-global--palette--black-300: #{pf-color-function(var(--pf-global--palette--black-300--base))};
+  --pf-global--palette--black-400: #{pf-color-function(var(--pf-global--palette--black-400--base))};
+  --pf-global--palette--black-500: #{pf-color-function(var(--pf-global--palette--black-500--base))};
+  --pf-global--palette--black-600: #{pf-color-function(var(--pf-global--palette--black-600--base))};
+  --pf-global--palette--black-700: #{pf-color-function(var(--pf-global--palette--black-700--base))};
+  --pf-global--palette--black-800: #{pf-color-function(var(--pf-global--palette--black-800--base))};
+  --pf-global--palette--black-900: #{pf-color-function(var(--pf-global--palette--black-900--base))};
+  --pf-global--palette--red-9999: #{pf-color-function(var(--pf-global--palette--red-9999--base))};
+  --pf-global--palette--red-8888: #{pf-color-function(var(--pf-global--palette--red-8888--base))};
+  --pf-global--palette--blue-300: #{pf-color-function(var(--pf-global--palette--blue-300--base))};
 
   // Backgrounds
   --pf-global--BackgroundColor--100: var(--pf-global--palette--black-800); // primary background color
@@ -90,36 +90,36 @@
 
   // Shadows
   // Small
-  --pf-global--BoxShadow--sm: 0 #{pf-size-prem(1px)} #{pf-size-prem(2px)} 0 #{pf-color(var(--pf-global--palette--black-1000, .48))},
-    0 0 #{pf-size-prem(2px)} 0 #{pf-color(var(--pf-global--palette--black-1000, .24))};
-  --pf-global--BoxShadow--sm-top: 0 #{pf-size-prem(-2px)} #{pf-size-prem(4px)} #{pf-size-prem(-1px)} #{pf-color(var(--pf-global--palette--black-1000, .64))};
-  --pf-global--BoxShadow--sm-right: #{pf-size-prem(2px)} 0 #{pf-size-prem(4px)} #{pf-size-prem(-1px)} #{pf-color(var(--pf-global--palette--black-1000, .64))};
-  --pf-global--BoxShadow--sm-bottom: 0 #{pf-size-prem(2px)} #{pf-size-prem(4px)} #{pf-size-prem(-1px)} #{pf-color(var(--pf-global--palette--black-1000, .64))};
-  --pf-global--BoxShadow--sm-left: #{pf-size-prem(-2px)} 0 #{pf-size-prem(4px)} #{pf-size-prem(-1px)} #{pf-color(var(--pf-global--palette--black-1000, .64))};
+  --pf-global--BoxShadow--sm: 0 #{pf-size-prem(1px)} #{pf-size-prem(2px)} 0 #{pf-color-function(var(--pf-global--palette--black-1000, .48))},
+    0 0 #{pf-size-prem(2px)} 0 #{pf-color-function(var(--pf-global--palette--black-1000, .24))};
+  --pf-global--BoxShadow--sm-top: 0 #{pf-size-prem(-2px)} #{pf-size-prem(4px)} #{pf-size-prem(-1px)} #{pf-color-function(var(--pf-global--palette--black-1000, .64))};
+  --pf-global--BoxShadow--sm-right: #{pf-size-prem(2px)} 0 #{pf-size-prem(4px)} #{pf-size-prem(-1px)} #{pf-color-function(var(--pf-global--palette--black-1000, .64))};
+  --pf-global--BoxShadow--sm-bottom: 0 #{pf-size-prem(2px)} #{pf-size-prem(4px)} #{pf-size-prem(-1px)} #{pf-color-function(var(--pf-global--palette--black-1000, .64))};
+  --pf-global--BoxShadow--sm-left: #{pf-size-prem(-2px)} 0 #{pf-size-prem(4px)} #{pf-size-prem(-1px)} #{pf-color-function(var(--pf-global--palette--black-1000, .64))};
 
   // Medium
-  --pf-global--BoxShadow--md: 0 #{pf-size-prem(4px)} #{pf-size-prem(8px)} #{pf-size-prem(0)} #{pf-color(var(--pf-global--palette--black-1000, .48))},
-    0 0 #{pf-size-prem(4px)} 0 #{pf-color(var(--pf-global--palette--black-1000, .24))};
-  --pf-global--BoxShadow--md-top: 0 #{pf-size-prem(-8px)} #{pf-size-prem(8px)} #{pf-size-prem(-6px)} #{pf-color(var(--pf-global--palette--black-1000, .72))};
-  --pf-global--BoxShadow--md-right: #{pf-size-prem(8px)} 0 #{pf-size-prem(8px)} #{pf-size-prem(-6px)} #{pf-color(var(--pf-global--palette--black-1000, .72))};
-  --pf-global--BoxShadow--md-bottom: 0 #{pf-size-prem(8px)} #{pf-size-prem(8px)} #{pf-size-prem(-6px)} #{pf-color(var(--pf-global--palette--black-1000, .72))};
-  --pf-global--BoxShadow--md-left: #{pf-size-prem(-8px)} 0 #{pf-size-prem(8px)} #{pf-size-prem(-6px)} #{pf-color(var(--pf-global--palette--black-1000, .72))};
+  --pf-global--BoxShadow--md: 0 #{pf-size-prem(4px)} #{pf-size-prem(8px)} #{pf-size-prem(0)} #{pf-color-function(var(--pf-global--palette--black-1000, .48))},
+    0 0 #{pf-size-prem(4px)} 0 #{pf-color-function(var(--pf-global--palette--black-1000, .24))};
+  --pf-global--BoxShadow--md-top: 0 #{pf-size-prem(-8px)} #{pf-size-prem(8px)} #{pf-size-prem(-6px)} #{pf-color-function(var(--pf-global--palette--black-1000, .72))};
+  --pf-global--BoxShadow--md-right: #{pf-size-prem(8px)} 0 #{pf-size-prem(8px)} #{pf-size-prem(-6px)} #{pf-color-function(var(--pf-global--palette--black-1000, .72))};
+  --pf-global--BoxShadow--md-bottom: 0 #{pf-size-prem(8px)} #{pf-size-prem(8px)} #{pf-size-prem(-6px)} #{pf-color-function(var(--pf-global--palette--black-1000, .72))};
+  --pf-global--BoxShadow--md-left: #{pf-size-prem(-8px)} 0 #{pf-size-prem(8px)} #{pf-size-prem(-6px)} #{pf-color-function(var(--pf-global--palette--black-1000, .72))};
 
   // Large
-  --pf-global--BoxShadow--lg: 0 #{pf-size-prem(8px)} #{pf-size-prem(16px)} 0 #{pf-color(var(--pf-global--palette--black-1000, .64))},
-  0 0 #{pf-size-prem(6px)} 0 #{pf-color(var(--pf-global--palette--black-1000, .32))};
-  --pf-global--BoxShadow--lg-top: 0 #{pf-size-prem(-12px)} #{pf-size-prem(12px)} #{pf-size-prem(-8px)} #{pf-color(var(--pf-global--palette--black-1000, .72))};
-  --pf-global--BoxShadow--lg-right: #{pf-size-prem(12px)} 0 #{pf-size-prem(12px)} #{pf-size-prem(-8px)} #{pf-color(var(--pf-global--palette--black-1000, .72))};
-  --pf-global--BoxShadow--lg-bottom: 0 #{pf-size-prem(12px)} #{pf-size-prem(12px)} #{pf-size-prem(-8px)} #{pf-color(var(--pf-global--palette--black-1000, .72))};
-  --pf-global--BoxShadow--lg-left: #{pf-size-prem(-12px)} 0 #{pf-size-prem(12px)} #{pf-size-prem(-8px)} #{pf-color(var(--pf-global--palette--black-1000, .72))};
+  --pf-global--BoxShadow--lg: 0 #{pf-size-prem(8px)} #{pf-size-prem(16px)} 0 #{pf-color-function(var(--pf-global--palette--black-1000, .64))},
+  0 0 #{pf-size-prem(6px)} 0 #{pf-color-function(var(--pf-global--palette--black-1000, .32))};
+  --pf-global--BoxShadow--lg-top: 0 #{pf-size-prem(-12px)} #{pf-size-prem(12px)} #{pf-size-prem(-8px)} #{pf-color-function(var(--pf-global--palette--black-1000, .72))};
+  --pf-global--BoxShadow--lg-right: #{pf-size-prem(12px)} 0 #{pf-size-prem(12px)} #{pf-size-prem(-8px)} #{pf-color-function(var(--pf-global--palette--black-1000, .72))};
+  --pf-global--BoxShadow--lg-bottom: 0 #{pf-size-prem(12px)} #{pf-size-prem(12px)} #{pf-size-prem(-8px)} #{pf-color-function(var(--pf-global--palette--black-1000, .72))};
+  --pf-global--BoxShadow--lg-left: #{pf-size-prem(-12px)} 0 #{pf-size-prem(12px)} #{pf-size-prem(-8px)} #{pf-color-function(var(--pf-global--palette--black-1000, .72))};
 
   // XL
-  --pf-global--BoxShadow--xl: 0 #{pf-size-prem(16px)} #{pf-size-prem(32px)} 0 #{pf-color(var(--pf-global--palette--black-1000, .64))},
-    0 0 #{pf-size-prem(8px)} 0 #{pf-color(var(--pf-global--palette--black-1000, .4))};
-  --pf-global--BoxShadow--xl-top: 0 #{pf-size-prem(-16px)} #{pf-size-prem(16px)} #{pf-size-prem(-8px)} #{pf-color(var(--pf-global--palette--black-1000, .8))};
-  --pf-global--BoxShadow--xl-right: #{pf-size-prem(16px)} 0 #{pf-size-prem(16px)} #{pf-size-prem(-8px)} #{pf-color(var(--pf-global--palette--black-1000, .8))};
-  --pf-global--BoxShadow--xl-bottom: 0 #{pf-size-prem(16px)} #{pf-size-prem(16px)} #{pf-size-prem(-8px)} #{pf-color(var(--pf-global--palette--black-1000, .8))};
-  --pf-global--BoxShadow--xl-left: #{pf-size-prem(-16px)} 0 #{pf-size-prem(16px)} #{pf-size-prem(-8px)} #{pf-color(var(--pf-global--palette--black-1000, .8))};
+  --pf-global--BoxShadow--xl: 0 #{pf-size-prem(16px)} #{pf-size-prem(32px)} 0 #{pf-color-function(var(--pf-global--palette--black-1000, .64))},
+    0 0 #{pf-size-prem(8px)} 0 #{pf-color-function(var(--pf-global--palette--black-1000, .4))};
+  --pf-global--BoxShadow--xl-top: 0 #{pf-size-prem(-16px)} #{pf-size-prem(16px)} #{pf-size-prem(-8px)} #{pf-color-function(var(--pf-global--palette--black-1000, .8))};
+  --pf-global--BoxShadow--xl-right: #{pf-size-prem(16px)} 0 #{pf-size-prem(16px)} #{pf-size-prem(-8px)} #{pf-color-function(var(--pf-global--palette--black-1000, .8))};
+  --pf-global--BoxShadow--xl-bottom: 0 #{pf-size-prem(16px)} #{pf-size-prem(16px)} #{pf-size-prem(-8px)} #{pf-color-function(var(--pf-global--palette--black-1000, .8))};
+  --pf-global--BoxShadow--xl-left: #{pf-size-prem(-16px)} 0 #{pf-size-prem(16px)} #{pf-size-prem(-8px)} #{pf-color-function(var(--pf-global--palette--black-1000, .8))};
 
   // Inset
   --pf-global--BoxShadow--inset: inset 0 0 #{pf-size-prem(10)} 0 var(--pf-global--palette--black-1000);
