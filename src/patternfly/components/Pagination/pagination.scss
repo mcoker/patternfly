@@ -1,3 +1,5 @@
+@use "../../sass-utilities/all" as *;
+
 $pf-c-pagination--breakpoint-map: build-breakpoint-map();
 $pf-c-pagination--variable-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl");
 

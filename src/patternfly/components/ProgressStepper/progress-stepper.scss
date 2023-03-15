@@ -1,3 +1,5 @@
+@use "../../sass-utilities/all" as *;
+
 $pf-c-progress-stepper--breakpoint-map: build-breakpoint-map();
 
 // Default layout is vertical

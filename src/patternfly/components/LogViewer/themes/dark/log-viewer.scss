@@ -1,4 +1,4 @@
-@import "../../../../sass-utilities/themes/dark/all";
+@use "../../../../sass-utilities/themes/dark/all" as *;
 
 @mixin pf-theme-dark-log-viewer() {
   .pf-c-log-viewer.pf-m-dark .pf-c-log-viewer__main {

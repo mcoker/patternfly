@@ -1,3 +1,5 @@
+@use "../../sass-utilities/all" as *;
+
 $pf-c-form--m-horizontal--breakpoint-map: build-breakpoint-map("sm", "md", "lg", "xl", "2xl");
 
 @mixin pf-c-form--m-horizontal {

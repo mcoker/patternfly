@@ -1,4 +1,5 @@
-@import "./data-list-grid";
+@use "../../sass-utilities/all" as *;
+@use "./data-list-grid";
 
 .pf-c-data-list {
   --pf-c-data-list--FontSize: 1em; // inherit font-size, update this to global variable at breaking change

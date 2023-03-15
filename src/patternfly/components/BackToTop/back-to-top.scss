@@ -1,3 +1,5 @@
+@use "../../sass-utilities/all" as *;
+
 .pf-c-back-to-top {
   --pf-c-back-to-top--Right: var(--pf-global--spacer--2xl);
   --pf-c-back-to-top--Bottom: var(--pf-global--spacer--lg);

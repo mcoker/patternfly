@@ -1,6 +1,8 @@
+@use "../../sass-utilities/all" as *;
+@use "sass:math";
+
 $pf-c-sidebar--breakpoint-map--width: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
 $pf-c-sidebar__panel--list--width: ("default", 25, 33, 50, 66, 75, 100);
-
 
 .pf-c-sidebar {
   --pf-c-sidebar--BackgroundColor: var(--pf-global--BackgroundColor--100);
@@ -178,7 +180,7 @@ $pf-c-sidebar__panel--list--width: ("default", 25, 33, 50, 66, 75, 100);
         @if $width-value == "default" {
           --pf-c-sidebar__panel--FlexBasis: var(--pf-c-sidebar__panel--FlexBasis--base);
         } @else {
-          --pf-c-sidebar__panel--FlexBasis: #{percentage(div($width-value, 100))};
+          --pf-c-sidebar__panel--FlexBasis: #{$width-value + '%'};
         }
       }
     }

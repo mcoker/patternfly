@@ -1,3 +1,5 @@
+@use "../../sass-utilities/all" as *;
+
 .pf-c-label-group {
   // Label group - spaces main with the close button
   --pf-c-label-group--RowGap: var(--pf-global--spacer--sm);

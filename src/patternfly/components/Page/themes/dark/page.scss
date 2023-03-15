@@ -1,4 +1,5 @@
-@import "../../../../sass-utilities/themes/dark/all";
+@use "../../../../sass-utilities/themes/dark/all" as *;
+
 
 @mixin pf-theme-dark-page() {
   .pf-c-page {

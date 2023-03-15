@@ -1,3 +1,5 @@
+@use "../../sass-utilities/all" as *;
+
 .pf-c-backdrop {
   --pf-c-backdrop--Position: fixed;
   --pf-c-backdrop--ZIndex: var(--pf-global--ZIndex--lg);

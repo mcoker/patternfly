@@ -1,6 +1,8 @@
-$pf-u-sizing--min-max--breakpoint-map: build-breakpoint-map();
-// stylelint-disable
+@use "../../sass-utilities/all" as *;
 
+$pf-u-sizing--min-max--breakpoint-map: build-breakpoint-map();
+
+// stylelint-disable
 // Width options
 $pf-u-width-options: (
   w-auto:    (width auto),
@@ -87,5 +89,4 @@ $pf-u-height-options: (
     $important: true
   );
 }
-
 // stylelint-enable
