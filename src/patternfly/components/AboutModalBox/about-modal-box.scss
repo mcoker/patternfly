@@ -1,4 +1,4 @@
-.pf-c-about-modal-box {
+:root {
   // Component variables
   --pf-c-about-modal-box--BackgroundColor: var(--pf-global--palette--black-1000); // Modal uses a non-standard background color
   --pf-c-about-modal-box--Height: 100%;
@@ -94,8 +94,9 @@
     --pf-c-about-modal-box__content--MarginBottom: var(--pf-c-about-modal-box__content--sm--MarginBottom);
     --pf-c-about-modal-box__content--MarginLeft: var(--pf-c-about-modal-box__content--sm--MarginLeft);
   }
+}
 
-  // This component always needs to be dark
+.pf-c-about-modal-box {
   @include pf-t-dark;
 
   position: relative;

@@ -1,4 +1,4 @@
-.pf-c-nav {
+:root {
   --pf-c-nav--Transition: var(--pf-global--Transition);
 
   // Light theme
@@ -390,7 +390,9 @@
     --pf-c-nav--c-menu__item--PaddingRight: var(--pf-c-nav--c-menu__item--xl--PaddingRight);
     --pf-c-nav--c-menu__item--PaddingLeft: var(--pf-c-nav--c-menu__item--xl--PaddingLeft);
   }
+}
 
+.pf-c-nav {
   position: relative;
 
   .pf-c-menu {

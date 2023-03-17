@@ -1,4 +1,4 @@
-.pf-c-multiple-file-upload {
+:root {
   --pf-c-multiple-file-upload--GridTemplateColumns: 1fr;
   --pf-c-multiple-file-upload--Gap: var(--pf-global--spacer--lg);
 
@@ -91,7 +91,9 @@
 
   // status item progress size
   --pf-c-multiple-file-upload__status-item-progress-size--Color: var(--pf-global--Color--200);
+}
 
+.pf-c-multiple-file-upload {
   display: grid;
   grid-template-columns: var(--pf-c-multiple-file-upload--GridTemplateColumns);
   gap: var(--pf-c-multiple-file-upload--Gap);

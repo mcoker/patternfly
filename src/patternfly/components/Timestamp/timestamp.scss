@@ -1,4 +1,4 @@
-.pf-c-timestamp {
+:root {
   --pf-c-timestamp--FontSize: var(--pf-global--FontSize--sm);
   --pf-c-timestamp--Color: var(--pf-global--Color--200);
   --pf-c-timestamp--OutlineOffset: #{pf-size-prem(3px)};
@@ -13,7 +13,9 @@
   --pf-c-timestamp--m-help-text--focus--Color: var(--pf-global--Color--100);
   --pf-c-timestamp--m-help-text--hover--TextDecorationColor: var(--pf-global--Color--100);
   --pf-c-timestamp--m-help-text--focus--TextDecorationColor: var(--pf-global--Color--100);
+}
 
+.pf-c-timestamp {
   display: inline-block;
   font-size: var(--pf-c-timestamp--FontSize);
   color: var(--pf-c-timestamp--Color);

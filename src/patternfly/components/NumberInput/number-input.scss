@@ -1,4 +1,4 @@
-.pf-c-number-input {
+:root {
   // unit
   --pf-c-number-input__unit--c-input-group--MarginLeft: var(--pf-global--spacer--sm);
 
@@ -18,7 +18,9 @@
         var(--pf-c-number-input--c-form-control--width-base) + var(--pf-c-number-input--c-form-control--width-chars) * 1ch
       ) + var(--pf-c-number-input--c-form-control--width-icon)
     );
+}
 
+.pf-c-number-input {
   display: inline-flex;
   align-items: center;
 

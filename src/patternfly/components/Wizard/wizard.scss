@@ -1,4 +1,4 @@
-.pf-c-wizard {
+:root {
   --pf-c-wizard--Height: 100%;
   --pf-c-modal-box--c-wizard--FlexBasis: #{pf-size-prem(762px)}; // this is a specific height from design for the wizard in a modal
 
@@ -205,7 +205,9 @@
     --pf-c-wizard__footer--PaddingBottom: var(--pf-c-wizard__footer--xl--PaddingBottom);
     --pf-c-wizard__footer--PaddingLeft: var(--pf-c-wizard__footer--xl--PaddingLeft);
   }
+}
 
+.pf-c-wizard {
   position: relative;
   display: flex;
   flex-direction: column;

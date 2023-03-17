@@ -1,6 +1,6 @@
 $pf-c-description-list--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
 
-.pf-c-description-list {
+:root {
   --pf-c-description-list--RowGap: var(--pf-global--gutter--md);
   --pf-c-description-list--ColumnGap: var(--pf-global--spacer--lg);
   --pf-c-description-list--GridTemplateColumns--count: 1;
@@ -25,10 +25,6 @@ $pf-c-description-list--breakpoint-map: build-breakpoint-map("base", "sm", "md",
   --pf-c-description-list__term--FontWeight: var(--pf-global--FontWeight--bold);
   --pf-c-description-list__term--FontSize: var(--pf-global--FontSize--sm);
   --pf-c-description-list__term--LineHeight: var(--pf-global--LineHeight--sm);
-
-  @media screen and (min-width: $pf-global--breakpoint--sm) {
-    --pf-c-description-list__term--Display: var(--pf-c-description-list__term--sm--Display);
-  }
 
   // icon
   --pf-c-description-list__term-icon--MinWidth: var(--pf-global--icon--FontSize--sm);
@@ -62,6 +58,13 @@ $pf-c-description-list--breakpoint-map: build-breakpoint-map("base", "sm", "md",
   // Display modifiers
   --pf-c-description-list--m-display-lg__description--FontSize: var(--pf-global--FontSize--lg);
   --pf-c-description-list--m-display-2xl__description--FontSize: var(--pf-global--FontSize--2xl);
+}
+
+
+.pf-c-description-list {
+  @media screen and (min-width: $pf-global--breakpoint--sm) {
+    --pf-c-description-list__term--Display: var(--pf-c-description-list__term--sm--Display);
+  }
 
   display: grid;
   grid-template-columns: var(--pf-c-description-list--GridTemplateColumns);

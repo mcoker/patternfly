@@ -35,7 +35,7 @@ $pf-c-divider--spacer-map: build-spacer-map("none", "xs", "sm", "md", "lg", "xl"
   }
 }
 
-.pf-c-divider {
+:root {
   // Base
   --pf-c-divider--BorderWidth--base: var(--pf-global--BorderWidth--sm);
   --pf-c-divider--BorderColor--base: var(--pf-c-divider--BackgroundColor); // update at breaking change
@@ -61,7 +61,9 @@ $pf-c-divider--spacer-map: build-spacer-map("none", "xs", "sm", "md", "lg", "xl"
   --pf-c-divider--m-vertical--FlexDirection: column;
   --pf-c-divider--m-vertical--after--Height: auto;
   --pf-c-divider--m-vertical--after--Width: var(--pf-c-divider--BorderWidth--base); // remove at breaking change
+}
 
+.pf-c-divider {
   // Vertical
   @include pf-hidden-visible(var(--pf-c-divider--Display));
   @include pf-c-divider--m-horizontal; // set to default to horizontal

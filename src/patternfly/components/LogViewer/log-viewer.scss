@@ -1,4 +1,4 @@
-.pf-c-log-viewer {
+:root {
   --pf-c-log-viewer--Height: 100%;
   --pf-c-log-viewer--MaxHeight: auto;
   --pf-c-log-viewer--m-line-numbers__index--Display: inline;
@@ -65,7 +65,9 @@
 
   // Dark theme
   --pf-c-log-viewer--m-dark__main--BorderWidth: 0;
+}
 
+.pf-c-log-viewer {
   &.pf-m-dark {
     --pf-c-log-viewer__main--BorderWidth: var(--pf-c-log-viewer--m-dark__main--BorderWidth);
 

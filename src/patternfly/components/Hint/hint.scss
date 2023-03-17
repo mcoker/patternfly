@@ -1,4 +1,4 @@
-.pf-c-hint {
+:root {
   --pf-c-hint--GridRowGap: var(--pf-global--spacer--md);
   --pf-c-hint--PaddingTop: var(--pf-global--spacer--lg);
   --pf-c-hint--PaddingRight: var(--pf-global--spacer--lg);
@@ -22,7 +22,9 @@
   // Hint Actions
   --pf-c-hint__actions--MarginLeft: var(--pf-global--spacer--2xl);
   --pf-c-hint__actions--c-dropdown--MarginTop: calc(var(--pf-global--spacer--form-element) * -1);
+}
 
+.pf-c-hint {
   display: grid;
   grid-template-columns: 1fr auto;
   grid-row-gap: var(--pf-c-hint--GridRowGap);

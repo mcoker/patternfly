@@ -1,7 +1,7 @@
 $pf-c-sidebar--breakpoint-map--width: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
 $pf-c-sidebar__panel--list--width: ("default", 25, 33, 50, 66, 75, 100);
 
-.pf-c-sidebar {
+:root {
   --pf-c-sidebar--inset: var(--pf-global--spacer--md);
   --pf-c-sidebar--xl--inset: var(--pf-global--spacer--lg);
   --pf-c-sidebar--BackgroundColor: var(--pf-global--BackgroundColor--100);
@@ -107,7 +107,9 @@ $pf-c-sidebar__panel--list--width: ("default", 25, 33, 50, 66, 75, 100);
   @media (min-width: $pf-global--breakpoint--xl) {
     --pf-c-sidebar--inset: var(--pf-c-sidebar--xl--inset);
   }
+}
 
+.pf-c-sidebar {
   &.pf-m-gutter > .pf-c-sidebar__main {
     gap: var(--pf-c-sidebar--m-gutter__main--Gap);
   }

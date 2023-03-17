@@ -1,4 +1,4 @@
-.pf-c-text-input-group {
+:root {
   --pf-c-text-input-group--BackgroundColor: var(--pf-global--BackgroundColor--100);
 
   // Base border
@@ -49,7 +49,9 @@
   // input disabled style
   --pf-c-text-input-group--m-disabled--Color: var(--pf-global--disabled-color--100);
   --pf-c-text-input-group--m-disabled--BackgroundColor: var(--pf-global--disabled-color--300);
+}
 
+.pf-c-text-input-group {
   position: relative;
   display: flex;
   width: 100%; // when child of flex layout, take up space

@@ -1,4 +1,4 @@
-.pf-c-empty-state {
+:root {
   --pf-c-empty-state--PaddingTop: var(--pf-global--spacer--xl);
   --pf-c-empty-state--PaddingRight: var(--pf-global--spacer--xl);
   --pf-c-empty-state--PaddingBottom: var(--pf-global--spacer--xl);
@@ -48,7 +48,9 @@
   // Actions
   --pf-c-empty-state__actions--RowGap: var(--pf-global--spacer--xs);
   --pf-c-empty-state__actions--ColumnGap: var(--pf-global--spacer--xs);
+}
 
+.pf-c-empty-state {
   display: flex;
   align-items: center;
   justify-content: center;

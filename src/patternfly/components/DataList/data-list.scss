@@ -1,6 +1,6 @@
 @import "./data-list-grid";
 
-.pf-c-data-list {
+:root {
   --pf-c-data-list--FontSize: 1em; // inherit font-size, update this to global variable at breaking change
   --pf-c-data-list--LineHeight: var(--pf-global--LineHeight--md);
   --pf-c-data-list--BorderTopColor: var(--pf-global--BorderColor--300);
@@ -162,7 +162,9 @@
   --pf-c-data-list--m-compact__item-draggable-button--PaddingTop: var(--pf-global--spacer--sm);
   --pf-c-data-list--m-compact__item-draggable-button--PaddingBottom: var(--pf-global--spacer--sm);
   --pf-c-data-list--m-compact__cell--m-icon--cell--PaddingTop: var(--pf-global--spacer--sm);
+}
 
+.pf-c-data-list {
   @include pf-t-light;
 
   font-size: var(--pf-c-data-list--FontSize);

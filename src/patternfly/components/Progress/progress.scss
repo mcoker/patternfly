@@ -1,4 +1,4 @@
-.pf-c-progress {
+:root {
   // Component variables
   --pf-c-progress--GridGap: var(--pf-global--spacer--md);
 
@@ -31,16 +31,15 @@
   --pf-c-progress--m-sm__description--FontSize: var(--pf-global--FontSize--sm);
   --pf-c-progress--m-sm__measure--FontSize: var(--pf-global--FontSize--sm);
   --pf-c-progress--m-lg__bar--Height: var(--pf-global--spacer--lg);
+}
 
-  // Component styles
+.pf-c-progress {
   display: grid;
   grid-template-rows: 1fr auto;
   grid-template-columns: auto auto;
   grid-gap: var(--pf-c-progress--GridGap);
   align-items: end;
 
-  // Modifiers
-  // size modifiers
   &.pf-m-sm {
     --pf-c-progress__bar--Height: var(--pf-c-progress--m-sm__bar--Height); // set height to the small height
 

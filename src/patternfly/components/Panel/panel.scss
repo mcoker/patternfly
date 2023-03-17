@@ -1,4 +1,4 @@
-.pf-c-panel {
+:root {
   --pf-c-panel--Width: auto;
   --pf-c-panel--MinWidth: auto;
   --pf-c-panel--MaxWidth: none;
@@ -44,7 +44,9 @@
   --pf-c-panel--m-scrollable__main--MaxHeight: #{pf-size-prem(300px)};
   --pf-c-panel--m-scrollable__main--Overflow: auto;
   --pf-c-panel--m-scrollable__footer--BoxShadow: 0 #{pf-size-prem(-5px)} #{pf-size-prem(4px)} #{pf-size-prem(-4px)} #{rgba($pf-color-black-1000, .16)}; // insets the shadow so it doesn't show on left/right sides
+}
 
+.pf-c-panel  {
   position: relative;
   z-index: var(--pf-c-panel--ZIndex);
   width: var(--pf-c-panel--Width);

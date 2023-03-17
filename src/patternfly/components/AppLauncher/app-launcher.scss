@@ -1,7 +1,4 @@
-// Don't remove this magic comment. See gulpfile.js.
-// @import "../../sass-utilities/all";
-
-.pf-c-app-launcher {
+:root {
   // Menu
   --pf-c-app-launcher__menu--BackgroundColor: var(--pf-global--BackgroundColor--light-100);
   --pf-c-app-launcher__menu--BoxShadow: var(--pf-global--BoxShadow--md);
@@ -80,7 +77,9 @@
   // Divider
   --pf-c-app-launcher--c-divider--MarginTop: var(--pf-global--spacer--sm);
   --pf-c-app-launcher--c-divider--MarginBottom: var(--pf-global--spacer--sm);
+}
 
+.pf-c-app-launcher {
   position: relative;
   display: inline-block;
   max-width: 100%;

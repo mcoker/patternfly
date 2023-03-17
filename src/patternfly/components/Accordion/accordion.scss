@@ -1,4 +1,4 @@
-.pf-c-accordion {
+:root {
   // accordion
   --pf-c-accordion--BackgroundColor: var(--pf-global--BackgroundColor--100);
 
@@ -77,8 +77,9 @@
   --pf-c-accordion--m-bordered__toggle--before--BorderBottomWidth: var(--pf-global--BorderWidth--sm);
   --pf-c-accordion--m-bordered__expandable-content--m-expanded__expandable-content-body--last-child--before--BorderBottomWidth: var(--pf-global--BorderWidth--sm);
   --pf-c-accordion--m-bordered__expandable-content--m-expanded__expandable-content-body--last-child--before--BorderBottomColor: var(--pf-global--BorderColor--100);
+}
 
-  // This component always needs to be light
+.pf-c-accordion {
   @include pf-t-light;
 
   background-color: var(--pf-c-accordion--BackgroundColor);

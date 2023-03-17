@@ -1,4 +1,4 @@
-.pf-c-back-to-top {
+:root {
   --pf-c-back-to-top--Right: var(--pf-global--spacer--2xl);
   --pf-c-back-to-top--Bottom: var(--pf-global--spacer--lg);
   --pf-c-back-to-top--md--Bottom: var(--pf-global--spacer--2xl);
@@ -13,7 +13,9 @@
   @media (min-width: $pf-global--breakpoint--md) {
     --pf-c-back-to-top--Bottom: var(--pf-c-back-to-top--md--Bottom);
   }
+}
 
+.pf-c-back-to-top {
   position: absolute;
   right: var(--pf-c-back-to-top--Right);
   bottom: var(--pf-c-back-to-top--Bottom);

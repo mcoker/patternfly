@@ -1,4 +1,4 @@
-.pf-c-content {
+:root {
   // Body
   --pf-c-content--MarginBottom: var(--pf-global--spacer--md);
   --pf-c-content--LineHeight: var(--pf-global--LineHeight--md);
@@ -95,7 +95,9 @@
   // hr
   --pf-c-content--hr--Height: var(--pf-global--BorderWidth--sm);
   --pf-c-content--hr--BackgroundColor: var(--pf-global--BorderColor--100);
+}
 
+.pf-c-content {
   font-size: var(--pf-c-content--FontSize);
   line-height: var(--pf-c-content--LineHeight);
   color: var(--pf-c-content--Color);

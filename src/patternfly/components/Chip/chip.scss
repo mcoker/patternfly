@@ -1,4 +1,4 @@
-.pf-c-chip {
+:root {
   --pf-c-chip--PaddingTop: var(--pf-global--spacer--xs);
   --pf-c-chip--PaddingRight: var(--pf-global--spacer--sm);
   --pf-c-chip--PaddingBottom: var(--pf-global--spacer--xs);
@@ -40,7 +40,9 @@
 
   // icon
   --pf-c-chip__icon--MarginLeft: var(--pf-global--spacer--sm);
+}
 
+.pf-c-chip {
   @include pf-t-light;  // This component always needs to be light
 
   position: relative;

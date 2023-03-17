@@ -1,4 +1,4 @@
-.pf-c-breadcrumb {
+:root {
   // Breadcrumb item
   --pf-c-breadcrumb__item--FontSize: var(--pf-global--FontSize--sm);
   --pf-c-breadcrumb__item--LineHeight: var(--pf-global--LineHeight--sm);
@@ -28,7 +28,9 @@
 
   // breadcrumb toggle
   --pf-c-breadcrumb__dropdown--c-dropdown__toggle--LineHeight: var(--pf-global--LineHeight--sm);
+}
 
+.pf-c-breadcrumb {
   display: inline-flex;
 }
 

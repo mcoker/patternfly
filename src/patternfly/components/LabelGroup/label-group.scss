@@ -1,4 +1,4 @@
-.pf-c-label-group {
+:root {
   // Label group - spaces main with the close button
   --pf-c-label-group--RowGap: var(--pf-global--spacer--sm);
   --pf-c-label-group--ColumnGap: 0;
@@ -46,7 +46,9 @@
   --pf-c-label-group__textarea--PaddingRight: var(--pf-global--spacer--xs);
   --pf-c-label-group__textarea--PaddingBottom: 0;
   --pf-c-label-group__textarea--PaddingLeft: var(--pf-global--spacer--xs);
+}
 
+.pf-c-label-group {
   display: inline-flex;
   row-gap: var(--pf-c-label-group--RowGap);
   column-gap: var(--pf-c-label-group--ColumnGap);

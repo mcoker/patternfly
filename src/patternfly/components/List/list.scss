@@ -1,4 +1,4 @@
-.pf-c-list {
+:root {
   // list
   --pf-c-list--PaddingLeft: var(--pf-global--spacer--lg);
   --pf-c-list--nested--MarginTop: var(--pf-global--spacer--sm);
@@ -23,7 +23,9 @@
   --pf-c-list--m-icon-lg__item-icon--MinWidth: var(--pf-global--icon--FontSize--lg);
   --pf-c-list--m-icon-lg__item-icon--MarginRight: var(--pf-global--spacer--md);
   --pf-c-list--m-icon-lg__item-icon--FontSize: var(--pf-global--icon--FontSize--lg);
+}
 
+.pf-c-list {
   padding-left: var(--pf-c-list--PaddingLeft);
 
   ol,

@@ -1,6 +1,4 @@
-.pf-c-chip-group {
-  @include pf-t-light; // force the container follow the light theme
-
+:root {
   // Chip group - spaces main and close
   // column-gap spacer supports legacy chip group
   --pf-c-chip-group--PaddingTop: 0;
@@ -33,6 +31,10 @@
   // Chip group close - negative margin stretches height for click area
   --pf-c-chip-group__close--MarginTop: calc(var(--pf-global--spacer--xs) * -1);
   --pf-c-chip-group__close--MarginBottom: calc(var(--pf-global--spacer--xs) * -1);
+}
+
+.pf-c-chip-group {
+  @include pf-t-light;
 
   row-gap: var(--pf-c-chip-group--RowGap);
   column-gap: var(--pf-c-chip-group--ColumnGap);

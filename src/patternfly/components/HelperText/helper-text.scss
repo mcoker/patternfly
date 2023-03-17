@@ -1,4 +1,4 @@
-.pf-c-helper-text {
+:root {
   --pf-c-helper-text--Gap: var(--pf-global--spacer--xs);
   --pf-c-helper-text--FontSize: var(--pf-global--FontSize--sm);
 
@@ -30,7 +30,9 @@
   --pf-c-helper-text__item-icon--MarginRight: var(--pf-global--spacer--xs);
 
   // text
+}
 
+.pf-c-helper-text {
   display: grid;
   gap: var(--pf-c-helper-text--Gap);
   font-size: var(--pf-c-helper-text--FontSize);

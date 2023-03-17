@@ -1,5 +1,4 @@
-.pf-c-table {
-
+:root {
   // stylelint-disable
   // ============================================================ //
   // Start non-conformant variables
@@ -315,8 +314,10 @@
     --pf-c-table--m-compact--cell--first-last-child--PaddingLeft: var(--pf-c-table--m-compact--cell--first-last-child--xl--PaddingLeft);
     --pf-c-table--m-compact--cell--first-last-child--PaddingRight: var(--pf-c-table--m-compact--cell--first-last-child--xl--PaddingRight);
   }
+}
 
-  @include pf-t-light; // This component always needs to be light
+.pf-c-table {
+  @include pf-t-light;
 
   // Base
   width: 100%;

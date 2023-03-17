@@ -1,4 +1,4 @@
-.pf-c-modal-box {
+:root {
   --pf-c-modal-box--BackgroundColor: var(--pf-global--BackgroundColor--100);
   --pf-c-modal-box--BoxShadow: var(--pf-global--BoxShadow--xl);
   --pf-c-modal-box--ZIndex: var(--pf-global--ZIndex--xl);
@@ -65,7 +65,9 @@
   // Footer buttons
   --pf-c-modal-box__footer--c-button--MarginRight: var(--pf-global--spacer--md); // Button spacer is used to manipulate margin-left and/or margin-right values at various breakpoints, with a single value.
   --pf-c-modal-box__footer--c-button--sm--MarginRight: calc(var(--pf-c-modal-box__footer--c-button--MarginRight) / 2);
+}
 
+.pf-c-modal-box {
   position: relative;
   z-index: var(--pf-c-modal-box--ZIndex);
   display: flex;

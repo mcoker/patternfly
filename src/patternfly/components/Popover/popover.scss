@@ -1,4 +1,4 @@
-.pf-c-popover {
+:root {
   // Component
   --pf-c-popover--FontSize: var(--pf-global--FontSize--sm);
   --pf-c-popover--MinWidth: calc(var(--pf-c-popover__content--PaddingLeft) + var(--pf-c-popover__content--PaddingRight) + #{pf-size-prem(300px)});
@@ -64,7 +64,9 @@
 
   // Footer
   --pf-c-popover__footer--MarginTop: var(--pf-global--spacer--md);
+}
 
+.pf-c-popover {
   position: relative;
   min-width: var(--pf-c-popover--MinWidth);
   max-width: var(--pf-c-popover--MaxWidth);

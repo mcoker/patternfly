@@ -1,4 +1,4 @@
-.pf-c-code-editor {
+:root {
   // controls
   --pf-c-code-editor__controls--c-button--m-control--Color: var(--pf-global--Color--200);
   --pf-c-code-editor__controls--c-button--m-control--hover--Color: var(--pf-global--Color--100);
@@ -46,7 +46,9 @@
 
   // tab text
   --pf-c-code-editor__tab-icon--text--MarginLeft: var(--pf-global--spacer--sm);
+}
 
+.pf-c-code-editor {
   &.pf-m-read-only {
     --pf-c-code-editor__main--BackgroundColor: var(--pf-c-code-editor--m-read-only__main--BackgroundColor);
   }

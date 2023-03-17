@@ -1,5 +1,4 @@
-// Content
-.pf-c-tab-content {
+:root {
   --pf-c-tab-content__body--PaddingTop: 0;
   --pf-c-tab-content__body--PaddingRight: 0;
   --pf-c-tab-content__body--PaddingBottom: 0;
@@ -26,8 +25,9 @@
     --pf-c-tab-content__body--m-padding--PaddingBottom: var(--pf-c-tab-content__body--m-padding--xl--PaddingBottom);
     --pf-c-tab-content__body--m-padding--PaddingLeft: var(--pf-c-tab-content__body--m-padding--xl--PaddingLeft);
   }
+}
 
-
+.pf-c-tab-content {
   &.pf-m-light-300 {
     background-color: var(--pf-c-tab-content--m-light-300);
   }

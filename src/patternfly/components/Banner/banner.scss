@@ -1,4 +1,4 @@
-.pf-c-banner {
+:root {
   --pf-c-banner--PaddingTop: var(--pf-global--spacer--xs);
   --pf-c-banner--PaddingRight: var(--pf-global--spacer--md);
   --pf-c-banner--md--PaddingRight: var(--pf-global--spacer--lg);
@@ -29,7 +29,9 @@
   --pf-c-banner--m-gold--BackgroundColor: var(--pf-global--palette--gold-400);
   --pf-c-banner--m-sticky--ZIndex: var(--pf-global--ZIndex--md);
   --pf-c-banner--m-sticky--BoxShadow: var(--pf-global--BoxShadow--md-bottom);
+}
 
+.pf-c-banner {
   @include pf-t-dark;
   @include pf-text-overflow;
 

@@ -1,6 +1,6 @@
 $pf-c-dropdown--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
 
-.pf-c-dropdown {
+:root {
   // Toggle
   --pf-c-dropdown__toggle--PaddingTop: var(--pf-global--spacer--form-element);
   --pf-c-dropdown__toggle--PaddingRight: var(--pf-global--spacer--sm);
@@ -188,8 +188,9 @@ $pf-c-dropdown--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "
   --pf-c-dropdown--m-full-height__toggle--focus--before--BorderBottomWidth: var(--pf-global--BorderWidth--xl);
   --pf-c-dropdown--m-full-height__toggle--PaddingRight: var(--pf-global--spacer--lg);
   --pf-c-dropdown--m-full-height__toggle--PaddingLeft: var(--pf-global--spacer--lg);
+}
 
-
+.pf-c-dropdown {
   position: relative;
   display: inline-block;
   max-width: 100%;

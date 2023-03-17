@@ -1,4 +1,4 @@
-.pf-c-badge {
+:root {
   // Component
   --pf-c-badge--BorderRadius: var(--pf-global--BorderRadius--lg);
   --pf-c-badge--FontSize: var(--pf-global--FontSize--xs);
@@ -13,7 +13,9 @@
   --pf-c-badge--m-read--Color: var(--pf-global--Color--dark-100);
   --pf-c-badge--m-unread--BackgroundColor: var(--pf-global--primary-color--100);
   --pf-c-badge--m-unread--Color: var(--pf-global--Color--light-100);
+}
 
+.pf-c-badge {
   display: inline-block;
   min-width: var(--pf-c-badge--MinWidth);
   padding-right: var(--pf-c-badge--PaddingRight);

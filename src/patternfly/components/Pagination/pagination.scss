@@ -1,7 +1,7 @@
 $pf-c-pagination--breakpoint-map: build-breakpoint-map();
 $pf-c-pagination--variable-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl");
 
-.pf-c-pagination {
+:root {
   --pf-c-pagination--inset: 0;
   --pf-c-pagination--PaddingRight: var(--pf-c-pagination--inset);
   --pf-c-pagination--PaddingLeft: var(--pf-c-pagination--inset);
@@ -98,7 +98,9 @@ $pf-c-pagination--variable-map: build-spacer-map("none", "sm", "md", "lg", "xl",
     --pf-c-pagination__scroll-button--Width: var(--pf-c-pagination__scroll-button--xl--Width);
     --pf-c-pagination--m-page-insets--inset: var(--pf-c-pagination--m-page-insets--xl--inset);
   }
+}
 
+.pf-c-pagination {
   display: flex;
   flex-wrap: wrap;
   align-items: center;

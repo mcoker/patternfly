@@ -1,7 +1,9 @@
-.pf-c-truncate {
+:root {
   --pf-c-truncate--MinWidth: 12ch;
   --pf-c-truncate__start--MinWidth: 6ch;
+}
 
+.pf-c-truncate {
   display: inline-grid;
   grid-auto-flow: column;
   align-items: baseline;

@@ -1,6 +1,6 @@
 $pf-c-dual-list-selector__item--MaxNesting: 10;
 
-.pf-c-dual-list-selector {
+:root {
   // Grid
   --pf-c-dual-list-selector__header--GridArea: pane-header;
   --pf-c-dual-list-selector__tools--GridArea: pane-tools;
@@ -87,7 +87,9 @@ $pf-c-dual-list-selector__item--MaxNesting: 10;
   --pf-c-dual-list-selector__item-toggle-icon--Transition: var(--pf-global--Transition);
   --pf-c-dual-list-selector__item-toggle-icon--MinWidth: var(--pf-c-dual-list-selector__list-item-row--FontSize);
   --pf-c-dual-list-selector__list-item--m-disabled__item-toggle-icon--Color: var(--pf-global--disabled-color--200);
+}
 
+.pf-c-dual-list-selector {
   display: grid;
   grid-template-areas:
     "pane-header . pane-header-c"

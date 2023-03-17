@@ -1,4 +1,4 @@
-.pf-c-toggle-group {
+:root {
   // button
   --pf-c-toggle-group__button--PaddingTop: var(--pf-global--spacer--form-element);
   --pf-c-toggle-group__button--PaddingRight: var(--pf-global--spacer--md);
@@ -41,7 +41,9 @@
   --pf-c-toggle-group--m-compact__button--PaddingBottom: 0;
   --pf-c-toggle-group--m-compact__button--PaddingLeft: var(--pf-global--spacer--sm);
   --pf-c-toggle-group--m-compact__button--FontSize: var(--pf-global--FontSize--xs);
+}
 
+.pf-c-toggle-group {
   display: flex;
 
   &.pf-m-compact {

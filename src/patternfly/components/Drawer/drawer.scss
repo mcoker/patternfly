@@ -2,7 +2,7 @@ $pf-c-drawer--breakpoint-map: build-breakpoint-map("base", "lg", "xl", "2xl");
 $pf-c-drawer--breakpoint-map--width: build-breakpoint-map("base", "lg", "xl", "2xl");
 $pf-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
 
-.pf-c-drawer {
+:root {
   // Section
   --pf-c-drawer__section--BackgroundColor: var(--pf-global--BackgroundColor--100);
   --pf-c-drawer__section--m-light-200--BackgroundColor: var(--pf-global--BackgroundColor--200);
@@ -158,7 +158,9 @@ $pf-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
   --pf-c-drawer--m-inline__panel--PaddingLeft: var(--pf-c-drawer__panel--after--Width);
   --pf-c-drawer--m-panel-left--m-inline__panel--PaddingRight: var(--pf-c-drawer__panel--after--Width);
   --pf-c-drawer--m-panel-bottom--m-inline__panel--PaddingTop: var(--pf-c-drawer__panel--after--Width);
+}
 
+.pf-c-drawer {
   display: flex;
   flex-direction: column;
   height: 100%;

@@ -1,4 +1,4 @@
-.pf-c-button {
+:root {
   // Component
   --pf-c-button--PaddingTop: var(--pf-global--spacer--form-element);
   --pf-c-button--PaddingRight: var(--pf-global--spacer--md);
@@ -204,7 +204,9 @@
   --pf-c-button--disabled__c-badge--BackgroundColor: var(--pf-global--BackgroundColor--200);
   --pf-c-button--m-primary__c-badge--BorderColor: var(--pf-global--BorderColor--300);
   --pf-c-button--m-primary__c-badge--BorderWidth: var(--pf-global--BorderWidth--sm); // used only for primary, unread, not disabled
+}
 
+.pf-c-button {
   position: relative;
   display: inline-block;
   padding: var(--pf-c-button--PaddingTop) var(--pf-c-button--PaddingRight) var(--pf-c-button--PaddingBottom) var(--pf-c-button--PaddingLeft);

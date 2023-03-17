@@ -1,4 +1,4 @@
-.pf-c-slider {
+:root {
   // should always be set inline
   --pf-c-slider--value: 0;
 
@@ -73,7 +73,9 @@
   --pf-c-slider--m-disabled__rail-track--before--fill--BackgroundColor: var(--pf-global--palette--black-500);
   --pf-c-slider--m-disabled__step--m-active__slider-tick--BackgroundColor: var(--pf-global--palette--black-700);
   --pf-c-slider--m-disabled__thumb--BackgroundColor: var(--pf-global--palette--black-700);
+}
 
+.pf-c-slider {
   display: flex;
 
   &.pf-m-disabled {

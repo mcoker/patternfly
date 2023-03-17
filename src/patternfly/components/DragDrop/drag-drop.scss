@@ -1,4 +1,5 @@
-.pf-c-draggable {
+:root {
+  // Draggable
   --pf-c-draggable--Cursor: auto;
   --pf-c-draggable--m-dragging--Cursor: grabbing;
   --pf-c-draggable--m-dragging--BoxShadow: var(--pf-global--BoxShadow--md);
@@ -7,6 +8,14 @@
   --pf-c-draggable--m-drag-outside--Cursor: not-allowed;
   --pf-c-draggable--m-drag-outside--after--BorderColor: var(--pf-global--danger-color--100);
 
+  // Droppable
+  --pf-c-droppable--m-dragging--after--BackgroundColor: #{rgba($pf-global--BackgroundColor--100, .6)};
+  --pf-c-droppable--m-dragging--after--BorderWidth: var(--pf-global--BorderWidth--sm);
+  --pf-c-droppable--m-dragging--after--BorderColor: var(--pf-global--active-color--100);
+  --pf-c-droppable--m-drag-outside--after--BorderColor: var(--pf-global--danger-color--100);
+}
+
+.pf-c-draggable {
   cursor: var(--pf-c-draggable--Cursor);
 
   &.pf-m-dragging {
@@ -34,14 +43,6 @@
 }
 
 .pf-c-droppable {
-  $pf-global--BackgroundColor--100: #fff;
-  $pf-c-droppable--m-dragging--after--BackgroundColor: rgba($pf-global--BackgroundColor--100, .6);
-
-  --pf-c-droppable--m-dragging--after--BackgroundColor: #{$pf-c-droppable--m-dragging--after--BackgroundColor}; // allows for rbga() so we can combine background and border in single element
-  --pf-c-droppable--m-dragging--after--BorderWidth: var(--pf-global--BorderWidth--sm);
-  --pf-c-droppable--m-dragging--after--BorderColor: var(--pf-global--active-color--100);
-  --pf-c-droppable--m-drag-outside--after--BorderColor: var(--pf-global--danger-color--100);
-
   &.pf-m-dragging {
     position: relative;
 

@@ -1,4 +1,4 @@
-.pf-c-login {
+:root {
   --pf-c-login--PaddingTop: var(--pf-global--spacer--lg);
   --pf-c-login--PaddingBottom: var(--pf-global--spacer--lg);
   --pf-c-login--xl--BackgroundImage: none;
@@ -113,7 +113,9 @@
   @media (min-width: $pf-global--breakpoint--xl) {
     --pf-c-login__footer--c-list--PaddingTop: var(--pf-c-login__footer--c-list--xl--PaddingTop);
   }
+}
 
+.pf-c-login {
   display: flex;
   justify-content: center;
   min-height: 100vh;

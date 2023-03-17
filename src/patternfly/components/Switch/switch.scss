@@ -1,4 +1,4 @@
-.pf-c-switch {
+:root {
   // Switch - the vars for this file don't follow our normal order so that the IE11 script can convert the vars correctly
   --pf-c-switch--FontSize: var(--pf-global--FontSize--md);
   --pf-c-switch__label--PaddingLeft: var(--pf-global--spacer--md); // remove at breaking change
@@ -42,7 +42,9 @@
 
   // Switch label
   --pf-c-switch__label--Color: var(--pf-global--Color--dark-100);
+}
 
+.pf-c-switch {
   position: relative;
   display: inline-grid;
   grid-template-columns: auto;

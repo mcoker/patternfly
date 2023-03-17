@@ -1,4 +1,4 @@
-.pf-c-options-menu {
+:root {
   // Toggle
   --pf-c-options-menu__toggle--BackgroundColor: transparent;
   --pf-c-options-menu__toggle--PaddingTop: var(--pf-global--spacer--form-element);
@@ -80,7 +80,9 @@
   // Divider
   --pf-c-options-menu--c-divider--MarginTop: var(--pf-global--spacer--sm);
   --pf-c-options-menu--c-divider--MarginBottom: var(--pf-global--spacer--sm);
+}
 
+.pf-c-options-menu {
   position: relative;
   display: inline-block;
   max-width: 100%;

@@ -1,4 +1,4 @@
-.pf-c-alert {
+:root {
   // Alert variables
   --pf-c-alert--BoxShadow: var(--pf-global--BoxShadow--lg);
   --pf-c-alert--BackgroundColor: var(--pf-global--BackgroundColor--100);
@@ -107,6 +107,9 @@
   --pf-c-alert--m-expanded__toggle-icon--Rotate: 90deg;
   --pf-c-alert--m-expanded__description--action-group--PaddingTop: var(--pf-c-alert__description--action-group--PaddingTop-base);
 
+}
+
+.pf-c-alert {
   @include pf-t-light; // This component always needs to be light
 
   position: relative;

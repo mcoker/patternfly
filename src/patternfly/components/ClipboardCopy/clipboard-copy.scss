@@ -1,4 +1,4 @@
-.pf-c-clipboard-copy {
+:root {
   // Toggle icon
   --pf-c-clipboard-copy__toggle-icon--Transition: .2s ease-in 0s;
   --pf-c-clipboard-copy--m-expanded__toggle-icon--Rotate: 90deg;
@@ -33,7 +33,9 @@
   --pf-c-clipboard-copy__actions-item--button--PaddingRight: var(--pf-global--spacer--sm);
   --pf-c-clipboard-copy__actions-item--button--PaddingBottom: var(--pf-global--spacer--xs);
   --pf-c-clipboard-copy__actions-item--button--PaddingLeft: var(--pf-global--spacer--sm);
+}
 
+.pf-c-clipboard-copy {
   // Toggle button expanded
   &.pf-m-expanded {
     .pf-c-clipboard-copy__toggle-icon {

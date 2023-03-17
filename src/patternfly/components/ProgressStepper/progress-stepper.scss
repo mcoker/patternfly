@@ -56,7 +56,7 @@ $pf-c-progress-stepper--breakpoint-map: build-breakpoint-map();
 }
 
 // Progress stepper is vertically oriented by default
-.pf-c-progress-stepper {
+:root {
   // Vertical - these are the default settings
   --pf-c-progress-stepper--m-vertical--GridAutoFlow: row;
   --pf-c-progress-stepper--m-vertical--GridTemplateColumns: auto 1fr;
@@ -179,7 +179,9 @@ $pf-c-progress-stepper--breakpoint-map: build-breakpoint-map();
   --pf-c-progress-stepper__step-description--FontSize: var(--pf-global--FontSize--sm);
   --pf-c-progress-stepper__step-description--Color: var(--pf-global--Color--200);
   --pf-c-progress-stepper__step-description--TextAlign: left;
+}
 
+.pf-c-progress-stepper {
   // Vertical by default
   @include pf-c-progress-stepper--m-vertical;
 

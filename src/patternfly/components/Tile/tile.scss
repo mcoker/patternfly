@@ -1,4 +1,4 @@
-.pf-c-tile {
+:root {
   --pf-c-tile--PaddingTop: var(--pf-global--spacer--lg);
   --pf-c-tile--PaddingRight: var(--pf-global--spacer--lg);
   --pf-c-tile--PaddingBottom: var(--pf-global--spacer--lg);
@@ -60,7 +60,9 @@
 
   // large variation
   --pf-c-tile--m-display-lg__header--m-stacked__icon--FontSize: var(--pf-global--icon--FontSize--xl);
+}
 
+.pf-c-tile {
   position: relative;
   display: inline-grid;
   grid-template-rows: min-content;

@@ -1,4 +1,4 @@
-.pf-c-notification-drawer {
+:root {
   --pf-c-notification-drawer--BackgroundColor: var(--pf-global--BackgroundColor--200);
 
   // Header
@@ -96,7 +96,9 @@
   --pf-c-notification-drawer__group-toggle-icon--Color: var(--pf-global--Color--200);
   --pf-c-notification-drawer__group-toggle-icon--Transition: .2s ease-in 0s;
   --pf-c-notification-drawer__group--m-expanded__group-toggle-icon--Rotate: 90deg;
+}
 
+.pf-c-notification-drawer {
   display: flex;
   flex-direction: column;
   height: 100%;

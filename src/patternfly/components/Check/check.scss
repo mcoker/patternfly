@@ -1,4 +1,4 @@
-.pf-c-check {
+:root {
   --pf-c-check--GridGap: var(--pf-global--spacer--xs) var(--pf-global--spacer--sm);
   --pf-c-check__label--disabled--Color: var(--pf-global--disabled-color--100);
   --pf-c-check__label--Color: var(--pf-global--Color--100);
@@ -15,7 +15,9 @@
   --pf-c-check__label-required--MarginLeft: var(--pf-global--spacer--xs);
   --pf-c-check__label-required--FontSize: var(--pf-global--FontSize--sm);
   --pf-c-check__label-required--Color: var(--pf-global--danger-color--100);
+}
 
+.pf-c-check {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: var(--pf-c-check--GridGap);

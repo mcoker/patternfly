@@ -41,7 +41,7 @@ $pf-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl
   --pf-c-masthead__content--c-nav--m-horizontal--MarginLeft: var(--pf-c-masthead--m-display-inline__content--c-nav--m-horizontal--MarginLeft);
 }
 
-.pf-c-masthead {
+:root {
   --pf-c-masthead--PaddingLeft: var(--pf-c-masthead--inset);
   --pf-c-masthead--PaddingRight: var(--pf-c-masthead--inset);
   --pf-c-masthead--BackgroundColor: var(--pf-global--BackgroundColor--dark-100);
@@ -146,7 +146,10 @@ $pf-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl
   --pf-c-masthead--c-toolbar__expandable-content--PaddingLeft: var(--pf-c-masthead--inset);
   --pf-c-masthead--c-toolbar__expandable-content--BorderTopWidth: var(--pf-global--BorderWidth--sm);
   --pf-c-masthead--c-toolbar__expandable-content--BorderTopColor: var(--pf-c-masthead--item-border-color--base);
+}
 
+.pf-c-masthead {
+  @include pf-t-dark;
 
   // Set layout to stack by default
   @include pf-c-masthead--m-display-stack;
@@ -161,8 +164,6 @@ $pf-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl
   @media screen and (min-width: $pf-global--breakpoint--xl) {
     --pf-c-masthead--inset: var(--pf-c-masthead--xl--inset);
   }
-
-  @include pf-t-dark; // force the container to follow the dark theme
 
   position: relative;
   display: grid;

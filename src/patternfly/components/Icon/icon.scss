@@ -1,4 +1,4 @@
-.pf-c-icon {
+:root {
   // Size
   --pf-c-icon--Width: var(--pf-global--icon--FontSize--md);
   --pf-c-icon--Height: var(--pf-global--icon--FontSize--md);
@@ -33,7 +33,9 @@
   --pf-c-icon--m-md--content--FontSize: var(--pf-global--icon--FontSize--md);
   --pf-c-icon--m-lg--content--FontSize: var(--pf-global--icon--FontSize--lg);
   --pf-c-icon--m-xl--content--FontSize: var(--pf-global--icon--FontSize--xl);
+}
 
+.pf-c-icon {
   position: relative;
   display: inline-flex;
   align-items: center;

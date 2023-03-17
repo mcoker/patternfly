@@ -326,3 +326,25 @@ $pf-global--spacer-map: (
   "3xl": "var(--pf-global--spacer--3xl)",
   "4xl": "var(--pf-global--spacer--4xl)"
 );
+
+// pf-t-[light/dark] map
+$pf-global-t-var-map: (
+  "light": (
+    "--pf-global--Color--100": "--pf-global--Color--dark-100",
+    "--pf-global--Color--200": "--pf-global--Color--dark-200",
+    "--pf-global--BorderColor--100": "--pf-global--BorderColor--dark-100",
+    "--pf-global--primary-color--100": "--pf-global--primary-color--dark-100",
+    "--pf-global--link--Color": "--pf-global--link--Color--dark",
+    "--pf-global--link--Color--hover": "--pf-global--link--Color--dark--hover",
+    "--pf-global--BackgroundColor--100": "--pf-global--BackgroundColor--light-100"
+  ),
+  "dark": (
+    "--pf-global--Color--100": "--pf-global--Color--light-100",
+    "--pf-global--Color--200": "--pf-global--Color--light-200",
+    "--pf-global--BorderColor--100": "--pf-global--BorderColor--light-100",
+    "--pf-global--primary-color--100": "--pf-global--primary-color--light-100",
+    "--pf-global--link--Color": "--pf-global--link--Color--light",
+    "--pf-global--link--Color--hover": "--pf-global--link--Color--light",
+    "--pf-global--BackgroundColor--100": "--pf-global--BackgroundColor--dark-100"
+  )
+);

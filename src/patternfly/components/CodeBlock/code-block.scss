@@ -1,4 +1,4 @@
-.pf-c-code-block {
+:root {
   --pf-c-code-block--BackgroundColor: var(--pf-global--BackgroundColor--200);
   --pf-c-code-block__header--BorderBottomWidth: var(--pf-global--BorderWidth--sm);
   --pf-c-code-block__header--BorderBottomColor: var(--pf-global--BorderColor--100);
@@ -8,7 +8,9 @@
   --pf-c-code-block__content--PaddingLeft: var(--pf-global--spacer--md);
   --pf-c-code-block__pre--FontFamily: var(--pf-global--FontFamily--monospace);
   --pf-c-code-block__pre--FontSize: var(--pf-global--FontSize--sm);
+}
 
+.pf-c-code-block {
   background-color: var(--pf-c-code-block--BackgroundColor);
 }
 

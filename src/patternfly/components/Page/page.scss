@@ -1,8 +1,7 @@
 $pf-c-page--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
 $pf-c-page--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
 
-// URL.com/guidelines#layout
-.pf-c-page {
+:root {
   --pf-c-page--BackgroundColor: var(--pf-global--BackgroundColor--light-300);
 
   // Header
@@ -190,7 +189,9 @@ $pf-c-page--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg"
   --pf-c-page__main-wizard--BorderTopColor: var(--pf-global--BorderColor--100);
   --pf-c-page__main-wizard--BorderTopWidth: var(--pf-global--BorderWidth--sm);
   --pf-c-page__main-wizard--m-light-200--BackgroundColor: var(--pf-global--BackgroundColor--200);
+}
 
+.pf-c-page {
   // Base
   display: grid;
   grid-template-areas:

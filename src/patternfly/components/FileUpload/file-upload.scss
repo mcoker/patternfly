@@ -1,4 +1,4 @@
-.pf-c-file-upload {
+:root {
   // pf-m-loading
   --pf-c-file-upload--m-loading__file-details--before--BackgroundColor: var(--pf-global--BackgroundColor--100);
   --pf-c-file-upload--m-loading__file-details--before--Left: var(--pf-global--BorderWidth--sm);
@@ -17,7 +17,9 @@
 
   // Button overrides
   --pf-c-file-upload__file-select__c-button--m-control--OutlineOffset: calc(-1 * var(--pf-global--spacer--xs));
+}
 
+.pf-c-file-upload {
   position: relative;
   display: flex;
   flex-direction: column;

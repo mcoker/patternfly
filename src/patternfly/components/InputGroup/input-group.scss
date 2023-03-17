@@ -1,4 +1,4 @@
-.pf-c-input-group {
+:root {
   // Input group
   --pf-c-input-group--child--ZIndex: var(--pf-global--ZIndex--xs);
 
@@ -35,7 +35,9 @@
   // Form control
   --pf-c-input-group--c-form-control--invalid--ZIndex: var(--pf-global--ZIndex--xs);
   --pf-c-input-group--c-form-control--MarginRight: 0;
+}
 
+.pf-c-input-group {
   display: flex;
   width: 100%;
 }

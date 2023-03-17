@@ -1,6 +1,6 @@
 $pf-c-tree-view--MaxNesting: 10;
 
-.pf-c-tree-view {
+:root {
   --pf-c-tree-view--PaddingTop: var(--pf-global--spacer--sm);
   --pf-c-tree-view--PaddingBottom: var(--pf-global--spacer--sm);
 
@@ -171,7 +171,9 @@ $pf-c-tree-view--MaxNesting: 10;
   --pf-c-tree-view--m-compact--m-no-background__node--nested--PaddingTop: 0;
   --pf-c-tree-view--m-compact--m-no-background__node--nested--PaddingBottom: 0;
   --pf-c-tree-view--m-compact--m-no-background__node--before--Top: calc(var(--pf-c-tree-view--m-compact__node-container--nested--PaddingTop) + var(--pf-c-tree-view--m-compact__node--nested--PaddingTop) + #{pf-size-prem(4px)});
+}
 
+.pf-c-tree-view {
   padding-top: var(--pf-c-tree-view--PaddingTop);
   padding-bottom: var(--pf-c-tree-view--PaddingBottom);
 

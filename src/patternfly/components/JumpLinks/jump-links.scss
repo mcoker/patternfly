@@ -1,6 +1,6 @@
 $pf-c-jump-links--m-expandable--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
 
-.pf-c-jump-links {
+:root {
   // list
   --pf-c-jump-links__list--Display: flex;
   --pf-c-jump-links__list--PaddingTop: 0;
@@ -72,7 +72,9 @@ $pf-c-jump-links--m-expandable--breakpoint-map: build-breakpoint-map("base", "sm
   // toggle text
   --pf-c-jump-links__toggle-text--MarginLeft: var(--pf-global--spacer--md);
   --pf-c-jump-links__toggle-text--Color: var(--pf-global--Color--100);
+}
 
+.pf-c-jump-links {
   display: flex;
 
   &.pf-m-center {

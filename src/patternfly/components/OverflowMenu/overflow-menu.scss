@@ -1,4 +1,4 @@
-.pf-c-overflow-menu {
+:root {
   // Base spacer - shared value
   --pf-c-overflow-menu--spacer--base: var(--pf-global--spacer--md);
 
@@ -15,7 +15,9 @@
   // Icon button group
   --pf-c-overflow-menu__group--m-icon-button-group--spacer: var(--pf-c-overflow-menu--spacer--base);
   --pf-c-overflow-menu__group--m-icon-button-group--space-items: 0;
+}
 
+.pf-c-overflow-menu {
   display: inline-flex;
   align-items: center;
 }

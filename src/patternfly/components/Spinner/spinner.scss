@@ -1,6 +1,4 @@
-// Spinner Component
-
-.pf-c-spinner {
+:root {
   --pf-c-spinner--diameter: var(--pf-global--icon--FontSize--xl);
   --pf-c-spinner--Width: var(--pf-c-spinner--diameter);
   --pf-c-spinner--Height: var(--pf-c-spinner--diameter);
@@ -14,7 +12,9 @@
 
   // inline
   --pf-c-spinner--m-inline--diameter: 1em;
+}
 
+.pf-c-spinner {
   width: var(--pf-c-spinner--Width);
   height: var(--pf-c-spinner--Height);
   overflow: hidden;

@@ -1,4 +1,4 @@
-.pf-c-search-input {
+:root {
   // Base border
   --pf-c-search-input__text--before--BorderWidth: var(--pf-global--BorderWidth--sm);
   --pf-c-search-input__text--before--BorderColor: var(--pf-global--BorderColor--300);
@@ -55,7 +55,9 @@
   --pf-c-search-input__menu-item--BackgroundColor: transparent;
   --pf-c-search-input__menu-item--hover--BackgroundColor: var(--pf-global--BackgroundColor--200);
   --pf-c-search-input__menu-item--focus--BackgroundColor: var(--pf-global--BackgroundColor--200);
+}
 
+.pf-c-search-input {
   position: relative;
   width: 100%;
 }

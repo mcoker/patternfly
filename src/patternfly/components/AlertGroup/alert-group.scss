@@ -1,5 +1,4 @@
-// Tabs
-.pf-c-alert-group {
+:root {
   // Alert group variables
   --pf-c-alert-group__item--MarginTop: var(--pf-global--spacer--sm);
 
@@ -24,7 +23,9 @@
   --pf-c-alert-group__overflow-button--focus--BoxShadow: var(--pf-global--BoxShadow--lg), var(--pf-global--BoxShadow--lg-bottom);
   --pf-c-alert-group__overflow-button--active--Color: var(--pf-global--link--Color--hover);
   --pf-c-alert-group__overflow-button--active--BoxShadow: var(--pf-global--BoxShadow--lg), var(--pf-global--BoxShadow--lg-bottom);
+}
 
+.pf-c-alert-group {
   // Spacing between alerts
   > * + * {
     margin-top: var(--pf-c-alert-group__item--MarginTop);

@@ -1,4 +1,4 @@
-.pf-c-context-selector {
+:root {
   // Context selector
   --pf-c-context-selector--Width: #{pf-size-prem(250px)};
 
@@ -121,7 +121,9 @@
   --pf-c-context-selector--m-page-insets__toggle--m-plain--m-text--PaddingLeft: var(--pf-global--spacer--md);
   --pf-c-context-selector--m-page-insets__toggle--m-plain--m-text--xl--PaddingRight: var(--pf-global--spacer--lg);
   --pf-c-context-selector--m-page-insets__toggle--m-plain--m-text--xl--PaddingLeft: var(--pf-global--spacer--lg);
+}
 
+.pf-c-context-selector {
   @media screen and (min-width: $pf-global--breakpoint--xl) {
     --pf-c-context-selector--m-page-insets__toggle--PaddingRight: var(--pf-c-context-selector--m-page-insets__toggle--xl--PaddingRight);
     --pf-c-context-selector--m-page-insets__toggle--PaddingLeft: var(--pf-c-context-selector--m-page-insets__toggle--xl--PaddingLeft);
