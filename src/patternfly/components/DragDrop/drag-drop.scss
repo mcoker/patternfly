@@ -1,3 +1,4 @@
+@use "../../sass-utilities/all" as *;
 .pf-c-draggable {
   --pf-c-draggable--Cursor: auto;
   --pf-c-draggable--m-dragging--Cursor: grabbing;

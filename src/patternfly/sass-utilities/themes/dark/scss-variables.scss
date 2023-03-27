@@ -1,3 +1,5 @@
+@use "colors" as dark-colors;
+
 // background colors
 $pf-global--BackgroundColor--100: $pf-color-black-800; // primary background color
 $pf-global--BackgroundColor--150: $pf-color-black-850; // in-between special use case background color

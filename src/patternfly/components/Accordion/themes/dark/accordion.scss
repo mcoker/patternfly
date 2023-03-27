@@ -1,4 +1,4 @@
-@import "../../../../sass-utilities/themes/dark/all";
+@use "../../../../sass-utilities/themes/dark/all"as *;
 
 @mixin pf-theme-dark-accordion() {
   .pf-c-accordion {

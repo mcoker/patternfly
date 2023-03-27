@@ -1,3 +1,5 @@
+@use "../sass-utilities/all" as *;
+
 // Reset - based on minireset.css v0.0.3 | MIT License github.com/jgthms/minireset.css
 @if $pf-global--enable-reset {
   :where(
@@ -140,8 +142,8 @@
 }
 
 // stylelint-disable no-invalid-position-at-import-rule
-@import "./themes/dark/globals";
+@use "./themes/dark/globals";
 
 @include pf-theme-dark($pf-theme-dark-prefix: ":root") {
-  @include pf-theme-dark-globals;
+  @include globals.pf-theme-dark-globals;
 }

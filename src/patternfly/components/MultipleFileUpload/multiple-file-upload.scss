@@ -1,3 +1,4 @@
+@use "../../sass-utilities/all" as *;
 .pf-c-multiple-file-upload {
   --pf-c-multiple-file-upload--GridTemplateColumns: 1fr;
   --pf-c-multiple-file-upload--Gap: var(--pf-global--spacer--lg);

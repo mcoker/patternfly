@@ -1,3 +1,4 @@
+@use "../../sass-utilities/all" as *;
 .pf-c-input-group {
   // Input group
   --pf-c-input-group--child--ZIndex: var(--pf-global--ZIndex--xs);

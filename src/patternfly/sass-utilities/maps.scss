@@ -1,0 +1,70 @@
+@use "scss-variables" as *;
+
+// Global breakpoint map - used for @pf-grid-item-modifiers
+$pf-global--breakpoint-map: (
+  "": null,
+  "sm": "-on-sm",
+  "md": "-on-md",
+  "lg": "-on-lg",
+  "xl": "-on-xl",
+  "2xl": "-on-2xl"
+);
+
+// Global breakpoint list - used for @pf-utility-builder
+$pf-global--breakpoint-list: (
+  "sm",
+  "md",
+  "lg",
+  "xl",
+  "2xl"
+);
+
+// Global breakpoint name map - used for %pf-hidden-visible
+$pf-global--breakpoint-name-map: (
+  "sm": $pf-global--breakpoint--sm,
+  "md": $pf-global--breakpoint--md,
+  "lg": $pf-global--breakpoint--lg,
+  "xl": $pf-global--breakpoint--xl,
+  "2xl": $pf-global--breakpoint--2xl
+);
+
+// Global breakpoint name map - used for %pf-hidden-visible
+$pf-global--height-breakpoint-name-map: (
+  "sm": $pf-global--height-breakpoint--sm,
+  "md": $pf-global--height-breakpoint--md,
+  "lg": $pf-global--height-breakpoint--lg,
+  "xl": $pf-global--height-breakpoint--xl,
+  "2xl": $pf-global--height-breakpoint--2xl
+);
+
+// Spacer properties
+$pf-global--spacer-properties-map: (
+  "m":  "margin",
+  "mt": "margin-top",
+  "mr": "margin-right",
+  "mb": "margin-bottom",
+  "ml": "margin-left",
+  "mx": null,
+  "my": null,
+  "p":  "padding",
+  "pt": "padding-top",
+  "pr": "padding-right",
+  "pb": "padding-bottom",
+  "pl": "padding-left",
+  "px": null,
+  "py": null
+);
+
+// Spacer values
+$pf-global--spacer-map: (
+  "auto": "auto",
+  "0": 0,
+  "xs": "var(--pf-global--spacer--xs)",
+  "sm": "var(--pf-global--spacer--sm)",
+  "md": "var(--pf-global--spacer--md)",
+  "lg": "var(--pf-global--spacer--lg)",
+  "xl": "var(--pf-global--spacer--xl)",
+  "2xl": "var(--pf-global--spacer--2xl)",
+  "3xl": "var(--pf-global--spacer--3xl)",
+  "4xl": "var(--pf-global--spacer--4xl)"
+);

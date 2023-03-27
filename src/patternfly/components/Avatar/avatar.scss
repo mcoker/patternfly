@@ -1,3 +1,4 @@
+@use "../../sass-utilities/all" as *;
 $pf-c-avatar--breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg", "xl", "2xl");
 $pf-c-avatar--sizes: "sm", "md", "lg", "xl";
 

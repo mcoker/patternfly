@@ -1,3 +1,4 @@
+@use "../../sass-utilities/all" as *;
 .pf-c-table {
   --pf-c-table__sticky-cell--MinWidth--base: #{pf-size-prem(200px)};
   --pf-c-table__sticky-cell--MinWidth: var(--pf-c-table__sticky-cell--MinWidth--base);

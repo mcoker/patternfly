@@ -1,3 +1,4 @@
+@use "../../sass-utilities/all" as *;
 .pf-c-skeleton {
   --pf-c-skeleton--BackgroundColor: var(--pf-global--palette--black-150);
   --pf-c-skeleton--Width: auto;

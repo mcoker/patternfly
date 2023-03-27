@@ -1,3 +1,4 @@
+@use "../../sass-utilities/all" as *;
 .pf-c-icon {
   // Size
   --pf-c-icon--Width: var(--pf-global--icon--FontSize--md);
