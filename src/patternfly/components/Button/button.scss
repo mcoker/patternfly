@@ -1,6 +1,6 @@
 // @debug $button; // check your variable names located in src/patternfly/sass-utilities/component-namespaces.scss
 
-.#{$button} {
+:root {
   --#{$button}--PaddingTop: var(--pf-t--global--spacer--sm);
   --#{$button}--PaddingRight: var(--pf-t--global--spacer--lg);
   --#{$button}--PaddingBottom: var(--pf-t--global--spacer--sm);
@@ -143,7 +143,9 @@
   --#{$button}--disabled__c-badge--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
   --#{$button}--m-primary__c-badge--BorderColor: var(--pf-t--global--border--color--default);
   --#{$button}--m-primary__c-badge--BorderWidth: var(--pf-t--global--border--width--300); // used only for primary, unread, not disabled
+}
 
+.#{$button} {
   position: relative;
   display: inline-block;
   padding-block-start: var(--#{$button}--PaddingTop);
@@ -171,7 +173,7 @@
 
   &:hover,
   &:focus {
-    --#{$button}--BackgroundColor: var(--#{$button}--hover--BackgroundColor);
+    --#{$button}--BackgroundColor:: var(--#{$button}--hover--BackgroundColor);
     --#{$button}--after--BorderColor: var(--#{$button}--hover--after--BorderColor);
     --#{$button}--after--BorderWidth: var(--#{$button}--hover--after--BorderWidth);
 
@@ -205,7 +207,7 @@
 
   // Primary
   &.pf-m-primary {
-    --#{$button}--Color: var(--#{$button}--m-primary--Color);
+    --#{$button}--Color:: var(--#{$button}--m-primary--Color);
     --#{$button}--BackgroundColor: var(--#{$button}--m-primary--BackgroundColor);
     --#{$button}--hover--BackgroundColor: var(--#{$button}--m-primary--hover--BackgroundColor);
     --#{$button}--m-active--BackgroundColor: var(--#{$button}--m-primary--m-active--BackgroundColor);
@@ -224,7 +226,7 @@
     --#{$button}--hover--after--BorderColor: var(--#{$button}--#{$button}--m-secondary--hover--after--BorderColor);
     --#{$button}--m-active--Color: var(--#{$button}--#{$button}--m-secondary--m-active--Color);
     --#{$button}--m-active--after--BorderWidth: var(--#{$button}--#{$button}--m-secondary--m-active--after--BorderWidth);
-    --#{$button}--m-active--after--BorderWidth: var(--#{$button}--#{$button}--m-secondary--m-active--after--BorderColor);
+    --#{$button}--m-active--after--BorderColor: var(--#{$button}--#{$button}--m-secondary--m-active--after--BorderColor);
   }
 
   // Tertiary
@@ -232,11 +234,10 @@
     --#{$button}--Color: var(--#{$button}--m-tertiary--Color);
     --#{$button}--after--BorderColor: var(--#{$button}--m-tertiary--after--BorderColor);
     --#{$button}--hover--after--BorderWidth: var(--#{$button}--#{$button}--m-tertiary--hover--after--BorderWidth);
-    --#{$button}--hover--after--BorderWidth: var(--#{$button}--#{$button}--m-tertiary--hover--after--BorderWidth);
     --#{$button}--hover--after--BorderColor: var(--#{$button}--#{$button}--m-tertiary--hover--after--BorderColor);
     --#{$button}--m-active--Color: var(--#{$button}--#{$button}--m-tertiary--m-active--Color);
     --#{$button}--m-active--after--BorderWidth: var(--#{$button}--#{$button}--m-tertiary--m-active--after--BorderWidth);
-    --#{$button}--m-active--after--BorderWidth: var(--#{$button}--#{$button}--m-tertiary--m-active--after--BorderColor);
+    --#{$button}--m-active--after--BorderColor: var(--#{$button}--#{$button}--m-tertiary--m-active--after--BorderColor);
   }
 
   // Link
@@ -269,7 +270,7 @@
     }
 
     &.pf-m-display-lg {
-      --#{$button}--FontSize:: var(--#{$button}--m-link--m-display-lg--FontSize);
+      --#{$button}--FontSize: var(--#{$button}--m-link--m-display-lg--FontSize);
     }
   }
 
@@ -463,10 +464,3 @@
   align-items: center;
   margin-inline-start: var(--#{$button}__count--MarginLeft);
 }
-
-// // stylelint-disable no-invalid-position-at-import-rule
-// @import "themes/dark/button";
-
-// @include pf-v5-theme-dark {
-//   @include pf-v5-theme-dark-button;
-// }
