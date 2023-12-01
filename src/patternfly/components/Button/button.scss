@@ -207,7 +207,7 @@
 
   // Primary
   &.pf-m-primary {
-    --#{$button}--Color:: var(--#{$button}--m-primary--Color);
+    --#{$button}--Color: var(--#{$button}--m-primary--Color);
     --#{$button}--BackgroundColor: var(--#{$button}--m-primary--BackgroundColor);
     --#{$button}--hover--BackgroundColor: var(--#{$button}--m-primary--hover--BackgroundColor);
     --#{$button}--m-active--BackgroundColor: var(--#{$button}--m-primary--m-active--BackgroundColor);
