@@ -173,7 +173,7 @@
 
   &:hover,
   &:focus {
-    --#{$button}--BackgroundColor:: var(--#{$button}--hover--BackgroundColor);
+    --#{$button}--BackgroundColor: var(--#{$button}--hover--BackgroundColor);
     --#{$button}--after--BorderColor: var(--#{$button}--hover--after--BorderColor);
     --#{$button}--after--BorderWidth: var(--#{$button}--hover--after--BorderWidth);
 
