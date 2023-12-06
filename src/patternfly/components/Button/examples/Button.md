@@ -33,8 +33,6 @@ import './Button.css'
   Warning
 {{/button}}
 
-<br>
-<br>
 {{#> button button--modifier="pf-m-link"}}
   {{#> button-icon button-icon--modifier="pf-m-start"}}
     <i class="fas fa-plus-circle" aria-hidden="true"></i>
@@ -59,18 +57,11 @@ import './Button.css'
 {{#> button button--modifier="pf-m-inline pf-m-link"}}
   Inline link
 {{/button}}
-<br>
-<br>
-<span>Default plain button: </span>
+
 {{#> button button--modifier="pf-m-plain" button--attribute='aria-label="Remove"'}}
   <i class="fas fa-times" aria-hidden="true"></i>
 {{/button}}
-<br>
-<span>No padding plain button: </span>
-{{#> button button--modifier="pf-m-plain pf-m-no-padding" button--attribute='aria-label="Remove"'}}
-  <i class="fas fa-times" aria-hidden="true"></i>
-{{/button}}
-<br><br>
+
 {{#> button button--modifier="pf-m-control"}}
   Control
 {{/button}}
@@ -81,7 +72,6 @@ import './Button.css'
 ```
 
 ### Small buttons
-
 ```hbs
 {{#> button button--modifier="pf-m-primary pf-m-small"}}
   Primary
@@ -129,6 +119,7 @@ import './Button.css'
   Control
 {{/button}}
 ```
+
 ### Disabled
 ```hbs
 {{#> button button--modifier="pf-m-primary" button--attribute="disabled"}}
@@ -374,6 +365,42 @@ Sed hendrerit nisi in cursus maximus. Ut malesuada nisi turpis, in condimentum v
       7
     {{/badge}}
   {{/button-count}}
+{{/button}}
+```
+
+### Plain with no padding
+```hbs
+For when a plain/icon button is placed inline with text {{#> button button--modifier="pf-m-plain pf-m-no-padding" button--attribute='aria-label="More info"'}}<i class="fas fa-question-circle" aria-hidden="true"></i>{{/button}}.
+```
+
+### Stateful
+```hbs
+{{#> button button--modifier="pf-m-stateful"}}
+  <i class="fas fa-bell" aria-hidden="true"></i> 10 {{#> screen-reader}}items{{/screen-reader}}
+{{/button}}
+
+{{#> button button--modifier="pf-m-stateful pf-m-clicked"}}
+  <i class="fas fa-bell" aria-hidden="true"></i> 10 {{#> screen-reader}}items{{/screen-reader}}
+{{/button}}
+
+<br><br>
+
+{{#> button button--modifier="pf-m-stateful pf-m-unread"}}
+  <i class="fas fa-bell" aria-hidden="true"></i> 10 {{#> screen-reader}}unread items{{/screen-reader}}
+{{/button}}
+
+{{#> button button--modifier="pf-m-stateful pf-m-unread pf-m-clicked"}}
+  <i class="fas fa-bell" aria-hidden="true"></i> 10 {{#> screen-reader}}unread items{{/screen-reader}}
+{{/button}}
+
+<br><br>
+
+{{#> button button--modifier="pf-m-stateful pf-m-unread pf-m-attention"}}
+  <i class="fas fa-bell" aria-hidden="true"></i> 10 {{#> screen-reader}}unread items, needs attention{{/screen-reader}}
+{{/button}}
+
+{{#> button button--modifier="pf-m-stateful pf-m-unread pf-m-attention pf-m-clicked"}}
+  <i class="fas fa-bell" aria-hidden="true"></i> 10 {{#> screen-reader}}unread items, needs attention{{/screen-reader}}
 {{/button}}
 ```
 

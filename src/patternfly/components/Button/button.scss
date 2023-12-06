@@ -20,11 +20,13 @@
   // Primary
   --#{$button}--m-primary--BackgroundColor: var(--pf-t--global--color--brand--default);
   --#{$button}--m-primary--Color: var(--pf-t--global--text--color--on-brand--default);
-  --#{$button}--m-primary--hover--BackgroundColor: var(--pf-t--global--color--brand--hover);
+  --#{$button}--m-primary--hover--BackgroundColor: var(--pf-t--global--text--color--on-brand--hover);
+  --#{$button}--m-primary--m-clicked--Color: var(--pf-t--global--text--color--on-brand--clicked);
+  --#{$button}--m-primary--m-clicked--BackgroundColor: var(--pf-t--global--color--brand--clicked);
 
   // Secondary
   --#{$button}--m-secondary--BackgroundColor: transparent;
-  --#{$button}--m-secondary--after--BorderColor: var(--pf-t--global--border--color--brand--default);
+  --#{$button}--m-secondary--BorderColor: var(--pf-t--global--border--color--brand--default);
   --#{$button}--m-secondary--hover--after--BorderColor: var(--pf-t--global--border--color--brand--hover);
   --#{$button}--m-secondary--hover--after--BorderWidth: var(--pf-t--global--border--width--button--hover);
 
@@ -143,6 +145,17 @@
   --#{$button}--disabled__c-badge--BackgroundColor: var(--pf-t--global--background--color--disabled--default);
   --#{$button}--m-primary__c-badge--BorderColor: var(--pf-t--global--border--color--default);
   --#{$button}--m-primary__c-badge--BorderWidth: var(--pf-t--global--border--width--300); // used only for primary, unread, not disabled
+
+  // Stateful
+  --#{$button}--m-stateful--BackgroundColor: var(--pf-t--global--background--color--control--default);
+  --#{$button}--m-stateful--Color: var(--pf-t--global--text--color--regular);
+  --#{$button}--m-stateful__icon--Color: var(--pf-t--global--icon--color--regular);
+  --#{$button}--m-stateful--hover--BackgroundColor: var(--pf-t--global--text--color--on-brand--hover);
+  --#{$button}--m-stateful--hover--Color: var(--pf-t--global--text--color--on-brand--hover);
+  --#{$button}--m-stateful--hover__icon--Color: var(--pf-t--global--text--color--on-brand--hover);
+  --#{$button}--m-stateful--m-clicked--BackgroundColor: var(--pf-t--global--color--brand--clicked);
+  --#{$button}--m-stateful--m-clicked--Color: var(--pf-t--global--text--color--on-brand--clicked);
+  --#{$button}--m-stateful--m-clicked__icon--Color: var(--pf-t--global--text--color--on-brand--clicked);
 }
 
 .#{$button} {
@@ -158,6 +171,7 @@
   text-align: center;
   white-space: nowrap;
   user-select: none;
+  background-color: var(--#{$button}--BackgroundColor);
   border: 0;
   border-radius: var(--#{$button}--BorderRadius);
 
