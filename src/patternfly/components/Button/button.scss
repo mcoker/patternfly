@@ -39,6 +39,9 @@
   --#{$button}--m-secondary--hover--BorderColor: var(--pf-t--global--border--color--brand--hover);
   --#{$button}--m-secondary--m-clicked--Color: var(--pf-t--global--text--color--brand--clicked);
   --#{$button}--m-secondary--m-clicked--BorderColor: var(--pf-t--global--border--color--brand--clicked);
+  --#{$button}--m-secondary--m-danger--BackgroundColor: transparent;
+  --#{$button}--m-secondary--m-danger--Color: var(--pf-t--global--text--color--status--danger--default);
+  --#{$button}--m-secondary--m-danger--BorderColor: var(--pf-t--global--border--color--status--danger--default);
 
   // Tertiary
   --#{$button}--m-tertiary--BackgroundColor: transparent;
@@ -237,6 +240,12 @@
     --#{$button}--hover--BorderColor: var(--#{$button}--m-secondary--hover--BorderColor);
     --#{$button}--m-clicked--Color: var(--#{$button}--m-secondary--m-clicked--Color);
     --#{$button}--m-clicked--BorderColor: var(--#{$button}--m-secondary--m-clicked--BorderColor);
+
+    &.pf-m-danger {
+      --#{$button}--BackgroundColor: var(--#{$button}--m-secondary--m-danger--BackgroundColor);
+      --#{$button}--Color: var(--#{$button}--m-secondary--m-danger--Color);
+      --#{$button}--BorderColor: var(--#{$button}--m-secondary--m-danger--BorderColor);
+    }
   }
 
   // Tertiary
@@ -246,7 +255,6 @@
     --#{$button}--hover--BorderWidth: var(--#{$button}--m-tertiary--hover--BorderWidth);
     --#{$button}--hover--BorderColor: var(--#{$button}--m-tertiary--hover--BorderColor);
     --#{$button}--m-clicked--Color: var(--#{$button}--m-tertiary--m-clicked--Color);
-    --#{$button}--m-clicked--BorderWidth: var(--#{$button}--m-tertiary--m-clicked--BorderWidth);
     --#{$button}--m-clicked--BorderColor: var(--#{$button}--m-tertiary--m-clicked--BorderColor);
   }
 
