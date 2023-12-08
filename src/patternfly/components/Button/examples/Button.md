@@ -9,221 +9,27 @@ import './Button.css'
 ## Examples
 ### Variations
 ```hbs
-{{#> button button--modifier="pf-m-primary"}}
-  Primary
-{{/button}}
+{{> button--variations}}
+```
 
-{{#> button button--modifier="pf-m-secondary"}}
-  Secondary
-{{/button}}
-
-{{#> button button--modifier="pf-m-secondary pf-m-danger"}}
-  Secondary danger
-{{/button}}
-
-{{#> button button--modifier="pf-m-tertiary"}}
-  Tertiary
-{{/button}}
-
-{{#> button button--modifier="pf-m-danger"}}
-  Danger
-{{/button}}
-
-{{#> button button--modifier="pf-m-warning"}}
-  Warning
-{{/button}}
-
-{{#> button button--modifier="pf-m-link"}}
-  {{#> button-icon button-icon--modifier="pf-m-start"}}
-    <i class="fas fa-plus-circle" aria-hidden="true"></i>
-  {{/button-icon}}
-  Link
-{{/button}}
-
-{{#> button button--modifier="pf-m-link"}}
-  Link
-  {{#> button-icon button-icon--modifier="pf-m-end"}}
-    <i class="fas fa-plus-circle" aria-hidden="true"></i>
-  {{/button-icon}}
-{{/button}}
-
-{{#> button button--modifier="pf-m-link pf-m-danger"}}
-  {{#> button-icon button-icon--modifier="pf-m-start"}}
-    <i class="fas fa-plus-circle" aria-hidden="true"></i>
-  {{/button-icon}}
-  Link danger
-{{/button}}
-
-{{#> button button--modifier="pf-m-inline pf-m-link"}}
-  Inline link
-{{/button}}
-
-{{#> button button--modifier="pf-m-plain" button--attribute='aria-label="Remove"'}}
-  <i class="fas fa-times" aria-hidden="true"></i>
-{{/button}}
-
-{{#> button button--modifier="pf-m-control"}}
-  Control
-{{/button}}
-
-{{#> button button--modifier="pf-m-control" button--attribute='aria-label="Copy input"'}}
-  <i class="fas fa-copy" aria-hidden="true"></i>
-{{/button}}
+### Clicked buttons
+```hbs
+{{> button--variations button--IsClicked=true}}
 ```
 
 ### Small buttons
 ```hbs
-{{#> button button--modifier="pf-m-primary pf-m-small"}}
-  Primary
-{{/button}}
-
-{{#> button button--modifier="pf-m-secondary pf-m-small"}}
-  Secondary
-{{/button}}
-
-{{#> button button--modifier="pf-m-secondary pf-m-danger pf-m-small"}}
-  Secondary danger
-{{/button}}
-
-{{#> button button--modifier="pf-m-tertiary pf-m-small"}}
-  Tertiary
-{{/button}}
-
-{{#> button button--modifier="pf-m-danger pf-m-small"}}
-  Danger
-{{/button}}
-
-{{#> button button--modifier="pf-m-warning pf-m-small"}}
-  Warning
-{{/button}}
-
-{{#> button button--modifier="pf-m-link pf-m-small"}}
-  Link
-  {{#> button-icon button-icon--modifier="pf-m-end"}}
-    <i class="fas fa-plus-circle" aria-hidden="true"></i>
-  {{/button-icon}}
-{{/button}}
-
-{{#> button button--modifier="pf-m-link pf-m-danger pf-m-small"}}
-  Link danger
-  {{#> button-icon button-icon--modifier="pf-m-end"}}
-    <i class="fas fa-plus-circle" aria-hidden="true"></i>
-  {{/button-icon}}
-{{/button}}
-
-{{#> button button--modifier="pf-m-inline pf-m-link pf-m-small"}}
-  Inline link
-{{/button}}
-
-{{#> button button--modifier="pf-m-control pf-m-small"}}
-  Control
-{{/button}}
+{{> button--variations button--IsSmall=true}}
 ```
 
 ### Disabled
 ```hbs
-{{#> button button--modifier="pf-m-primary" button--attribute="disabled"}}
-  Primary disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-secondary" button--attribute="disabled"}}
-  Secondary disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-secondary pf-m-danger" button--attribute="disabled"}}
-  Secondary danger disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-tertiary" button--attribute="disabled"}}
-  Tertiary disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-danger" button--attribute="disabled"}}
-  Danger disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-warning" button--attribute="disabled"}}
-  Warning disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-link" button--attribute="disabled"}}
-  {{#> button-icon button-icon--modifier="pf-m-start"}}
-    <i class="fas fa-plus-circle" aria-hidden="true"></i>
-  {{/button-icon}}
-  Link disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-link pf-m-danger" button--attribute="disabled"}}
-  {{#> button-icon button-icon--modifier="pf-m-start"}}
-    <i class="fas fa-plus-circle" aria-hidden="true"></i>
-  {{/button-icon}}
-  Link danger disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-link pf-m-inline" button--attribute="disabled"}}
-  Inline link disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-plain" button--attribute='aria-label="Remove" disabled'}}
-  <i class="fas fa-times" aria-hidden="true"></i>
-{{/button}}
-
-{{#> button button--modifier="pf-m-control" button--attribute="disabled"}}
-  Control disabled
-{{/button}}
+{{> button--variations button--IsDisabled=true}}
 ```
 
 ### Aria-disabled
 ```hbs
-{{#> button button--modifier="pf-m-primary pf-m-aria-disabled" button--attribute='aria-disabled="true"'}}
-  Primary disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-secondary pf-m-aria-disabled" button--attribute='aria-disabled="true"'}}
-  Secondary disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-secondary pf-m-danger pf-m-aria-disabled" button--attribute='aria-disabled="true"'}}
-  Secondary danger disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-tertiary pf-m-aria-disabled" button--attribute='aria-disabled="true"'}}
-  Tertiary disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-danger pf-m-aria-disabled" button--attribute='aria-disabled="true"'}}
-  Danger disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-warning pf-m-aria-disabled" button--attribute='aria-disabled="true"'}}
-  Warning disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-link pf-m-aria-disabled" button--attribute='aria-disabled="true"'}}
-  {{#> button-icon button-icon--modifier="pf-m-start"}}
-    <i class="fas fa-plus-circle" aria-hidden="true"></i>
-  {{/button-icon}}
-  Link disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-link pf-m-danger pf-m-aria-disabled" button--attribute='aria-disabled="true"'}}
-  {{#> button-icon button-icon--modifier="pf-m-start"}}
-    <i class="fas fa-plus-circle" aria-hidden="true"></i>
-  {{/button-icon}}
-  Link danger disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-link pf-m-inline pf-m-aria-disabled" button--attribute='aria-disabled="true"'}}
-  Inline link disabled
-{{/button}}
-
-{{#> button button--modifier="pf-m-plain pf-m-aria-disabled" button--attribute='aria-label="Remove" aria-disabled="true"'}}
-  <i class="fas fa-times" aria-hidden="true"></i>
-{{/button}}
-
-{{#> button button--modifier="pf-m-control pf-m-aria-disabled" button--attribute='aria-disabled="true"'}}
-  Control disabled
-{{/button}}
+{{> button--variations button--IsAriaDisabled=true}}
 ```
 
 ### Links as buttons

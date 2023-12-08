@@ -1,0 +1,60 @@
+{{#> button button--IsPrimary=true}}
+  Primary
+{{/button}}
+
+{{#> button button--IsSecondary=true}}
+  Secondary
+{{/button}}
+
+{{#> button button--IsSecondary=true button--IsDanger=true}}
+  Secondary danger
+{{/button}}
+
+{{#> button button--IsTertiary=true}}
+  Tertiary
+{{/button}}
+
+{{#> button button--IsDanger=true}}
+  Danger
+{{/button}}
+
+{{#> button button--IsWarning=true}}
+  Warning
+{{/button}}
+
+{{#> button button--IsLink=true}}
+  {{#> button-icon button-icon--modifier="pf-m-start"}}
+    <i class="fas fa-plus-circle" aria-hidden="true"></i>
+  {{/button-icon}}
+  Link
+{{/button}}
+
+{{#> button button--IsLink=true}}
+  Link
+  {{#> button-icon button-icon--modifier="pf-m-end"}}
+    <i class="fas fa-plus-circle" aria-hidden="true"></i>
+  {{/button-icon}}
+{{/button}}
+
+{{#> button button--IsLink=true button--IsDanger=true}}
+  {{#> button-icon button-icon--modifier="pf-m-start"}}
+    <i class="fas fa-plus-circle" aria-hidden="true"></i>
+  {{/button-icon}}
+  Link danger
+{{/button}}
+
+{{#> button button--IsLink=true button--IsInline=true}}
+  Inline link
+{{/button}}
+
+{{#> button button--IsPlain=true button--attribute='aria-label="Remove"'}}
+  <i class="fas fa-times" aria-hidden="true"></i>
+{{/button}}
+
+{{#> button button--IsControl=true}}
+  Control
+{{/button}}
+
+{{#> button button--IsControl=true button--attribute='aria-label="Copy input"'}}
+  <i class="fas fa-copy" aria-hidden="true"></i>
+{{/button}}
