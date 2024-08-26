@@ -80,8 +80,8 @@
   --#{$alert}--m-info__title--Color: var(--pf-t--global--text--color--regular);
 
   // Inline
-    --#{$alert}--m-inline--BackgroundColor: var(--pf-t--global--background--color--primary--default);
-    --#{$alert}--m-inline--BoxShadow: none;
+  --#{$alert}--m-inline--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$alert}--m-inline--BoxShadow: none;
 
   // Inline plain
   --#{$alert}--m-inline--m-plain--BorderWidth: 0;
@@ -182,11 +182,11 @@
 }
 
 .#{$alert}__toggle-icon {
-  @include pf-v6-mirror-inline-on-rtl;
-
   display: inline-block;
   transition: var(--#{$alert}__toggle-icon--Transition);
   transform: rotate(var(--#{$alert}__toggle-icon--Rotate));
+
+  @include pf-v6-mirror-inline-on-rtl;
 }
 
 .#{$alert}__icon {
