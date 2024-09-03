@@ -291,7 +291,7 @@ $pf-v6-c-form--m-horizontal--breakpoint-map: build-breakpoint-map("sm", "md", "l
 
 .#{$form}__group-label-help {
   .#{$button} {
-    --#{$button}--FontSize: var(--#{$form}__group-label-help--FontSize);
+    --#{$button}__icon--FontSize: var(--#{$form}__group-label-help--FontSize);
   }
 }
 

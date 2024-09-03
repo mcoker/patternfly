@@ -217,11 +217,11 @@
   // Nested selector to match button component color specificity
   .#{$wizard}__close {
     position: absolute;
-   inset-block-start: var(--#{$wizard}__close--InsetBlockStart);
-   inset-inline-end: var(--#{$wizard}__close--InsetInlineEnd);
+    inset-block-start: var(--#{$wizard}__close--InsetBlockStart);
+    inset-inline-end: var(--#{$wizard}__close--InsetInlineEnd);
 
-    button {
-      font-size: var(--#{$wizard}__close--FontSize);
+    .#{$button} {
+      --#{$button}__icon--FontSize: var(--#{$wizard}__close--FontSize);
     }
   }
 }

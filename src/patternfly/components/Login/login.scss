@@ -241,8 +241,8 @@
 }
 
 .#{$login}__main-footer-links-item {
-  .#{$button}{
-    --#{$button}--FontSize: var(--#{$login}__main-footer-links-item--c-button--FontSize);
+  .#{$button} {
+    --#{$button}__icon--FontSize: var(--#{$login}__main-footer-links-item--c-button--FontSize);
   }
 }
 

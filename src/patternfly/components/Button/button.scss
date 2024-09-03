@@ -9,6 +9,7 @@
   --#{$button}--PaddingInlineEnd: var(--pf-t--global--spacer--action--horizontal--default);
   --#{$button}--PaddingBlockEnd: var(--pf-t--global--spacer--control--vertical--default);
   --#{$button}--PaddingInlineStart: var(--pf-t--global--spacer--action--horizontal--default);
+  --#{$button}--MinWidth: calc(max(var(--#{$button}--FontSize), var(--#{$button}__icon--FontSize)) * var(--#{$button}--LineHeight) + var(--#{$button}--PaddingBlockStart) + var(--#{$button}--PaddingBlockEnd));
   --#{$button}--Color: var(--pf-t--global--text--color--regular);
   --#{$button}--LineHeight: var(--pf-t--global--font--line-height--body);
   --#{$button}--FontWeight: var(--pf-t--global--font--weight--body--default);
@@ -116,6 +117,7 @@
   --#{$button}--m-link--m-inline--TextDecorationStyle: var(--pf-t--global--text-decoration--link--style--default);
   --#{$button}--m-link--m-inline--hover--TextDecorationLine: var(--pf-t--global--text-decoration--link--line--hover);
   --#{$button}--m-link--m-inline--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--link--style--hover);
+  --#{$button}--m-link--m-inline__icon--FontSize: initial;
   --#{$button}--m-link--m-inline__progress--InsetInlineStart: var(--pf-t--global--spacer--xs);
   --#{$button}--m-link--m-inline--m-in-progress--PaddingInlineStart: calc(var(--#{$button}--m-link--m-inline__progress--InsetInlineStart) + 1rem + var(--pf-t--global--spacer--sm));
   --#{$button}--m-link--m-inline--disabled--Color: var(--pf-t--global--text--color--disabled);
@@ -131,7 +133,6 @@
   --#{$button}--m-plain--Color: var(--pf-t--global--icon--color--regular);
   --#{$button}--m-plain__icon--Color: var(--pf-t--global--text--color--regular);
   --#{$button}--m-plain--BackgroundColor: var(--pf-t--global--background--color--action--plain--default);
-  --#{$button}--m-plain--MinWidth: calc(1em * var(--#{$button}--LineHeight) + var(--#{$button}--PaddingBlockStart) + var(--#{$button}--PaddingBlockEnd));
   --#{$button}--m-plain--hover--Color: var(--pf-t--global--icon--color--regular);
   --#{$button}--m-plain--hover--BackgroundColor: var(--pf-t--global--background--color--action--plain--hover);
   --#{$button}--m-plain--m-clicked--Color: var(--pf-t--global--icon--color--regular);
@@ -237,6 +238,7 @@
   --#{$button}--m-display-lg--PaddingInlineStart: var(--pf-t--global--spacer--action--horizontal--spacious);
   --#{$button}--m-display-lg--FontWeight: var(--pf-t--global--font--weight--body--bold);
   --#{$button}--m-link--m-display-lg--FontSize: var(--pf-t--global--font--size--body--lg);
+  --#{$button}--m-link--m-display-lg__icon--FontSize: var(--pf-t--global--icon--size--font--body--lg);
 
   // Small
   --#{$button}--m-small--PaddingBlockStart: var(--pf-t--global--spacer--control--vertical--compact);
@@ -251,6 +253,7 @@
   --#{$button}--disabled__icon--Color: var(--pf-t--global--icon--color--on-disabled);
 
   // Icons
+  --#{$button}__icon--FontSize: var(--pf-t--global--icon--size--font--body--default);
   --#{$button}__icon--Color: var(--pf-t--global--icon--color--regular);
   --#{$button}--hover__icon--Color: var(--pf-t--global--icon--color--regular);
   --#{$button}--m-clicked__icon--Color: var(--pf-t--global--icon--color--regular);
@@ -289,6 +292,7 @@
   gap: var(--#{$button}--Gap);
   align-items: var(--#{$button}--AlignItems);
   justify-content: var(--#{$button}--JustifyContent);
+  min-width: var(--#{$button}--MinWidth);
   padding-block-start: var(--#{$button}--PaddingBlockStart);
   padding-block-end: var(--#{$button}--PaddingBlockEnd);
   padding-inline-start: var(--#{$button}--PaddingInlineStart);
@@ -413,6 +417,7 @@
       --#{$button}--PaddingBlockEnd: var(--#{$button}--m-link--m-inline--PaddingBlockEnd);
       --#{$button}--PaddingInlineStart: var(--#{$button}--m-link--m-inline--PaddingInlineStart);
       --#{$button}--BackgroundColor: transparent;
+      --#{$button}__icon--FontSize: var(--#{$button}--m-link--m-inline__icon--FontSize);
       --#{$button}__progress--InsetInlineStart: var(--#{$button}--m-link--m-inline__progress--InsetInlineStart);
       --#{$button}--TextDecorationLine: var(--#{$button}--m-link--m-inline--TextDecorationLine);
       --#{$button}--TextDecorationStyle: var(--#{$button}--m-link--m-inline--TextDecorationStyle);
@@ -443,6 +448,7 @@
 
     &.pf-m-display-lg {
       --#{$button}--FontSize: var(--#{$button}--m-link--m-display-lg--FontSize);
+      --#{$button}__icon--FontSize: var(--#{$button}--m-link--m-display-lg__icon--FontSize);
     }
   }
 
@@ -567,8 +573,6 @@
 
       min-width: var(--#{$button}--m-plain--m-no-padding--MinWidth);
     }
-
-    min-width: var(--#{$button}--m-plain--MinWidth);
   }
 
   &.pf-m-block {
@@ -589,7 +593,6 @@
     --#{$button}--PaddingInlineEnd: var(--#{$button}--m-display-lg--PaddingInlineEnd);
     --#{$button}--PaddingBlockEnd: var(--#{$button}--m-display-lg--PaddingBlockEnd);
     --#{$button}--PaddingInlineStart: var(--#{$button}--m-display-lg--PaddingInlineStart);
-    --#{$button}--FontSize: var(--#{$button}--m-display-lg--FontSize);
   }
 
   &:hover,
@@ -667,6 +670,7 @@
 .#{$button}__icon {
   margin-inline-start: var(--#{$button}__icon--MarginInlineStart);
   margin-inline-end: var(--#{$button}__icon--MarginInlineEnd);
+  font-size: var(--#{$button}__icon--FontSize, inherit);
   color: var(--#{$button}__icon--Color);
 
   &.pf-m-start {

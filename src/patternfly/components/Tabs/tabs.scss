@@ -658,7 +658,7 @@ $pf-v6-c-tabs--spacer-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl
   display: flex;
 
   .#{$button} {
-    --#{$button}--FontSize: var(--#{$tabs}__item-action--c-button--FontSize);
+    --#{$button}__icon--FontSize: var(--#{$tabs}__item-action--c-button--FontSize);
   }
 }
 
@@ -712,7 +712,7 @@ $pf-v6-c-tabs--spacer-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl
   }
 
   .#{$button} {
-    --#{$button}--FontSize: var(--#{$tabs}__add--c-button--FontSize);
+    --#{$button}__icon--FontSize: var(--#{$tabs}__add--c-button--FontSize);
   }
 }
 

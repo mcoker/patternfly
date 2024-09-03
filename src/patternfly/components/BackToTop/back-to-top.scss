@@ -27,6 +27,7 @@
 
   .#{$button} {
     --#{$button}--FontSize: var(--#{$back-to-top}--c-button--FontSize);
+    --#{$button}__icon--FontSize: var(--#{$back-to-top}--c-button--FontSize);
     --#{$button}--PaddingBlockStart: var(--#{$back-to-top}--c-button--PaddingBlockStart);
     --#{$button}--PaddingInlineEnd: var(--#{$back-to-top}--c-button--PaddingInlineEnd);
     --#{$button}--PaddingBlockEnd: var(--#{$back-to-top}--c-button--PaddingBlockEnd);

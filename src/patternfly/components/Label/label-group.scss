@@ -133,7 +133,7 @@
   align-self: flex-start;
 
   .#{$button} {
-    --#{$button}--FontSize: var(--#{$label-group}__close--c-button--FontSize);
+    --#{$button}__icon--FontSize: var(--#{$label-group}__close--c-button--FontSize);
     --#{$button}--m-plain--m-no-padding--PaddingBlockStart: var(--#{$label-group}__close--c-button--PaddingBlockStart);
     --#{$button}--m-plain--m-no-padding--PaddingInlineEnd: var(--#{$label-group}__close--c-button--PaddingInlineEnd);
     --#{$button}--m-plain--m-no-padding--PaddingBlockEnd: var(--#{$label-group}__close--c-button--PaddingBlockEnd);
