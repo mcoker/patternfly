@@ -1,4 +1,6 @@
 @use '../../sass-utilities' as *;
+@use 'form-control-theme.scss' as *;
+
 
 @include pf-root($form-control) {
   --#{$form-control}--ColumnGap: var(--pf-t--global--spacer--gap--text-to-element--default);
@@ -21,10 +23,26 @@
 
   // padding
   --#{$form-control}--inset--base: var(--pf-t--global--spacer--control--horizontal--default);
-  --#{$form-control}--PaddingBlockStart: var(--pf-t--global--spacer--control--vertical--default);
-  --#{$form-control}--PaddingBlockEnd: var(--pf-t--global--spacer--control--vertical--default);
-  --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}--inset--base);
-  --#{$form-control}--PaddingInlineStart: var(--#{$form-control}--inset--base);
+  --#{$form-control}--PaddingBlockStart--base: var(--pf-t--global--spacer--control--vertical--default);
+  --#{$form-control}--PaddingBlockEnd--base: var(--pf-t--global--spacer--control--vertical--default);
+  --#{$form-control}--PaddingInlineEnd--base: var(--#{$form-control}--inset--base);
+  --#{$form-control}--PaddingInlineStart--base: var(--#{$form-control}--inset--base);
+  --#{$form-control}--PaddingBlockStart: var(--#{$form-control}--PaddingBlockStart--base);
+  --#{$form-control}--PaddingBlockEnd: var(--#{$form-control}--PaddingBlockEnd--base);
+  --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}--PaddingInlineEnd--base);
+  --#{$form-control}--PaddingInlineStart: var(--#{$form-control}--PaddingInlineStart--base);
+
+  // input padding
+  --#{$form-control}__input--PaddingBlockStart: var(--#{$form-control}--PaddingBlockStart--base);
+  --#{$form-control}__input--PaddingBlockEnd: var(--#{$form-control}--PaddingBlockEnd--base);
+  --#{$form-control}__input--PaddingInlineEnd: var(--#{$form-control}--PaddingInlineEnd--base);
+  --#{$form-control}__input--PaddingInlineStart: var(--#{$form-control}--PaddingInlineStart--base);
+
+  // select padding
+  --#{$form-control}__select--PaddingBlockStart: var(--#{$form-control}--PaddingBlockStart--base);
+  --#{$form-control}__select--PaddingBlockEnd: var(--#{$form-control}--PaddingBlockEnd--base);
+  --#{$form-control}__select--PaddingInlineEnd: var(--#{$form-control}--PaddingInlineEnd--base);
+  --#{$form-control}__select--PaddingInlineStart: var(--#{$form-control}--PaddingInlineStart--base);
 
   // hover
   --#{$form-control}--hover--after--BorderWidth: var(--pf-t--global--border--width--control--hover);
@@ -70,7 +88,7 @@
   // error
   --#{$form-control}--m-error--after--BorderWidth: var(--pf-t--global--border--width--control--default);
   --#{$form-control}--m-error--after--BorderColor: var(--pf-t--global--border--color--status--danger--default);
-  --#{$form-control}--m-error--PaddingInlineEnd: calc(var(--#{$form-control}__icon--FontSize) + var(--#{$form-control}--inset--base) + var(--#{$form-control}--ColumnGap));
+  --#{$form-control}--m-error--PaddingInlineEnd: calc(var(--#{$form-control}__icon--FontSize) + var(--#{$form-control}--PaddingInlineEnd) + var(--#{$form-control}--ColumnGap));
   --#{$form-control}--m-error--icon--width: var(--#{$form-control}--FontSize);
 
   // custom icon
@@ -78,8 +96,6 @@
   --#{$form-control}--m-icon--icon--width: var(--#{$form-control}--FontSize);
   --#{$form-control}--m-icon--icon--spacer: calc(var(--pf-t--global--spacer--control--horizontal--default) / 2);
   --#{$form-control}--m-icon--icon--PaddingInlineEnd: calc(var(--#{$form-control}--inset--base) + var(--#{$form-control}--m-error--icon--width) + var(--#{$form-control}--m-icon--icon--spacer) + var(--#{$form-control}--m-icon--icon--width) + var(--#{$form-control}--m-icon--icon--spacer));
-  --#{$form-control}__select--PaddingInlineEnd: var(--#{$form-control}--inset--base);
-  --#{$form-control}__select--PaddingInlineStart: var(--#{$form-control}--inset--base);
 
   // Select success
   --#{$form-control}__select--m-success--m-status--PaddingInlineEnd: calc((var(--#{$form-control}__icon--FontSize) * 2) + var(--#{$form-control}__utilities--Gap) + var(--#{$form-control}__toggle-icon--PaddingInlineEnd) + var(--#{$form-control}__toggle-icon--PaddingInlineStart));
@@ -178,12 +194,19 @@
     text-overflow: ellipsis;
   }
 
+  @at-root .#{$form-control}:has(input) {
+    --#{$form-control}--PaddingBlockStart: var(--#{$form-control}__input--PaddingBlockStart);
+    --#{$form-control}--PaddingBlockEnd: var(--#{$form-control}__input--PaddingBlockEnd);
+    --#{$form-control}--PaddingInlineStart: var(--#{$form-control}__input--PaddingInlineStart);
+    --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}__input--PaddingInlineEnd);
+  }
+  
   &.pf-m-textarea {
     padding-block-start: var(--#{$form-control}--textarea--PaddingBlockStart--offset);
     padding-block-end: var(--#{$form-control}--textarea--PaddingBlockEnd--offset);
     padding-inline-start: var(--#{$form-control}--textarea--PaddingInlineStart--offset);
     padding-inline-end: var(--#{$form-control}--textarea--PaddingInlineEnd--offset);
-   
+
     &.pf-m-success,
     &.pf-m-warning,
     &.pf-m-error {
@@ -194,7 +217,7 @@
       padding-block-start: calc(var(--#{$form-control}--PaddingBlockStart) - var(--#{$form-control}--textarea--PaddingBlockStart--offset));
       padding-block-end: calc(var(--#{$form-control}--PaddingBlockEnd) - var(--#{$form-control}--textarea--PaddingBlockEnd--offset));
       padding-inline-start: calc(var(--#{$form-control}--PaddingInlineStart) - var(--#{$form-control}--textarea--PaddingInlineStart--offset));
-      padding-inline-end: calc(var(--#{$form-control}--PaddingInlineEnd) - var(--#{$form-control}--textarea--PaddingInlineEnd--offset) + var(--#{$form-control}--m-status--PaddingInlineEnd--offset, 0));  
+      padding-inline-end: calc(var(--#{$form-control}--PaddingInlineEnd) - var(--#{$form-control}--textarea--PaddingInlineEnd--offset) + var(--#{$form-control}--m-status--PaddingInlineEnd--offset, 0px));
       outline-offset: 0;
       scrollbar-gutter: stable;
     }
@@ -240,12 +263,18 @@
   }
 
   &.pf-m-error {
-    --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}--m-error--PaddingInlineEnd);
     --#{$form-control}--after--BorderColor: var(--#{$form-control}--m-error--after--BorderColor);
     --#{$form-control}--hover--after--BorderColor: var(--#{$form-control}--m-error--hover--after--BorderColor);
     --#{$form-control}__icon--m-status--Color: var(--#{$form-control}--m-error__icon--m-status--Color);
-    --#{$form-control}__select--PaddingInlineEnd: var(--#{$form-control}__select--m-error--m-status--PaddingInlineEnd);
     --#{$form-control}--after--BorderWidth: var(--#{$form-control}--m-error--after--BorderWidth);
+
+    > :is(input, textarea) {
+      padding-inline-end: var(--#{$form-control}--m-error--PaddingInlineEnd);
+    }
+
+    > select {
+      padding-inline-end: var(--#{$form-control}__select--m-error--m-status--PaddingInlineEnd);
+    }
 
     &.pf-m-icon {
       --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}--m-icon--icon--PaddingInlineEnd);
@@ -287,9 +316,11 @@
     --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}--m-icon--PaddingInlineEnd);
   }
 
-  > select {
-    --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}__select--PaddingInlineEnd);
+  @at-root .#{$form-control}:has(select) {
+    --#{$form-control}--PaddingBlockStart: var(--#{$form-control}__select--PaddingBlockStart);
+    --#{$form-control}--PaddingBlockEnd: var(--#{$form-control}__select--PaddingBlockEnd);
     --#{$form-control}--PaddingInlineStart: var(--#{$form-control}__select--PaddingInlineStart);
+    --#{$form-control}--PaddingInlineEnd: var(--#{$form-control}__select--PaddingInlineEnd);
 
     // Firefox's select text has additional padding
     // stylelint-disable-next-line
@@ -376,3 +407,6 @@
 select ~ .#{$form-control}__utilities {
   --#{$form-control}__utilities--PaddingInlineEnd: 0;
 }
+
+@include form-control-theme;
+

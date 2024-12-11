@@ -1,0 +1,17 @@
+@use '../../sass-utilities' as *;
+
+@mixin form-control-theme {
+  .pf-v6-c-form-control {
+    // textarea padding
+    --#{$form-control}__input--PaddingBlockStart: 40px;
+    --#{$form-control}__input--PaddingBlockEnd: 40px;
+    --#{$form-control}__input--PaddingInlineEnd: 40px;
+    --#{$form-control}__input--PaddingInlineStart: 40px;
+  
+    // select padding
+    --#{$form-control}__select--PaddingBlockStart: 60px;
+    --#{$form-control}__select--PaddingBlockEnd: 60px;
+    --#{$form-control}__select--PaddingInlineEnd: 60px;
+    --#{$form-control}__select--PaddingInlineStart: 60px;
+  }
+}
