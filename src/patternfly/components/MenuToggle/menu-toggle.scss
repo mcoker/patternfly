@@ -414,6 +414,21 @@
       pointer-events: none;
     }
   }
+
+  &.pf-m-plain {
+    &:hover,
+    &:focus {
+      &::before {
+        border: var(--pf-t--global--border--width--regular) solid var(--pf-t--global--border--color--high-contrast);
+      }
+    }
+
+    &.pf-m-clicked {
+      &::before {
+        border-width: var(--pf-t--global--border--width--strong);
+      }
+    }
+  }
 }
 
 // Register the property type for the custom property to be animatable

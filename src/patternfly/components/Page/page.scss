@@ -366,6 +366,7 @@ $pf-page-v6--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
 
 // Main & Drawer
 .#{$page}__main-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-self: var(--#{$page}__main-container--AlignSelf);
@@ -375,6 +376,9 @@ $pf-page-v6--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
   background: var(--#{$page}__main-container--BackgroundColor);
   border: var(--#{$page}__main-container--BorderWidth) solid var(--#{$page}__main-container--BorderColor);
   border-radius: var(--#{$page}__main-container--BorderRadius);
+  background-color: var(--#{$page}__main-container--BorderColor);
+  outline: calc(var(--#{$page}__main-container--BorderWidth) / 2) solid var(--pf-t--global--border--color--high-contrast);
+  outline-offset: calc(var(--#{$page}__main-container--BorderWidth) / 2 * -1);
 
   @media screen and (max-width: pf-v6-max-width-bp($pf-v6-global--breakpoint--md)) {
     --#{$page}__main-container--AlignSelf: var(--#{$page}__main-container--xs--AlignSelf);
@@ -409,7 +413,6 @@ $pf-page-v6--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
   &:has(.#{$page}__main-wizard) {
     align-self: stretch;
   }
-
 
   &:focus {
     outline: 0;

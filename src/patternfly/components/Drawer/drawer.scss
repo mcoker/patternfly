@@ -326,8 +326,10 @@ $pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
   transition-delay: var(--#{$drawer}__panel--TransitionDelay);
   transition-timing-function: var(--#{$drawer}__panel--TransitionTimingFunction);
   transition-duration: var(--#{$drawer}__panel--TransitionDuration);
-  transition-property: var(--#{$drawer}__panel--TransitionProperty);
+  // transition-property: var(--#{$drawer}__panel--TransitionProperty);
   -webkit-overflow-scrolling: touch;
+
+  border: var(--pf-t--global--border--width--regular) solid var(--pf-t--global--border--color--high-contrast);
 
   &::after {
     position: absolute;

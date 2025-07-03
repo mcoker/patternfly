@@ -394,7 +394,7 @@
   transition-delay: var(--#{$button}--TransitionDelay);
   transition-timing-function: var(--#{$button}--TransitionTimingFunction);
   transition-duration: var(--#{$button}--TransitionDuration);
-  transition-property: var(--#{$button}--TransitionProperty);
+  // transition-property: var(--#{$button}--TransitionProperty);
   scale: var(--#{$button}--ScaleX) var(--#{$button}--ScaleY);
 
   &::after {
@@ -667,9 +667,27 @@
       --#{$button}--PaddingInlineStart: var(--#{$button}--m-plain--m-no-padding--PaddingInlineStart);
       --#{$button}--m-small--PaddingInlineEnd: var(--#{$button}--m-plain--m-no-padding--m-small--PaddingInlineEnd);
       --#{$button}--m-small--PaddingInlineStart: var(--#{$button}--m-plain--m-no-padding--m-small--PaddingInlineStart);
+
+      border: 0;
   
       min-width: var(--#{$button}--m-plain--m-no-padding--MinWidth);
       background: var(--#{$button}--BackgroundColor); // override the ripple background
+    }
+  }
+
+  &.pf-m-link:not(.pf-m-inline),
+  &.pf-m-plain:not(.pf-m-no-padding) {
+    &:hover,
+    &:focus {
+      &::after {
+        border: var(--pf-t--global--border--width--regular) solid var(--pf-t--global--border--color--high-contrast);
+      }
+    }
+
+    &.pf-m-clicked {
+      &::after {
+        border-width: var(--pf-t--global--border--width--strong);
+      }
     }
   }
 
@@ -698,7 +716,7 @@
     display: grid;
     transition-timing-function: var(--#{$button}--m-favorite__icon--TransitionTimingFunction);
     transition-duration: var(--#{$button}--m-favorite__icon--TransitionDuration);
-    transition-property: color;
+    // transition-property: color;
   }
 
   // Favorite button when favorited
@@ -848,7 +866,7 @@
   transition-delay: var(--#{$button}__icon--TransitionDelay);
   transition-timing-function: var(--#{$button}__icon--TransitionTimingFunction);
   transition-duration: var(--#{$button}__icon--TransitionDuration);
-  transition-property: var(--#{$button}__icon--TransitionProperty);
+  // transition-property: var(--#{$button}__icon--TransitionProperty);
   rotate: var(--#{$button}__icon--Rotate);
   scale: var(--#{$button}__icon--ScaleX) var(--#{$button}__icon--ScaleY);
 
@@ -865,7 +883,7 @@
 .#{$button}__icon-favorited {
   grid-area: 1 / 1 / 1 / 1;
   transition-duration: var(--#{$button}__icon--favorite--TransitionDuration);
-  transition-property: opacity;
+  // transition-property: opacity;
 }
 
 .#{$button}__icon-favorite {

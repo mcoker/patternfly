@@ -665,7 +665,10 @@ $pf-v6-c-tabs--spacer-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl
 
   &:where(:hover, :focus) {
     --#{$tabs}__link--BackgroundColor: var(--#{$tabs}__link--hover--BackgroundColor);
-      }
+
+    border: var(--pf-t--global--border--width--regular) solid var(--pf-t--global--border--color--high-contrast);
+    margin: calc(-1 * var(--pf-t--global--border--width--regular));
+  }
 
   &:disabled,
   &.pf-m-disabled {
@@ -812,7 +815,7 @@ $pf-v6-c-tabs--spacer-map: build-spacer-map("none", "sm", "md", "lg", "xl", "2xl
       border-inline-start-width: var(--#{$tabs}--link-accent--BorderInlineStartWidth);
       transition-timing-function: var(--#{$tabs}--link-accent--TransitionTimingFunction);
       transition-duration: var(--#{$tabs}--link-accent--TransitionDuration);
-      transition-property: width, height, translate;
+      // transition-property: width, height, translate;
       transform-origin: var(--#{$tabs}--link-accent--TransformOrigin);
 
       @include pf-v6-bidirectional-style(

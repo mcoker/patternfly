@@ -218,7 +218,7 @@
   transition-delay: 0s, 0s, var(--#{$nav}__subnav--TransitionDelay--expand--focus, 0s), var(--#{$nav}__subnav--TransitionDelay--expand--focus, 0s), var(--#{$nav}__subnav--TransitionDelay--expand--focus, 0s), var(--#{$nav}__subnav--TransitionDelay--expand--focus, 0s);
   transition-timing-function: var(--#{$nav}__subnav--TransitionTimingFunction--expand);
   transition-duration: var(--#{$nav}__subnav--TransitionDuration--expand), var(--#{$nav}__subnav--TransitionDuration--expand--slide), 0s, 0s, 0s, 0s;
-  transition-property: opacity, translate, visibility, max-height, padding-block-start, padding-block-end;
+  // transition-property: opacity, translate, visibility, max-height, padding-block-start, padding-block-end;
   translate: 0 var(--#{$nav}__subnav--TranslateY);
 
   &[hidden] {
@@ -288,7 +288,7 @@
   border-radius: var(--#{$nav}__link--BorderRadius);
   transition-timing-function: var(--#{$nav}__link--TransitionTimingFunction--background-color), var(--#{$nav}__link--m-current--TransitionTimingFunction--color);
   transition-duration: var(--#{$nav}__link--TransitionDuration--background-color), var(--#{$nav}__link--m-current--TransitionDuration--color);
-  transition-property: background-color, color;
+  // transition-property: background-color, color;
 
   // explicitly set background-color prop to avoid affecting child elements settings
   &:hover,
@@ -296,6 +296,7 @@
   &:focus {
     color: var(--#{$nav}__link--hover--Color);
     background-color: var(--#{$nav}__link--hover--BackgroundColor);
+    
   }
 
   &.pf-m-current,
@@ -304,6 +305,32 @@
 
     color: var(--#{$nav}__link--m-current--Color);
     background-color: var(--#{$nav}__link--m-current--BackgroundColor);
+    position: relative;
+  }
+
+  &:hover,
+  &:focus,
+  &.pf-m-current {
+    &::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      border: solid var(--pf-t--global--border--color--high-contrast);
+      border-radius: inherit;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &::after {
+      border-width: var(--pf-t--global--border--width--regular)
+    }
+  }
+
+  &.pf-m-current {
+    &::after {
+      border-width: var(--pf-t--global--border--width--strong)
+    }
   }
 }
 
@@ -327,7 +354,7 @@
   display: inline-block;
   transition-timing-function: var(--#{$nav}__item__toggle-icon--TransitionTimingFunction--transform);
   transition-duration: var(--#{$nav}__item__toggle-icon--TransitionDuration--transform);
-  transition-property: transform;
+  // transition-property: transform;
   transform: rotate(var(--#{$nav}__item__toggle-icon--Rotate));
 
   @include pf-v6-mirror-inline-on-rtl;
