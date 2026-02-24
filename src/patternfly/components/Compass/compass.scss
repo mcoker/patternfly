@@ -114,8 +114,8 @@
 .#{$compass}__sidebar:is(.pf-m-start, .pf-m-end),
 .#{$compass}__main-footer,
 .#{$compass}__footer {
-  margin: 0;
   visibility: hidden;
+  margin: 0;
   opacity: 0;
   transition-delay: var(--#{$compass}--section--TransitionDelay);
   transition-timing-function: var(--#{$compass}--section--TransitionTimingFunction);
@@ -293,10 +293,10 @@
   padding-inline-start: var(--#{$compass}__panel--PaddingInlineStart);
   padding-inline-end: var(--#{$compass}__panel--PaddingInlineEnd);
   background-color: var(--#{$compass}__panel--BackgroundColor);
-  backdrop-filter: var(--#{$compass}__panel--BackdropFilter);
   border: var(--#{$compass}__panel--BorderWidth) solid var(--#{$compass}__panel--BorderColor);
   border-radius: var(--#{$compass}__panel--BorderRadius);
   box-shadow: var(--#{$compass}__panel--BoxShadow);
+  backdrop-filter: var(--#{$compass}__panel--BackdropFilter);
 
   &.pf-m-no-border {
     border-width: 0;

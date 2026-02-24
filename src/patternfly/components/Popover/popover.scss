@@ -260,7 +260,7 @@
 
 // Body
 .#{$popover}__body {
-  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .#{$popover}__footer {

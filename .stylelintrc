@@ -52,7 +52,16 @@
     "liberty/use-logical-spec": ["always", { "except": ["width", "max-width", "min-width", "height", "max-height", "min-height"] }],
     "max-nesting-depth": 3,
     "media-query-no-invalid": null,
+    "nesting-selector-no-missing-scoping-root": [ true, {
+      "ignoreAtRules": ["media", "mixin"]
+    }],
     "no-descending-specificity": null,
+    "no-invalid-position-declaration": [
+      true,
+      {
+        "ignoreAtRules": ["media"]
+      }
+    ],
     "no-unknown-animations": true,
     "order/order": [
       "custom-properties",
@@ -90,7 +99,6 @@
     "selector-max-combinators": 4,
     "selector-max-compound-selectors": 4,
     "selector-max-id": 0,
-    "selector-max-type": 2,
     "selector-nested-pattern": "^(?!.*&[-_])",
     "selector-no-qualifying-type": true,
     "value-keyword-case": ["lower", { "ignoreKeywords": ["Helvetica", "Arial", "Courier"] }]

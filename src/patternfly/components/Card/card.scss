@@ -414,9 +414,9 @@
 }
 
 .#{$card}__clickable-action {
+  outline: 0;
   background: none;
   border: 0;
-  outline: 0;
 
   &:disabled,
   &.pf-m-disabled {

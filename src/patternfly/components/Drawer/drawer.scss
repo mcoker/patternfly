@@ -367,6 +367,7 @@ $pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
 .#{$drawer}__panel {
   position: relative;
   z-index: var(--#{$drawer}__panel--ZIndex);
+  visibility: hidden; // hidden by default
   flex-basis: var(--#{$drawer}__panel--FlexBasis);
   row-gap: var(--#{$drawer}__panel--RowGap);
   order: 1;
@@ -374,7 +375,6 @@ $pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
   margin-block: var(--#{$drawer}__panel--MarginBlock, revert);
   margin-inline: var(--#{$drawer}__panel--MarginInline, revert);
   overflow: auto;
-  visibility: hidden; // hidden by default
   background-color: var(--#{$drawer}__panel--BackgroundColor);
   border: solid var(--#{$drawer}__panel--BorderColor);
   border-block-start-width: var(--#{$drawer}__panel--BorderBlockStartWidth);

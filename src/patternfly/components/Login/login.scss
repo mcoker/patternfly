@@ -139,7 +139,7 @@
       "main footer"
       "main .";
     grid-template-columns: var(--#{$login}__container--xl--GridTemplateColumns);
-    grid-column-gap: var(--#{$login}__container--xl--GridColumnGap);
+    column-gap: var(--#{$login}__container--xl--GridColumnGap);
     justify-content: center;
     padding-inline-start: var(--#{$login}__container--PaddingInlineStart);
     padding-inline-end: var(--#{$login}__container--PaddingInlineEnd);
