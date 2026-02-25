@@ -374,12 +374,13 @@ export const prefix = function (term) {
 //
 // ======================================================================================
 export const pfIcon = function (iconName) {
+  let baseName;
   try {
     if (!iconName || typeof iconName !== 'string') {
       console.error(`\x1b[31mInvalid icon name: ${iconName}\x1b[0m`);
       return new Handlebars.SafeString(`<!-- Invalid icon name -->`);
     }
-    let baseName = path.basename(iconName);
+    baseName = path.basename(iconName);
     if (Object.prototype.hasOwnProperty.call(pfToRhIcons, baseName)) {
       baseName = pfToRhIcons[baseName];
     }
@@ -392,7 +393,8 @@ export const pfIcon = function (iconName) {
     return new Handlebars.SafeString(svgContent);
   } catch (error) {
     const safeName = (iconName && typeof iconName === 'string') ? path.basename(iconName) : 'unknown';
-    console.error(`\x1b[31mError loading icon "${safeName}": ${error.message}\x1b[0m`);
-    return new Handlebars.SafeString(`<!-- Icon "${safeName}" not found -->`);
+    const resolvedBaseName = (baseName && typeof baseName === 'string') ? baseName : safeName;
+    console.error(`\x1b[31mError loading icon "${safeName}" (resolved "${resolvedBaseName}.svg"): ${error.message}\x1b[0m`);
+    return new Handlebars.SafeString(`<!-- Icon "${safeName}" (resolved "${resolvedBaseName}.svg") not found -->`);
   }
 }
