@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import Handlebars from 'handlebars';
 import { createRequire } from 'module';
-import { pfToRhIcons } from './pfIcon-map.js';
+import { pfToRhIcons } from './pfIcon-map.mjs';
 
 // TODO: TODO: update ternary to not escape chars
 
