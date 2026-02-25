@@ -3,6 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import Handlebars from 'handlebars';
 import { createRequire } from 'module';
+import { pfToRhIcons } from './pfIcon-map.js';
 
 // TODO: TODO: update ternary to not escape chars
 
@@ -378,7 +379,10 @@ export const pfIcon = function (iconName) {
       console.error(`\x1b[31mInvalid icon name: ${iconName}\x1b[0m`);
       return new Handlebars.SafeString(`<!-- Invalid icon name -->`);
     }
-    const baseName = path.basename(iconName);
+    let baseName = path.basename(iconName);
+    if (Object.prototype.hasOwnProperty.call(pfToRhIcons, baseName)) {
+      baseName = pfToRhIcons[baseName];
+    }
     const require = createRequire(import.meta.url);
     const packageJsonPath = require.resolve('@patternfly/react-icons/package.json');
     const packageDir = path.dirname(packageJsonPath);
