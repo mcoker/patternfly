@@ -103,6 +103,10 @@
     --#{$panel}__footer--BorderColor: var(--#{$panel}--m-scrollable__footer--BorderColor);
     --#{$panel}__footer--BorderWidth: var(--#{$panel}--m-scrollable__footer--BorderWidth);
   }
+
+  &.pf-m-pill {
+    --#{$panel}--BorderRadius: var(--#{$panel}--m-pill--BorderRadius);
+  }
 }
 
 .#{$panel}__header {
