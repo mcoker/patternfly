@@ -63,7 +63,7 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
   --#{$masthead}--m-docked--PaddingBlockEnd: var(--pf-t--global--spacer--lg);
   --#{$masthead}--m-docked--PaddingInlineStart: var(--pf-t--global--spacer--sm);
   --#{$masthead}--m-docked--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
-  --#{$masthead}--m-docked--BackgroundColor: var(--pf-t--global--background--color--glass--primary--default);
+  --#{$masthead}--m-docked--BackgroundColor: var(--pf-t--global--background--color--glass--primary--default, var(--pf-t--global--background--color--primary--default));
   --#{$masthead}--m-docked--BackdropFilter: var(--pf-t--global--background--filter--glass--blur--primary);
   --#{$masthead}--m-docked--c-toolbar--Height: 100%;
 
@@ -145,7 +145,7 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
   &.pf-m-docked {
     @include pf-v6-c-masthead--m-display-inline;
 
-    --#{$masthead}--BackgroundColor: var(--#{$masthead}--m-docked--BackgroundColor);
+    --#{$masthead}--BackgroundColor: transparent;
     --#{$masthead}--GridTemplateRows: var(--#{$masthead}--m-docked--GridTemplateRows);
     --#{$masthead}--PaddingBlockStart: var(--#{$masthead}--m-docked--PaddingBlockStart);
     --#{$masthead}--PaddingBlockEnd: var(--#{$masthead}--m-docked--PaddingBlockEnd);
@@ -162,7 +162,8 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
     flex-direction: column;
     align-items: stretch;
     height: 100%;
-    backdrop-filter: var(--#{$masthead}--m-docked--BackdropFilter);
+    border: 0;
+    box-shadow: none;
 
     .#{$masthead}__logo {
       width: revert;
@@ -193,7 +194,7 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
       height: var(--#{$masthead}--m-docked--c-toolbar--Height);
     }
 
-    @media (min-width: $pf-v6-global--breakpoint--dock--expand) {
+    @media (min-width: $pf-v6-global--breakpoint--dock--desktop) {
       .#{$masthead}__main {
         align-items: center;
       }
@@ -254,6 +255,15 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
       padding-inline-start: #{$inset-value};
       padding-inline-end: #{$inset-value};
     }
+  }
+
+  // placeholder for banded
+  @at-root :where(.pf-v6-theme-glass) &:not(.pf-m-docked) {
+    margin-block-end: var(--pf-t--global--spacer--inset--page-chrome);
+    background-color: var(--pf-t--global--background--color--glass--primary--default);
+    backdrop-filter: var(--pf-t--global--background--filter--glass--blur--primary);
+    border-block-end: var(--pf-t--global--border--width--glass--default) solid var(--pf-t--global--border--color--glass--default);
+    box-shadow: var(--pf-t--global--box-shadow--glass--default);
   }
 }
 
