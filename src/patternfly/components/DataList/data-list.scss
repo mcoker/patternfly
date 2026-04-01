@@ -191,9 +191,11 @@
     overflow-anchor: none;
   }
 
-  @at-root :where(.pf-v6-theme-glass) &:not(.pf-m-no-plain-on-glass),
-  &.pf-m-plain {
-    --#{$data-list}__item--BackgroundColor: var(--#{$data-list}--pf-m-plain__item--BackgroundColor);
+  @at-root {
+    :where(:not(.pf-v6-theme-glass)) &.pf-m-plain,
+    :where(.pf-v6-theme-glass) &:not(.pf-m-no-plain-on-glass) {
+      --#{$data-list}__item--BackgroundColor: var(--#{$data-list}--pf-m-plain__item--BackgroundColor);
+    }
   }
 }
 
