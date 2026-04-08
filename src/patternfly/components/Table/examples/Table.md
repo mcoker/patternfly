@@ -3828,16 +3828,6 @@ This example shows the use of `.pf-m-sticky-header-base` and `.pf-m-sticky-heade
 </div>
 ```
 
-### Sticky column
-```hbs
-<div class="pf-v6-c-scroll-inner-wrapper">
-  {{> table--scrollable
-      table--scrollable--id="sticky-column-example"
-      table--scrollable--Column1IsStickyColumn=true
-      table--scrollable--th--modifier--cell-1-modifier="pf-m-border-right"}}
-</div>
-```
-
 ### Sticky table usage
 
 For sticky columns to function correctly, the parent table's width must be controlled with `.pf-v6-c-scroll-inner-wrapper`. For sticky columns and sticky headers to function correctly, the parent table needs an inner and outer wrapper (`.pf-v6-c-scroll-outer-wrapper` and `.pf-v6-c-scroll-inner-wrapper`)
