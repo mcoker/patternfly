@@ -4041,8 +4041,8 @@ For sticky columns to function correctly, the parent table's width must be contr
 | Class | Applied to | Outcome |
 | -- | -- | -- |
 | `.pf-m-sticky-header` | `.pf-v6-c-table` | Makes the table cells in `<thead>` sticky to the top of the table on scroll. |
-| `.pf-m-sticky-header-unstuck` | `.pf-v6-c-table` | Makes the table cells in `<thead>` sticky to the top of the table on scroll, but does not apply sticky styling. `.pf-m-sticky-header-stuck` should be used to apply sticky styling. |
-| `.pf-m-sticky-header-stuck` | `.pf-v6-c-table` | Applies sticky header styling to a table with `.pf-m-sticky-header-unstuck`. |
+| `.pf-m-sticky-header-base` | `.pf-v6-c-table` | Makes the table cells in `<thead>` sticky to the top of the table on scroll, but does not apply sticky styling. `.pf-m-sticky-header-stuck` should be used to apply sticky styling. |
+| `.pf-m-sticky-header-stuck` | `.pf-v6-c-table` | Applies sticky header styling to a table with `.pf-m-sticky-header-base`. |
 | `.pf-v6-c-scroll-outer-wrapper` | `<div>` | Initiates a table container sticky columns outer wrapper. |
 | `.pf-v6-c-scroll-inner-wrapper` | `<div>` | Initiates a table container sticky columns inner wrapper. |
 | `.pf-v6-c-table__sticky-cell` | `<th>`, `<td>` | Initiates a sticky table cell. |

@@ -294,7 +294,7 @@
     table-layout: fixed;
   }
 
-  &.pf-m-sticky-header-unstuck > .#{$table}__thead {
+  &.pf-m-sticky-header-base > .#{$table}__thead {
     &::before,
     &::after {
       opacity: 0;
@@ -312,7 +312,7 @@
   }
 
   &.pf-m-sticky-header,
-  &.pf-m-sticky-header-unstuck {
+  &.pf-m-sticky-header-base {
     position: relative;
 
     > .#{$table}__thead {
@@ -338,7 +338,7 @@
   }
 
   &.pf-m-sticky-header,
-  &.pf-m-sticky-header-unstuck,
+  &.pf-m-sticky-header-base,
   &.pf-m-nested-column-header {
     > .#{$table}__thead {
       &::after {
