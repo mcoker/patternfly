@@ -215,7 +215,7 @@ import './Table.css'
         toolbar-template--HasFilterGroup=true
         toolbar-template--HasSortButton=true
       }}
-    {{> table-simple-table table-simple-table--modifier="pf-m-sticky-header"}}
+    {{> table-simple-table table-simple-table--modifier="pf-m-sticky-header" table-simple-table--IsLong=true}}
     {{> table-pagination-footer}}
   {{/page-main-section}}
 {{/inline}}

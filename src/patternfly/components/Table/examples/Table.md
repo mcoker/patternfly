@@ -3855,6 +3855,132 @@ There are a few ways this can be handled:
           2 days ago
         {{/table-td}}
       {{/table-tr}}
+
+      {{#> table-tr}}
+        {{#> table-td table-td--data-label="Repository name"}}
+          Repository 5
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Branches"}}
+          10
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Pull requests"}}
+          25
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Workspaces"}}
+          5
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Last commit"}}
+          2 days ago
+        {{/table-td}}
+      {{/table-tr}}
+
+      {{#> table-tr}}
+        {{#> table-td table-td--data-label="Repository name"}}
+          Repository 6
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Branches"}}
+          10
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Pull requests"}}
+          25
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Workspaces"}}
+          5
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Last commit"}}
+          2 days ago
+        {{/table-td}}
+      {{/table-tr}}
+
+      {{#> table-tr}}
+        {{#> table-td table-td--data-label="Repository name"}}
+          Repository 7
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Branches"}}
+          10
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Pull requests"}}
+          25
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Workspaces"}}
+          5
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Last commit"}}
+          2 days ago
+        {{/table-td}}
+      {{/table-tr}}
+
+      {{#> table-tr}}
+        {{#> table-td table-td--data-label="Repository name"}}
+          Repository 8
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Branches"}}
+          10
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Pull requests"}}
+          25
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Workspaces"}}
+          5
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Last commit"}}
+          2 days ago
+        {{/table-td}}
+      {{/table-tr}}
+
+      {{#> table-tr}}
+        {{#> table-td table-td--data-label="Repository name"}}
+          Repository 9
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Branches"}}
+          10
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Pull requests"}}
+          25
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Workspaces"}}
+          5
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Last commit"}}
+          2 days ago
+        {{/table-td}}
+      {{/table-tr}}
+
+      {{#> table-tr}}
+        {{#> table-td table-td--data-label="Repository name"}}
+          Repository 10
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Branches"}}
+          10
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Pull requests"}}
+          25
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Workspaces"}}
+          5
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Last commit"}}
+          2 days ago
+        {{/table-td}}
+      {{/table-tr}}
+
+      {{#> table-tr}}
+        {{#> table-td table-td--data-label="Repository name"}}
+          Repository 11
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Branches"}}
+          10
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Pull requests"}}
+          25
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Workspaces"}}
+          5
+        {{/table-td}}
+        {{#> table-td table-td--data-label="Last commit"}}
+          2 days ago
+        {{/table-td}}
+      {{/table-tr}}
     {{/table-tbody}}
   {{/table}}
 </div>
@@ -3915,6 +4041,8 @@ For sticky columns to function correctly, the parent table's width must be contr
 | Class | Applied to | Outcome |
 | -- | -- | -- |
 | `.pf-m-sticky-header` | `.pf-v6-c-table` | Makes the table cells in `<thead>` sticky to the top of the table on scroll. |
+| `.pf-m-sticky-header-unstuck` | `.pf-v6-c-table` | Makes the table cells in `<thead>` sticky to the top of the table on scroll, but does not apply sticky styling. `.pf-m-sticky-header-stuck` should be used to apply sticky styling. |
+| `.pf-m-sticky-header-stuck` | `.pf-v6-c-table` | Applies sticky header styling to a table with `.pf-m-sticky-header-unstuck`. |
 | `.pf-v6-c-scroll-outer-wrapper` | `<div>` | Initiates a table container sticky columns outer wrapper. |
 | `.pf-v6-c-scroll-inner-wrapper` | `<div>` | Initiates a table container sticky columns inner wrapper. |
 | `.pf-v6-c-table__sticky-cell` | `<th>`, `<td>` | Initiates a sticky table cell. |
