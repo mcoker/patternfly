@@ -337,18 +337,16 @@
     }
   }
 
-  &.pf-m-sticky-header,
-  &.pf-m-sticky-header-base,
-  &.pf-m-nested-column-header {
-    > .#{$table}__thead {
-      &::after {
-        position: absolute;
-        inset: 0;
-        z-index: var(--#{$table}--m-sticky-header--border--ZIndex);
-        pointer-events: none;
-        content: '';
-        border-block-end: var(--#{$table}--m-sticky-header--BorderBlockEndWidth) solid var(--#{$table}--m-sticky-header--BorderBlockEndColor);
-      }
+  &.pf-m-sticky-header > .#{$table}__thead,
+  &.pf-m-sticky-header-base > .#{$table}__thead,
+  .#{$table}__thead.pf-m-nested-column-header {
+    &::after {
+      position: absolute;
+      inset: 0;
+      z-index: var(--#{$table}--m-sticky-header--border--ZIndex);
+      pointer-events: none;
+      content: '';
+      border-block-end: var(--#{$table}--m-sticky-header--BorderBlockEndWidth) solid var(--#{$table}--m-sticky-header--BorderBlockEndColor);
     }
   }
 
@@ -1251,6 +1249,8 @@
 
   // - Table nested column header button
   &.pf-m-nested-column-header {
+    position: relative;
+
     .#{$table}__button {
       --#{$table}__button--PaddingInlineStart: var(--#{$table}__nested-column-header__button--PaddingInlineStart);
       --#{$table}__button--PaddingInlineEnd: var(--#{$table}__nested-column-header__button--PaddingInlineEnd);
