@@ -337,10 +337,9 @@
     }
   }
 
-  &.pf-m-sticky-header > .#{$table}__thead,
-  &.pf-m-sticky-header-base > .#{$table}__thead,
-  .#{$table}__thead.pf-m-nested-column-header {
-    &::after {
+  &.pf-m-sticky-header,
+  &.pf-m-sticky-header-base {
+    > .#{$table}__thead::after {
       position: absolute;
       inset: 0;
       z-index: var(--#{$table}--m-sticky-header--border--ZIndex);
@@ -1250,6 +1249,8 @@
   // - Table nested column header button
   &.pf-m-nested-column-header {
     position: relative;
+    background-color: var(--#{$table}--BackgroundColor);
+    border-block-end: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
 
     .#{$table}__button {
       --#{$table}__button--PaddingInlineStart: var(--#{$table}__nested-column-header__button--PaddingInlineStart);
