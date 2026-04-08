@@ -268,7 +268,6 @@
   --#{$table}--m-sticky-header--TransitionDuration--BackgroundColor: var(--pf-t--global--motion--duration--fade--default);
 
   :where(.pf-v6-theme-glass) & {
-    --#{$table}--m-sticky-header--border--ZIndex: -1;
     --#{$table}--m-sticky-header--BorderBlockEndWidth: 0;
     --#{$table}--m-sticky-header--BoxShadow: var(--#{$table}--m-sticky-header--BoxShadow--glass);
     --#{$table}--m-sticky-header--BorderRadius: var(--#{$table}--m-sticky-header--BorderRadius--glass);
@@ -339,7 +338,7 @@
   }
 
   &.pf-m-sticky-header,
-  &.pf-m-sticky-header-stuck,
+  &.pf-m-sticky-header-unstuck,
   &.pf-m-nested-column-header {
     > .#{$table}__thead {
       &::after {
