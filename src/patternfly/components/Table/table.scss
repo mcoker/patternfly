@@ -241,6 +241,7 @@
   // * Table nested column header
   --#{$table}__thead--m-nested-column-header--BorderBlockEndWidth: var(--#{$table}--border-width--base);
   --#{$table}__thead--m-nested-column-header--BorderBlockEndColor: var(--#{$table}--BorderColor);
+  --#{$table}__thead--m-nested-column-header--after--ZIndex: calc(var(--pf-t--global--z-index--xs) + 2);
   --#{$table}__thead--m-nested-column-header--button--OutlineOffset: #{pf-size-prem(-3px)};
   --#{$table}__thead--m-nested-column-header__tr--PaddingBlockStart: var(--pf-t--global--spacer--xs);
   --#{$table}__thead--m-nested-column-header__tr--PaddingBlockEnd: var(--pf-t--global--spacer--md);
@@ -1256,7 +1257,15 @@
   // - Table nested column header button
   &.pf-m-nested-column-header {
     position: relative;
-    border-block-end: var(--#{$table}__thead--m-nested-column-header--BorderBlockEndWidth) solid var(--#{$table}__thead--m-nested-column-header--BorderBlockEndColor);
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      z-index: var(--#{$table}__thead--m-nested-column-header--after--ZIndex);
+      pointer-events: none;
+      content: '';
+      border-block-end: var(--#{$table}__thead--m-nested-column-header--BorderBlockEndWidth) solid var(--#{$table}__thead--m-nested-column-header--BorderBlockEndColor);
+    }
 
     .#{$table}__button {
       --#{$table}__button--PaddingInlineStart: var(--#{$table}__nested-column-header__button--PaddingInlineStart);
