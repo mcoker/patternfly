@@ -239,6 +239,8 @@
   --#{$table}__tbody--m-selected--OutlineOffset: calc(-1 * var(--pf-t--global--spacer--xs));
 
   // * Table nested column header
+  --#{$table}__thead--m-nested-column-header--BorderBlockEndWidth: var(--#{$table}--border-width--base);
+  --#{$table}__thead--m-nested-column-header--BorderBlockEndColor: var(--#{$table}--BorderColor);
   --#{$table}__thead--m-nested-column-header--button--OutlineOffset: #{pf-size-prem(-3px)};
   --#{$table}__thead--m-nested-column-header__tr--PaddingBlockStart: var(--pf-t--global--spacer--xs);
   --#{$table}__thead--m-nested-column-header__tr--PaddingBlockEnd: var(--pf-t--global--spacer--md);
@@ -302,6 +304,11 @@
       transition-duration: var(--#{$table}--m-sticky-header--TransitionDuration--BackgroundColor);
       transition-property: opacity;
     }
+  }
+
+  &.pf-m-sticky-header,
+  &.pf-m-sticky-header-stuck {
+    --#{$table}__thead--m-nested-column-header--BorderBlockEndWidth: 0;
   }
 
   &.pf-m-sticky-header-stuck > .#{$table}__thead {
@@ -1249,8 +1256,7 @@
   // - Table nested column header button
   &.pf-m-nested-column-header {
     position: relative;
-    background-color: var(--#{$table}--BackgroundColor);
-    border-block-end: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
+    border-block-end: var(--#{$table}__thead--m-nested-column-header--BorderBlockEndWidth) solid var(--#{$table}__thead--m-nested-column-header--BorderBlockEndColor);
 
     .#{$table}__button {
       --#{$table}__button--PaddingInlineStart: var(--#{$table}__nested-column-header__button--PaddingInlineStart);
