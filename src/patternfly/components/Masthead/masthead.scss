@@ -16,6 +16,7 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
   // * Masthead main container holds the toggle and brand
   --#{$masthead}__main--ColumnGap: var(--pf-t--global--spacer--md);
   --#{$masthead}__main--MarginInlineEnd: var(--pf-t--global--spacer--inset--page-chrome);
+  --#{$masthead}--m-docked__main--RowGap: var(--pf-t--global--spacer--gap--group--vertical);
 
   // * Masthead brand
   --#{$masthead}__logo--MaxHeight: #{pf-size-prem(38px)};
@@ -62,8 +63,8 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
   --#{$masthead}--m-docked--PaddingBlockEnd: var(--pf-t--global--spacer--lg);
   --#{$masthead}--m-docked--PaddingInlineStart: var(--pf-t--global--spacer--sm);
   --#{$masthead}--m-docked--PaddingInlineEnd: var(--pf-t--global--spacer--sm);
-  --#{$masthead}--m-docked--BackgroundColor: var(--pf-t--global--background--color--glass--default);
-  --#{$masthead}--m-docked--BackdropFilter: var(--pf-t--global--background--color--glass--filter);
+  --#{$masthead}--m-docked--BackgroundColor: var(--pf-t--global--background--color--glass--primary--default, var(--pf-t--global--background--color--primary--default));
+  --#{$masthead}--m-docked--BackdropFilter: var(--pf-t--global--background--filter--glass--blur--primary);
   --#{$masthead}--m-docked--c-toolbar--Height: 100%;
 
   // * Masthead toolbar
@@ -144,7 +145,7 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
   &.pf-m-docked {
     @include pf-v6-c-masthead--m-display-inline;
 
-    --#{$masthead}--BackgroundColor: var(--#{$masthead}--m-docked--BackgroundColor);
+    --#{$masthead}--BackgroundColor: transparent;
     --#{$masthead}--GridTemplateRows: var(--#{$masthead}--m-docked--GridTemplateRows);
     --#{$masthead}--PaddingBlockStart: var(--#{$masthead}--m-docked--PaddingBlockStart);
     --#{$masthead}--PaddingBlockEnd: var(--#{$masthead}--m-docked--PaddingBlockEnd);
@@ -155,26 +156,74 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
     --#{$masthead}--m-display-inline--breakpoint--xl--GridTemplateColumns: auto;
     --#{$masthead}__main--GridColumn: auto;
     --#{$masthead}__content--GridColumn: auto;
-    --#{$masthead}__logo--Width: auto;
     --#{$masthead}__main--MarginInlineEnd: 0;
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: fit-content;
+    align-items: stretch;
     height: 100%;
-    backdrop-filter: var(--#{$masthead}--m-docked--BackdropFilter);
+    border: 0;
+    box-shadow: none;
+
+    .#{$masthead}__logo {
+      width: revert;
+
+      &.pf-m-compact {
+        display: none;
+        max-width: #{pf-size-prem(37px)};
+        max-height: revert;
+      }
+    }
+
+    .#{$masthead}__main {
+      flex-direction: column;
+      row-gap: var(--#{$masthead}--m-docked__main--RowGap);
+      align-items: flex-start;
+    }
 
     .#{$masthead}__content {
       flex-grow: 1;
       flex-direction: column;
+      align-items: stretch;
       align-self: revert;
     }
 
     .#{$toolbar} {
-      --#{$masthead}--c-toolbar--Width: fit-content;
+      --pf-v6-c-toolbar--m-vertical--Width: auto;
 
       height: var(--#{$masthead}--m-docked--c-toolbar--Height);
+    }
+
+    @media (min-width: $pf-v6-global--breakpoint--dock--desktop) {
+      .#{$masthead}__main {
+        align-items: center;
+      }
+
+      .#{$masthead}__logo {
+        display: none;
+
+        // stylelint-disable max-nesting-depth
+        &.pf-m-compact {
+          display: revert;
+        }
+        // stylelint-enable
+      }
+    }
+
+    @at-root .#{$page}__dock.pf-m-text-expanded & {
+      .#{$masthead}__logo {
+        display: revert;
+
+        // stylelint-disable max-nesting-depth
+        &.pf-m-compact {
+          display: none;
+        }
+        // stylelint-enable
+      }
+
+      .#{$masthead}__main {
+        align-items: flex-start;
+      }
     }
   }
 
@@ -206,6 +255,15 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
       padding-inline-start: #{$inset-value};
       padding-inline-end: #{$inset-value};
     }
+  }
+
+  // placeholder for banded
+  @at-root :where(.pf-v6-theme-glass) &:not(.pf-m-docked) {
+    margin-block-end: var(--pf-t--global--spacer--inset--page-chrome);
+    background-color: var(--pf-t--global--background--color--glass--primary--default);
+    backdrop-filter: var(--pf-t--global--background--filter--glass--blur--primary);
+    border-block-end: var(--pf-t--global--border--width--glass--default) solid var(--pf-t--global--border--color--glass--default);
+    box-shadow: var(--pf-t--global--box-shadow--glass--default);
   }
 }
 
@@ -282,7 +340,11 @@ $pf-v6-c-masthead--inset-map: build-spacer-map("none", "sm", "md", "lg", "xl", "
 // stylelint-disable no-duplicate-selectors
 .#{$masthead} {
   @each $breakpoint, $breakpoint-value in $pf-v6-c-masthead--breakpoint-map {
-    $breakpoint-name: if($breakpoint != "base", -on-#{$breakpoint}, "");
+    $breakpoint-name: "";
+
+    @if $breakpoint != "base" {
+      $breakpoint-name: -on-#{$breakpoint};
+    }
 
     @include pf-v6-apply-breakpoint($breakpoint) {
       &.pf-m-display-stack#{$breakpoint-name} {

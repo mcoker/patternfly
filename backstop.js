@@ -2,9 +2,19 @@ const config = require('./backstop.config');
 const scenarios = [];
 const viewports = [];
 
-// check for --dark flag to trigger separate reference & test images, html report
-const isDarkTheme = process.argv.includes('--dark');
-const themeSuffix = isDarkTheme ? '_dark' : '';
+// Check for theme flags to trigger separate reference & test images, html report
+const isFelt = process.argv.includes('--felt');
+const isDark = process.argv.includes('--dark');
+const isGlass = process.argv.includes('--glass');
+const isHighContrast = process.argv.includes('--high-contrast');
+
+// Build theme suffix based on active flags
+const themeParts = [];
+if (isFelt) themeParts.push('felt');
+if (isDark) themeParts.push('dark');
+if (isGlass) themeParts.push('glass');
+if (isHighContrast) themeParts.push('hc');
+const themeSuffix = themeParts.length > 0 ? `_${themeParts.join('_')}` : '';
 
 config.relativeUrls.map((relativeUrl) => {
   const url = relativeUrl.url || relativeUrl;
@@ -30,7 +40,7 @@ module.exports = {
   id: 'pf-core',
   viewports,
   scenarioDefaults: {
-    delay: 250, // a small timeout allows wiggle room for the page to fully render. increase as needed if you're getting rendering related false positives.
+    delay: 100, // a small timeout allows wiggle room for the page to fully render. increase as needed if you're getting rendering related false positives.
     readySelector: '.page-loaded',
     removeSelectors: ['.ws-full-page-utils'],
     misMatchThreshold: 0.001
@@ -60,7 +70,7 @@ module.exports = {
     html_report: `backstop_data/html_report${themeSuffix}`,
     ci_report: 'backstop_data/ci_report'
   },
-  asyncCaptureLimit: 1,
+  asyncCaptureLimit: 15,
   asyncCompareLimit: 50,
   resembleOutputOptions: {
     errorType: 'movementDifferenceIntensity',

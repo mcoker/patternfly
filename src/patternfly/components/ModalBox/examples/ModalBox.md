@@ -172,7 +172,7 @@ import './ModalBox.css'
   {{#> modal-box modal-box--attribute=(concat 'aria-labelledby="' modal-example--id '-title" aria-describedby="' modal-example--id '-description"')}}
     {{> modal-box-close}}
     {{#> modal-box-header}}
-      {{#> modal-box-title modal-box-title--IsIcon="true" modal-box-title--attribute=(concat 'id="' modal-example--id '-title"') modal-box-title-icon--type="bullhorn"}}
+      {{#> modal-box-title modal-box-title--IsIcon="true" modal-box-title--attribute=(concat 'id="' modal-example--id '-title"') modal-box-title-icon--type="rh-standard-megaphone"}}
         Modal with icon title
       {{/modal-box-title}}
     {{/modal-box-header}}
@@ -322,7 +322,7 @@ A modal box is a generic rectangular container that can be used to build modals.
 | `aria-describedby="[id value of applicable content]"` | `.pf-v6-c-modal-box` | Gives the modal an accessible description by referring to the modal content that describes the primary message or purpose of the dialog. Not used if there is no static text that describes the modal. |
 | `aria-modal="true"` | `.pf-v6-c-modal-box` | Tells assistive technologies that the windows underneath the current modal are not available for interaction. **Required**|
 | `aria-label="Close"` | `.pf-v6-c-modal-box__close .pf-v6-c-button` | Provides an accessible name for the close button as it uses an icon instead of text. **Required**|
-| `aria-hidden="true"` | Parent element containing the page contents when modal is open | Hides main contents of the page from screen readers. The element with `.pf-v6-c-modal-box` must not be a descendent of the element with `aria-hidden="true"`. For more info see [trapping focus](/accessibility/product-development-guide#trapping-focus). **Required** |
+| `aria-hidden="true"` | Parent element containing the page contents when modal is open | Hides main contents of the page from screen readers. The element with `.pf-v6-c-modal-box` must not be a descendent of the element with `aria-hidden="true"`. For more info see [trapping focus](/accessibility/develop#trapping-focus). **Required** |
 | `form="[id of form in modal body]"` | `.pf-v6-c-modal-box__footer .pf-v6-c-button` | Associates a submit button in the modal footer with a form in the modal body. For use when the submit button is outside of the `<form>` that the button submits. |
 | `tabindex="0"` | `.pf-v6-c-modal-box__body` | If a modal box body has overflow content that triggers a scrollbar, to ensure that the content is keyboard accessible, the body must include either a focusable element within the scrollable region or the body itself must be focusable by adding `tabindex="0"`. |
 
