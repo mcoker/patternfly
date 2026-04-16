@@ -387,7 +387,8 @@ $pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
     --#{$drawer}__section--BackgroundColor: var(--#{$drawer}__section--m-secondary--BackgroundColor);
   }
 
-  &.pf-m-no-background {
+  &.pf-m-no-background,
+  &.pf-m-plain {
     --#{$drawer}__section--BackgroundColor: transparent;
   }
 }
