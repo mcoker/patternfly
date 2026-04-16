@@ -387,6 +387,8 @@ $pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
     --#{$drawer}__section--BackgroundColor: var(--#{$drawer}__section--m-secondary--BackgroundColor);
   }
 
+  @at-root :where(:root:not(.pf-v6-theme-glass)) &.pf-m-plain,
+  :where(:root.pf-v6-theme-glass) &:not(.pf-m-no-plain-on-glass),
   &.pf-m-no-background {
     --#{$drawer}__section--BackgroundColor: transparent;
   }
