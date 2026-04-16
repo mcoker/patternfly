@@ -6,8 +6,7 @@
 @use './layouts';
 
 :root:where(.pf-v6-theme-glass) {
-  // custom stuff for the POC
-  .pf-v6-c-login, body { // needs to go on 'body' because drawers with a nested page component
+  body {
     background-image: url("./assets/images/PF-Bkg-Generic-Light.svg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -16,19 +15,19 @@
   }
 
   &:where(.pf-v6-theme-dark) {
-    .pf-v6-c-login, body { // needs to go on 'body' because drawers with a nested page component
+    body {
       background-image: url("./assets/images/PF-Bkg-Generic-Dark.svg");
     }
   }
 
   &:where(.pf-v6-theme-redhat) {
-    .pf-v6-c-login, body { // needs to go on 'body' because drawers with a nested page component
+    body {
       background-image: url("./assets/images/Felt-Bkg-Generic-Light.svg");
     }
   }
 
   &:where(.pf-v6-theme-redhat.pf-v6-theme-dark) {
-    .pf-v6-c-login, body { // needs to go on 'body' because drawers with a nested page component
+    body {
       background-image: url("./assets/images/Felt-Bkg-Generic-Dark.svg");
     }
   }
