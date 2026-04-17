@@ -5,11 +5,9 @@
 @use './components';
 @use './layouts';
 
-:where(.pf-v6-theme-glass) {
-  // custom stuff for the POC
-  .pf-v6-c-login, body { // needs to go on 'body' because drawers with a nested page component
-    // background-image: url("./assets/images/compass--wallpaper-light.jpg");
-    background-image: url("./assets/images/glass-brand-light.jpg");
+:root:where(.pf-v6-theme-glass) {
+  body {
+    background-image: url("./assets/images/PF-Bkg-Generic-Light.svg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -17,9 +15,40 @@
   }
 
   &:where(.pf-v6-theme-dark) {
-    .pf-v6-c-login, body { // needs to go on 'body' because drawers with a nested page component
-      // background-image: url("./assets/images/compass--wallpaper-dark.jpg");
-      background-image: url("./assets/images/glass-brand-dark.jpg");
+    body {
+      background-image: url("./assets/images/PF-Bkg-Generic-Dark.svg");
     }
+  }
+
+  &:where(.pf-v6-theme-redhat) {
+    body {
+      background-image: url("./assets/images/Felt-Bkg-Generic-Light.svg");
+    }
+  }
+
+  &:where(.pf-v6-theme-redhat.pf-v6-theme-dark) {
+    body {
+      background-image: url("./assets/images/Felt-Bkg-Generic-Dark.svg");
+    }
+  }
+}
+
+.pf-v6-c-compass {
+  background-image: url("./assets/images/PF-Bkg-Generic-Light.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  :root:where(.pf-v6-theme-dark) & {
+    background-image: url("./assets/images/PF-Bkg-Generic-Dark.svg");
+  }
+
+  :root:where(.pf-v6-theme-redhat) & {
+    background-image: url("./assets/images/Felt-Bkg-Generic-Light.svg");
+  }
+
+  :root:where(.pf-v6-theme-redhat.pf-v6-theme-dark) & {
+    background-image: url("./assets/images/Felt-Bkg-Generic-Dark.svg");
   }
 }
