@@ -179,10 +179,19 @@ $pf-page-v6--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
   --#{$page}--section--m-sticky-top--BoxShadow: var(--pf-t--global--box-shadow--sm--bottom);
   --#{$page}--section--m-sticky-top--BorderBlockEndWidth: var(--pf-t--global--border--width--high-contrast--regular);
   --#{$page}--section--m-sticky-top--BorderBlockEndColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$page}--section--m-sticky-top--BackgroundColor: var(--pf-t--global--background--color--sticky--default);
   --#{$page}--section--m-sticky-bottom--ZIndex: var(--pf-t--global--z-index--md);
   --#{$page}--section--m-sticky-bottom--BoxShadow: var(--pf-t--global--box-shadow--sm--top);
   --#{$page}--section--m-sticky-bottom--BorderBlockStartWidth: var(--pf-t--global--border--width--high-contrast--regular);
   --#{$page}--section--m-sticky-bottom--BorderBlockStartColor: var(--pf-t--global--border--color--high-contrast);
+  --#{$page}--section--m-sticky-bottom--BackgroundColor: var(--pf-t--global--background--color--sticky--default);
+
+  // Sticky - dynamic
+  --#{$page}--section--m-sticky-top--TransitionDuration: var(--pf-t--global--motion--duration--fade--short);
+  --#{$page}--section--m-sticky-top--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+  --#{$page}--section--m-sticky-bottom--TransitionDuration: var(--pf-t--global--motion--duration--fade--short);
+  --#{$page}--section--m-sticky-bottom--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--default);
+
 
   // Shadows
   --#{$page}--section--m-shadow-bottom--BoxShadow: var(--pf-t--global--box-shadow--sm--bottom);
@@ -664,6 +673,7 @@ $pf-page-v6--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
         position: sticky;
         inset-block-start: 0;
         z-index: var(--#{$page}--section--m-sticky-top--ZIndex);
+        background-color: var(--#{$page}--section--m-sticky-top--BackgroundColor);
         border-block-end: var(--#{$page}--section--m-sticky-top--BorderBlockEndWidth) solid var(--#{$page}--section--m-sticky-top--BorderBlockEndColor);
         box-shadow: var(--#{$page}--section--m-sticky-top--BoxShadow);
       }
@@ -672,9 +682,69 @@ $pf-page-v6--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
         position: sticky;
         inset-block-end: 0;
         z-index: var(--#{$page}--section--m-sticky-bottom--ZIndex);
+        background-color: var(--#{$page}--section--m-sticky-bottom--BackgroundColor);
         border-block-start: var(--#{$page}--section--m-sticky-bottom--BorderBlockStartWidth) solid var(--#{$page}--section--m-sticky-bottom--BorderBlockStartColor);
         box-shadow: var(--#{$page}--section--m-sticky-bottom--BoxShadow);
       }
+
+    }
+  }
+
+  // Dynamic sticky modifiers: no shadow + fade transition when stuck
+  &.pf-m-sticky-top-base {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: var(--#{$page}--section--m-sticky-top--ZIndex);
+    box-shadow: none;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background-color: var(--#{$page}--section--m-sticky-top--BackgroundColor);
+      box-shadow: var(--#{$page}--section--m-sticky-top--BoxShadow);
+      opacity: 0;
+      transition-duration: var(--#{$page}--section--m-sticky-top--TransitionDuration);
+      transition-timing-function: var(--#{$page}--section--m-sticky-top--TransitionTimingFunction);
+      transition-property: opacity;
+    }
+  }
+
+  &.pf-m-sticky-top-base,
+  .#{$page}__main-group.pf-m-sticky-top-base &:last-child {
+    --#{$page}__main-breadcrumb--PaddingBlockEnd: var(--#{$page}__main-breadcrumb--m-sticky-top--PaddingBlockEnd);
+  }
+
+  &.pf-m-sticky-top-stuck {
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &.pf-m-sticky-bottom-base {
+    position: sticky;
+    inset-block-end: 0;
+    z-index: var(--#{$page}--section--m-sticky-bottom--ZIndex);
+    box-shadow: none;
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background-color: var(--#{$page}--section--m-sticky-bottom--BackgroundColor);
+      box-shadow: var(--#{$page}--section--m-sticky-bottom--BoxShadow);
+      opacity: 0;
+      transition-duration: var(--#{$page}--section--m-sticky-bottom--TransitionDuration);
+      transition-timing-function: var(--#{$page}--section--m-sticky-bottom--TransitionTimingFunction);
+      transition-property: opacity;
+    }
+  }
+
+  &.pf-m-sticky-bottom-stuck {
+    &::before {
+      opacity: 1;
     }
   }
 }
@@ -771,7 +841,8 @@ $pf-page-v6--height-breakpoint-map: build-breakpoint-map("base", "sm", "md", "lg
   padding-inline-end: var(--#{$page}__main-subnav--PaddingInlineEnd);
   background-color: var(--#{$page}__main-subnav--BackgroundColor);
 
-  &.pf-m-sticky-top {
+  &.pf-m-sticky-top,
+  &.pf-m-sticky-top-base {
     padding-block-end: var(--#{$page}__main-subnav--m-sticky-top--PaddingBlockEnd);
   }
 }
