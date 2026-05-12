@@ -13,6 +13,10 @@
 @use "./tokens/tokens-felt-highcontrast-dark" as felt-highcontrast-dark;
 @use "./tokens/tokens-felt-glass" as felt-glass;
 @use "./tokens/tokens-felt-glass-dark" as felt-glass-dark;
+@use "./tokens/tokens-local-felt-glass-dark" as local-felt-glass-dark;
+@use "./tokens/tokens-local-felt-glass" as local-felt-glass;
+@use "./tokens/tokens-local-glass-dark" as local-glass-dark;
+@use "./tokens/tokens-local-glass" as local-glass;
 
 :root {
   @include pf-v6-set-inverse(false);
@@ -28,6 +32,7 @@
 
 :root:where(.pf-v6-theme-glass) {
   @include glass.pf-v6-tokens;
+  @include local-glass.pf-v6-tokens;
 }
 
 :root:where(.pf-v6-theme-felt) {
@@ -40,6 +45,7 @@
 
 :root:where(.pf-v6-theme-felt.pf-v6-theme-glass) {
   @include felt-glass.pf-v6-tokens;
+  @include local-felt-glass.pf-v6-tokens;
 }
 
 // Dark
@@ -53,6 +59,7 @@
 
 :root:where(.pf-v6-theme-dark.pf-v6-theme-glass) {
   @include glass-dark.pf-v6-tokens;
+  @include local-glass-dark.pf-v6-tokens;
 }
 
 :root:where(.pf-v6-theme-dark.pf-v6-theme-felt) {
@@ -65,6 +72,7 @@
 
 :root:where(.pf-v6-theme-dark.pf-v6-theme-felt.pf-v6-theme-glass) {
   @include felt-glass-dark.pf-v6-tokens;
+  @include local-felt-glass-dark.pf-v6-tokens;
 }
 
 // RTL
