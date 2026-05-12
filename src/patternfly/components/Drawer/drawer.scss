@@ -30,7 +30,7 @@ $pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
   --#{$drawer}__panel--BorderInlineStartWidth: var(--#{$drawer}__panel--after--Width); // default is left side
   --#{$drawer}__panel--BorderInlineEndWidth: 0;
   --#{$drawer}__panel--BackgroundColor: var(--pf-t--global--background--color--floating--default);
-  --#{$drawer}__panel--m-inline--BackgroundColor: var(--pf-t--global--background--color--primary--default);
+  --#{$drawer}__panel--m-inline--BackgroundColor: var(--pf-t--global--background--color--floating--default);
   --#{$drawer}__panel--m-secondary--BackgroundColor: var(--pf-t--global--background--color--floating--secondary--default);
   --#{$drawer}__panel--RowGap: var(--pf-t--global--spacer--sm);
   --#{$drawer}__panel--PaddingBlockStart: var(--pf-t--global--spacer--sm);
@@ -49,6 +49,7 @@ $pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
   --#{$drawer}__panel--md--FlexBasis--min: #{pf-size-prem(24px)};
   --#{$drawer}__panel--md--FlexBasis: 50%;
   --#{$drawer}__panel--md--FlexBasis--max: 100%;
+  --#{$drawer}__panel--m-inline--md--BackgroundColor: var(--pf-t--global--background--color--primary--default);
   --#{$drawer}__panel--xl--MinWidth: #{pf-size-prem(450px)};
   --#{$drawer}__panel--xl--FlexBasis: #{pf-size-prem(450px)};
   --#{$drawer}--m-panel-bottom__panel--md--MinHeight: 50%;
@@ -260,13 +261,6 @@ $pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
 
     > .#{$drawer}__main > .#{$drawer}__panel:not(.pf-m-no-border, .pf-m-resizable) {
       padding-inline-start: var(--#{$drawer}--m-inline__panel--PaddingInlineStart);
-    }
-
-    > .#{$drawer}__main > .#{$drawer}__panel.pf-m-glass {
-      --#{$drawer}__panel--BackgroundColor: var(--#{$drawer}__panel--m-glass--BackgroundColor);
-      --#{$drawer}__panel--BorderColor: var(--#{$drawer}__panel--m-glass--BorderColor);
-
-      backdrop-filter: var(--#{$drawer}__panel--m-glass--BackdropFilter);
     }
   }
 
@@ -661,10 +655,19 @@ $pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
 
     &.pf-m-inline,
     &.pf-m-static {
+      --#{$drawer}__panel--BackgroundColor: var(--#{$drawer}__panel--m-inline--md--BackgroundColor);
+
       > .#{$drawer}__main > .#{$drawer}__panel {
         @at-root :where(:root:not(.pf-v6-theme-glass)) &.pf-m-plain,
         :where(:root.pf-v6-theme-glass) &:not(.pf-m-no-plain-on-glass) {
           --#{$drawer}__panel--BackgroundColor: transparent;
+        }
+
+        @at-root :where(:root(.pf-v6-theme-glass)) &.pf-m-glass {
+          --#{$drawer}__panel--BackgroundColor: var(--#{$drawer}__panel--m-glass--BackgroundColor);
+          --#{$drawer}__panel--BorderColor: var(--#{$drawer}__panel--m-glass--BorderColor);
+
+          backdrop-filter: var(--#{$drawer}__panel--m-glass--BackdropFilter);
         }
       }
     }
