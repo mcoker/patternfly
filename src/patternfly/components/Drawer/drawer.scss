@@ -658,12 +658,12 @@ $pf-v6-c-drawer__panel--list--width: (25, 33, 50, 66, 75, 100);
       --#{$drawer}__panel--BackgroundColor: var(--#{$drawer}__panel--m-inline--md--BackgroundColor);
 
       > .#{$drawer}__main > .#{$drawer}__panel {
-        @at-root :where(:root:not(.pf-v6-theme-glass)) &.pf-m-plain,
+        :where(:root:not(.pf-v6-theme-glass)) &.pf-m-plain,
         :where(:root.pf-v6-theme-glass) &:not(.pf-m-no-plain-on-glass) {
           --#{$drawer}__panel--BackgroundColor: transparent;
         }
 
-        @at-root :where(:root(.pf-v6-theme-glass)) &.pf-m-glass {
+        :where(:root(.pf-v6-theme-glass)) &.pf-m-glass {
           --#{$drawer}__panel--BackgroundColor: var(--#{$drawer}__panel--m-glass--BackgroundColor);
           --#{$drawer}__panel--BorderColor: var(--#{$drawer}__panel--m-glass--BorderColor);
 
