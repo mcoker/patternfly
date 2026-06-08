@@ -989,6 +989,10 @@
     justify-content: flex-start;
     width: 100%;
 
+    .#{$button}__icon {
+      min-width: 1lh;
+    }
+
     @media (min-width: $pf-v6-global--breakpoint--dock--desktop) {
       justify-content: center;
 
