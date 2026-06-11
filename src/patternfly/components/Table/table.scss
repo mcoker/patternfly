@@ -269,6 +269,10 @@
   --#{$table}--m-sticky-header--BoxShadow--glass: var(--pf-t--global--box-shadow--sm);
   --#{$table}--m-sticky-header--TransitionTimingFunction--BackgroundColor: var(--pf-t--global--motion--timing-function--default);
   --#{$table}--m-sticky-header--TransitionDuration--BackgroundColor: var(--pf-t--global--motion--duration--fade--default);
+    
+  // * Table sticky footer
+  --#{$table}--m-sticky-footer--ZIndex: calc(var(--pf-t--global--z-index--xs) + 1);
+  --#{$table}--m-sticky-footer--border--ZIndex: calc(var(--pf-t--global--z-index--xs) + 2);
 
   :where(.pf-v6-theme-glass) & {
     --#{$table}--m-sticky-header--BorderBlockEndWidth: 0;
@@ -371,6 +375,34 @@
       }
       // stylelint-enable
     }
+  }
+
+  // - Table sticky footer
+  &.pf-m-sticky-footer {
+    > .#{$table}__tfoot {
+      position: sticky;
+      inset-block-end: 0;
+      z-index: var(--#{$table}--m-sticky-footer--ZIndex);
+      background: var(--#{$table}--BackgroundColor);
+
+      &::before {
+        position: absolute;
+        inset: 0;
+        z-index: var(--#{$table}--m-sticky-footer--border--ZIndex);
+        pointer-events: none;
+        content: "";
+        border-block-start: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
+      }
+    }
+
+    > .#{$table}__tbody:last-of-type > .#{$table}__tr:last-of-type {
+      border-block-end: 0;
+    }
+  }
+
+  // - Table plain
+  &.pf-m-plain {
+    --#{$table}--BackgroundColor: transparent;
   }
 
   // - Table striped
@@ -544,8 +576,8 @@
   // }
 
   .#{$table}__td.pf-m-action {
-    --pf-v6-c-table--cell--PaddingBlockStart: var(--#{$table}__td--m-action--PaddingBlockStart);
-    --pf-v6-c-table--cell--PaddingBlockEnd: var(--#{$table}__td--m-action--PaddingBlockEnd);
+    --#{$table}--cell--PaddingBlockStart: var(--#{$table}__td--m-action--PaddingBlockStart);
+    --#{$table}--cell--PaddingBlockEnd: var(--#{$table}__td--m-action--PaddingBlockEnd);
   }
 
   // - Table sort
@@ -1235,8 +1267,8 @@
   }
 
   .#{$table}__td.pf-m-action {
-    --pf-v6-c-table--cell--PaddingBlockStart: var(--#{$table}--m-compact__td--m-action--PaddingBlockStart);
-    --pf-v6-c-table--cell--PaddingBlockEnd: var(--#{$table}--m-compact__td--m-action--PaddingBlockEnd);
+    --#{$table}--cell--PaddingBlockStart: var(--#{$table}--m-compact__td--m-action--PaddingBlockStart);
+    --#{$table}--cell--PaddingBlockEnd: var(--#{$table}--m-compact__td--m-action--PaddingBlockEnd);
   }
 
   .#{$table}__icon {
@@ -1329,6 +1361,13 @@
   &.pf-m-border-row {
     border-block-end: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
   }
+}
+
+// - Table tfoot
+.#{$table}__tfoot {
+  --#{$table}__tr--BorderBlockEndWidth: 0;
+
+  vertical-align: top;
 }
 
 // - Table icon inline
