@@ -3,17 +3,7 @@
   "enabledManagers": ["npm"],
   "packageRules": [
     {
-      "matchPackagePatterns": [
-        "!@patternfly/patternfly-a11y",
-        "!@patternfly/react-core",
-        "!@patternfly/react-icons",
-        "!@patternfly/react-code-editor",
-        "!@patternfly/react-table",
-        "!@patternfly/documentation-framework",
-        "!sass",
-        "!stylelint*",
-        "!backstopjs"
-      ],
+      "matchDatasources": ["npm"],
       "enabled": false
     },
     {
@@ -26,13 +16,17 @@
         "@patternfly/react-table",
         "@patternfly/documentation-framework",
         "sass",
-        "stylelint*",
         "backstopjs"
-      ]
+      ],
+      "matchPackagePatterns": [
+        "^stylelint"
+      ],
+      "enabled": true
     },
     {
       "matchDatasources": ["npm"],
-      "matchPackageNames": ["@patternfly/patternfly-a11y"]
+      "matchPackageNames": ["@patternfly/patternfly-a11y"],
+      "enabled": true
     }
   ]
 }
