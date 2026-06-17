@@ -40,6 +40,8 @@
     {{#if avatar--aria-label}}aria-label="{{avatar--aria-label}}"{{else}}aria-hidden="true"{{/if}}>
     {{#if avatar--initials}}
       <span class="{{pfv}}avatar__initials" aria-hidden="true">{{avatar--initials}}</span>
+    {{else if avatar--src}}
+      {{readFile avatar--src}}
     {{else if avatar--icon}}
       {{pfIcon avatar--icon}}
     {{else if @partial-block}}

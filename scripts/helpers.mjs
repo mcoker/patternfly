@@ -414,3 +414,40 @@ export const pfIcon = function (iconName) {
     return new Handlebars.SafeString(`<!-- Icon "${safeName}" not found -->`);
   }
 }
+
+// ======================================================================================
+// readFile: a helper function to inline file contents from the project
+// ======================================================================================
+//
+// Usage:
+//   {{readFile '/assets/images/PF-IconLogo.svg'}}
+//   {{readFile 'src/patternfly/assets/images/PF-IconLogo.svg'}}
+//
+// ======================================================================================
+export const readFile = function (filePath) {
+  try {
+    if (!filePath || typeof filePath !== 'string') {
+      console.error(`\x1b[31mInvalid file path: ${filePath}\x1b[0m`);
+      return new Handlebars.SafeString(`<!-- Invalid file path -->`);
+    }
+
+    // Resolve path relative to project root
+    const projectRoot = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+    let resolvedPath;
+
+    if (filePath.startsWith('/')) {
+      // If path starts with /, treat it as relative to src/patternfly
+      resolvedPath = path.join(projectRoot, 'src/patternfly', filePath);
+    } else {
+      // Otherwise treat as relative to project root
+      resolvedPath = path.join(projectRoot, filePath);
+    }
+
+    const fileContent = fs.readFileSync(resolvedPath, 'utf8');
+    return new Handlebars.SafeString(fileContent);
+  } catch (error) {
+    const safePath = (filePath && typeof filePath === 'string') ? filePath : 'unknown';
+    console.error(`\x1b[31mError reading file "${safePath}": ${error.message}\x1b[0m`);
+    return new Handlebars.SafeString(`<!-- File "${safePath}" not found -->`);
+  }
+}
