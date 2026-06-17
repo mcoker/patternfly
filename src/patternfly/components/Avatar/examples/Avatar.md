@@ -15,7 +15,7 @@ Avatars can be created using either an `<img>` element with an image source, or 
 ```
 
 ### Color modifiers
-Color modifiers add visual interest and automatically include a border.
+Color modifiers add visual interest and automatically include a border. The available colors are: "red", "orangered", "orange", "yellow", "green", "teal", "blue", "purple", and "gray".
 ```hbs
 {{> avatar--colors}}
 ```
