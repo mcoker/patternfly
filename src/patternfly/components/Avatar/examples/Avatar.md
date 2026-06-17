@@ -11,7 +11,7 @@ import './Avatar.css'
 Avatars can be created using either an `<img>` element with an image source, or a `<div>` element with custom content.
 ```hbs
 {{> avatar avatar--IsImg=true avatar--src="/assets/images/pf-logo-avatar.jpg" avatar--alt="Avatar image"}}
-{{> avatar avatar--src="/assets/images/img_avatar-rhds.svg" avatar--arial-label="Avatar image"}}
+{{> avatar avatar--src="/assets/images/img_avatar-rhds.svg" avatar--aria-label="Avatar image"}}
 ```
 
 ### Color modifiers
@@ -30,7 +30,7 @@ Display a user's initials in the avatar. It's recommended to pass only a single 
 ### Bordered
 Use `.pf-m-bordered` to add a border to non-colorful avatars.
 ```hbs
-{{> avatar avatar--IsBordered=true avatar--icon="rh-ui-ai-chatbot" avatar--aria-label="Bordered red avatar with chatbot icon"}}
+{{> avatar avatar--IsBordered=true avatar--icon="rh-ui-ai-chatbot" avatar--aria-label="Bordered avatar with chatbot icon"}}
 ```
 
 ### Size variations
