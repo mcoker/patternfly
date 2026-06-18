@@ -9,7 +9,7 @@ $pf-v6-c-avatar--sizes: "sm", "md", "lg", "xl";
   --#{$avatar}--BorderRadius: var(--pf-t--global--border--radius--pill);
   --#{$avatar}--Width: #{pf-size-prem(36px)};
   --#{$avatar}--Height: #{pf-size-prem(36px)};
-  --#{$avatar}--FontSize: calc(#{pf-size-prem(36px)} / 1.414);
+  --#{$avatar}--FontSize: calc(#{pf-size-prem(36px)} / 1.414); // 1.414 is the square root of 2, used to get the inner square of the avatar
   --#{$avatar}--m-sm--Width: #{pf-size-prem(24px)};
   --#{$avatar}--m-sm--Height: #{pf-size-prem(24px)};
   --#{$avatar}--m-sm--FontSize: calc(#{pf-size-prem(24px)} / 1.414);
