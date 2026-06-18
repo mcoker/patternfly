@@ -434,13 +434,23 @@ export const readFile = function (filePath) {
     // Resolve path relative to project root
     const projectRoot = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
     let resolvedPath;
+    let expectedRoot;
 
     if (filePath.startsWith('/')) {
       // If path starts with /, treat it as relative to src/patternfly
-      resolvedPath = path.join(projectRoot, 'src/patternfly', filePath);
+      expectedRoot = path.join(projectRoot, 'src/patternfly');
+      resolvedPath = path.join(expectedRoot, filePath);
     } else {
       // Otherwise treat as relative to project root
+      expectedRoot = projectRoot;
       resolvedPath = path.join(projectRoot, filePath);
+    }
+
+    // Validate that the resolved path stays within the intended directory boundary
+    const relativePath = path.relative(expectedRoot, resolvedPath);
+    if (relativePath.startsWith('..') || path.isAbsolute(relativePath)) {
+      console.error(`\x1b[31mPath traversal attempt detected: ${filePath}\x1b[0m`);
+      return new Handlebars.SafeString(`<!-- Invalid file path -->`);
     }
 
     const fileContent = fs.readFileSync(resolvedPath, 'utf8');
