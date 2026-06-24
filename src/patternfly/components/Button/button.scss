@@ -144,6 +144,10 @@
   --#{$button}--m-link--m-inline--hover--TextDecorationLine: var(--pf-t--global--text-decoration--link--line--hover);
   --#{$button}--m-link--m-inline--hover--TextDecorationStyle: var(--pf-t--global--text-decoration--link--style--hover);
   --#{$button}--m-link--m-inline--hover--TextUnderlineOffset: var(--pf-t--global--text-decoration--offset--hover);
+  --#{$button}--m-link--m-inline--m-clicked--TextDecorationColor: var(--pf-t--global--text-decoration--color--hover);
+  --#{$button}--m-link--m-inline--m-clicked--TextDecorationLine: var(--pf-t--global--text-decoration--link--line--hover);
+  --#{$button}--m-link--m-inline--m-clicked--TextDecorationStyle: var(--pf-t--global--text-decoration--link--style--hover);
+  --#{$button}--m-link--m-inline--m-clicked--TextUnderlineOffset: var(--pf-t--global--text-decoration--offset--hover);
   --#{$button}--m-link--m-inline--TransitionProperty: color, text-underline-offset;
   --#{$button}--m-link--m-inline--TransitionDuration: var(--pf-t--global--motion--duration--fade--default), var(--pf-t--global--motion--duration--lg);
   --#{$button}--m-link--m-inline--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--accelerate), var(--pf-t--global--motion--timing-function--default);
@@ -158,6 +162,8 @@
   --#{$button}--m-link--m-inline__icon--Color: var(--pf-t--global--icon--color--brand--default);
   --#{$button}--m-link--m-inline--hover--Color: var(--pf-t--global--text--color--brand--hover);
   --#{$button}--m-link--m-inline--hover__icon--Color: var(--pf-t--global--icon--color--brand--hover);
+  --#{$button}--m-link--m-inline--m-clicked--Color: var(--pf-t--global--text--color--brand--clicked);
+  --#{$button}--m-link--m-inline--m-clicked__icon--Color: var(--pf-t--global--icon--color--brand--clicked);
 
   // Plain
   --#{$button}--m-plain--BorderRadius: var(--pf-t--global--border--radius--action--plain--default);
@@ -588,9 +594,14 @@
       --#{$button}--hover--TextDecorationLine: var(--#{$button}--m-link--m-inline--hover--TextDecorationLine);
       --#{$button}--hover--TextDecorationStyle: var(--#{$button}--m-link--m-inline--hover--TextDecorationStyle);
       --#{$button}--hover--TextDecorationColor: var(--#{$button}--m-link--m-inline--hover--TextDecorationColor);
-      --#{$button}--hover--TextUnderlineOffset: var(--#{$button}--m-link--m-inline--TextUnderlineOffset);
+      --#{$button}--m-clicked--TextDecorationLine: var(--#{$button}--m-link--m-inline--m-clicked--TextDecorationLine);
+      --#{$button}--m-clicked--TextDecorationStyle: var(--#{$button}--m-link--m-inline--m-clicked--TextDecorationStyle);
+      --#{$button}--m-clicked--TextDecorationColor: var(--#{$button}--m-link--m-inline--m-clicked--TextDecorationColor);
+      --#{$button}--m-clicked--TextUnderlineOffset: var(--#{$button}--m-link--m-inline--m-clicked--TextUnderlineOffset);
       --#{$button}--m-link--hover--Color: var(--#{$button}--m-link--m-inline--hover--Color);
       --#{$button}--m-link--hover__icon--Color: var(--#{$button}--m-link--m-inline--hover__icon--Color);
+      --#{$button}--m-link--m-clicked--Color: var(--#{$button}--m-link--m-inline--m-clicked--Color);
+      --#{$button}--m-link--m-clicked__icon--Color: var(--#{$button}--m-link--m-inline--m-clicked__icon--Color);
       --#{$button}--BorderWidth: 0;
       --#{$button}--hover--BorderWidth: 0;
       --#{$button}--m-clicked--BorderWidth: 0;
@@ -604,6 +615,11 @@
       &:hover,
       &:focus {
         --#{$button}--m-link--m-inline--TextUnderlineOffset: var(--#{$button}--m-link--m-inline--hover--TextUnderlineOffset);
+      }
+
+      &:active,
+      &.pf-m-clicked {
+        --#{$button}--m-link--m-inline--TextUnderlineOffset: var(--#{$button}--m-link--m-inline--m-clicked--TextUnderlineOffset);
       }
     }
 
