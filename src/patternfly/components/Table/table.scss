@@ -241,7 +241,7 @@
   // * Table nested column header
   --#{$table}__thead--m-nested-column-header--BorderBlockEndWidth: var(--#{$table}--border-width--base);
   --#{$table}__thead--m-nested-column-header--BorderBlockEndColor: var(--#{$table}--BorderColor);
-  --#{$table}__thead--m-nested-column-header--after--ZIndex: calc(var(--pf-t--global--z-index--xs) + 2);
+  --#{$table}__thead--m-nested-column-header--after--ZIndex: initial;
   --#{$table}__thead--m-nested-column-header--button--OutlineOffset: #{pf-size-prem(-3px)};
   --#{$table}__thead--m-nested-column-header__tr--PaddingBlockStart: var(--pf-t--global--spacer--xs);
   --#{$table}__thead--m-nested-column-header__tr--PaddingBlockEnd: var(--pf-t--global--spacer--md);
@@ -301,9 +301,9 @@
     table-layout: fixed;
   }
 
-  &.pf-m-sticky-header-base > .#{$table}__thead, &.pf-m-sticky-header-base > .#{$table}__thead .#{$table}__th {
-    &::before,
-    &::after {
+  &.pf-m-sticky-header-base > .#{$table}__thead,
+  &.pf-m-sticky-header-base > .#{$table}__thead .#{$table}__th {
+    &::before {
       opacity: 0;
       transition-timing-function: var(--#{$table}--m-sticky-header--TransitionTimingFunction--BackgroundColor);
       transition-duration: var(--#{$table}--m-sticky-header--TransitionDuration--BackgroundColor);
@@ -311,9 +311,9 @@
     }
   }
 
-  &.pf-m-sticky-header-stuck > .#{$table}__thead, &.pf-m-sticky-header-stuck > .#{$table}__thead .#{$table}__th {
-    &::before,
-    &::after {
+  &.pf-m-sticky-header-stuck > .#{$table}__thead,
+  &.pf-m-sticky-header-stuck > .#{$table}__thead .#{$table}__th {
+    &::before {
       opacity: 1;
     }
   }
@@ -337,7 +337,6 @@
         box-shadow: var(--#{$table}--m-sticky-header--BoxShadow);
       }
   
-
       .#{$table}__th::before {
         position: absolute;
         inset: 0;
@@ -345,6 +344,7 @@
         pointer-events: none;
         content: '';
         background-color: var(--#{$table}--m-sticky-header--BackgroundColor);
+        border-block-end: var(--#{$table}--m-sticky-header--BorderBlockEndWidth) solid var(--#{$table}--m-sticky-header--BorderBlockEndColor);
       }
 
       .#{$table}__th:first-child::before {
@@ -357,23 +357,22 @@
         border-end-end-radius: var(--#{$table}--m-sticky-header--BorderRadius);
       }
 
-      .#{$table}__tr:last-child::after {
-        position: absolute;
-        inset: 0;
-        z-index: var(--#{$table}--m-sticky-header--border--ZIndex);
-        pointer-events: none;
-        content: '';
-        border-block-end: var(--#{$table}--m-sticky-header--BorderBlockEndWidth) solid var(--#{$table}--m-sticky-header--BorderBlockEndColor);
-      }
-
       > :where(th, td) {
         z-index: var(--#{$table}--m-sticky-header--cell--ZIndex); // set z-index here to allow sticky column to override
       }
     }
+  }
 
+  &.pf-m-sticky-header,
+  &.pf-m-sticky-header-stuck {
     :where(.pf-v6-theme-glass) & {
-      .pf-m-nested-column-header {
+      .#{$table}__thead.pf-m-nested-column-header {
         --#{$table}--m-sticky-header--BorderRadius: 0;
+        --#{$table}__thead--m-nested-column-header--BorderBlockEndWidth: 0;
+
+        .#{$table}__tr:last-child.pf-m-border-row {
+          height: 0;
+        }
       }
     }
   }
@@ -499,20 +498,20 @@
       --#{$table}--cell--Overflow: visible;
     }
 
-    &.pf-m-border-right::before,
-    &.pf-m-border-left::before {
+    &.pf-m-border-right::after,
+    &.pf-m-border-left::after {
       position: absolute;
       inset: 0;
       pointer-events: none;
       content: "";
     }
 
-    &.pf-m-border-right::before {
-      border-inline-end: var(--#{$table}--cell--m-border-right--before--BorderInlineEndWidth) solid var(--#{$table}--cell--m-border-right--before--BorderInlineEndColor);
+    &.pf-m-border-right::after {
+      border-inline-end: var(--#{$table}--cell--m-border-right--before--BorderInlineEndWidth) solid var(--#{$table}--cell--m-border-right--before--BorderInlineEndColor); // TODO - rename to 'after' in a breaking change
     }
 
-    &.pf-m-border-left::before {
-      border-inline-start: var(--#{$table}--cell--m-border-left--before--BorderInlineStartWidth) solid var(--#{$table}--cell--m-border-left--before--BorderInlineStartColor);
+    &.pf-m-border-left::after {
+      border-inline-start: var(--#{$table}--cell--m-border-left--before--BorderInlineStartWidth) solid var(--#{$table}--cell--m-border-left--before--BorderInlineStartColor); // TODO - rename to 'after' in a breaking change
     }
   }
 
@@ -1305,15 +1304,23 @@
 
   // - Table nested column header button
   &.pf-m-nested-column-header {
+    --#{$table}--m-sticky-header--BorderBlockEndWidth: 0;
+    
     position: relative;
 
-    &::after {
+    .#{$table}__tr:last-child::after {
       position: absolute;
       inset: 0;
-      z-index: var(--#{$table}__thead--m-nested-column-header--after--ZIndex);
       pointer-events: none;
-      content: '';
-      border-block-end: var(--#{$table}__thead--m-nested-column-header--BorderBlockEndWidth) solid var(--#{$table}__thead--m-nested-column-header--BorderBlockEndColor);
+      // content: '';
+    }
+
+    .#{$table}__tr:last-child:not(.pf-m-border-row) {
+      &,
+      &::after {
+        z-index: var(--#{$table}__thead--m-nested-column-header--after--ZIndex, revert);
+        border-block-end: var(--#{$table}__thead--m-nested-column-header--BorderBlockEndWidth) solid var(--#{$table}__thead--m-nested-column-header--BorderBlockEndColor);  
+      }
     }
 
     .#{$table}__button {
@@ -1376,7 +1383,8 @@
   }
 
   &.pf-m-border-row {
-    border-block-end: var(--#{$table}--border-width--base) solid var(--#{$table}--BorderColor);
+    height: var(--#{$table}--border-width--base);
+    background-color: var(--#{$table}--BorderColor);
   }
 }
 
