@@ -3965,6 +3965,25 @@ This example shows the use of `.pf-m-sticky-header-base` and `.pf-m-sticky-heade
 {{/table}}
 ```
 
+### Sticky footer with base and stuck
+
+This example uses `.pf-m-sticky-footer-base` for sticky positioning without sticky styling. `.pf-m-sticky-footer-stuck` can be applied dynamically as the table has scrolled to show the footer styling while it is stuck and floating above the table content.
+
+```hbs
+{{#> table table--IsGrid=true table--modifier="pf-m-grid-md" table--HasStickyFooterBase=true table--HasStickyFooterStuck=true table--attribute='aria-label="This is a table with a sticky footer using base and stuck"'}}
+  {{#> table-tbody}}
+    {{#> table-tr}}
+      {{#> table-td}}Table content{{/table-td}}
+    {{/table-tr}}
+  {{/table-tbody}}
+  {{#> table-tfoot}}
+    {{#> table-tr}}
+      {{#> table-th table-th--attribute='scope="row"'}}Total{{/table-th}}
+    {{/table-tr}}
+  {{/table-tfoot}}
+{{/table}}
+```
+
 ### Sticky column
 ```hbs
 <div class="pf-v6-c-scroll-inner-wrapper">
@@ -4019,6 +4038,9 @@ For sticky columns to function correctly, the parent table's width must be contr
 | `.pf-m-sticky-header` | `.pf-v6-c-table` | Makes the table cells in `<thead>` sticky to the top of the table on scroll. |
 | `.pf-m-sticky-header-base` | `.pf-v6-c-table` | Makes the table cells in `<thead>` sticky to the top of the table on scroll, but does not apply sticky styling. `.pf-m-sticky-header-stuck` should be used to apply sticky styling. |
 | `.pf-m-sticky-header-stuck` | `.pf-v6-c-table` | Applies sticky header styling to a table with `.pf-m-sticky-header-base`. |
+| `.pf-m-sticky-footer` | `.pf-v6-c-table` | Makes the `<tfoot>` sticky to the bottom of the table on scroll with sticky styling. |
+| `.pf-m-sticky-footer-base` | `.pf-v6-c-table` | Makes the `<tfoot>` sticky to the bottom of the table on scroll, but does not apply sticky styling. `.pf-m-sticky-footer-stuck` should be used to apply sticky styling. |
+| `.pf-m-sticky-footer-stuck` | `.pf-v6-c-table` | Applies sticky footer styling to a table with `.pf-m-sticky-footer-base`. |
 | `.pf-v6-c-scroll-outer-wrapper` | `<div>` | Initiates a table container sticky columns outer wrapper. |
 | `.pf-v6-c-scroll-inner-wrapper` | `<div>` | Initiates a table container sticky columns inner wrapper. |
 | `.pf-v6-c-table__sticky-cell` | `<th>`, `<td>` | Initiates a sticky table cell. |
