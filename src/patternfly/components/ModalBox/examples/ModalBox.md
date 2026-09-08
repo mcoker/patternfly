@@ -345,6 +345,8 @@ A modal box is a generic rectangular container that can be used to build modals.
 | `.pf-m-md` | `.pf-v6-c-modal-box` | Modifies for a medium modal box width. |
 | `.pf-m-lg` | `.pf-v6-c-modal-box` | Modifies for a large modal box width. |
 | `.pf-m-align-top` | `.pf-v6-c-modal-box` | Modifies for top alignment.  |
+| `.pf-m-animate` | `.pf-v6-c-modal-box` | Enables animation support for opening/closing the modal. |
+| `.pf-m-open` | `.pf-v6-c-modal-box.pf-m-animate` | Used to open/close the modal when using `.pf-m-animate`. |
 | `.pf-m-icon` | `.pf-v6-c-modal-box__title` | Modifies the title layout to accommodate an icon. |
 | `.pf-m-custom` | `.pf-v6-c-modal-box`, `.pf-v6-c-modal-box__title` | Modifies for the custom alert state. |
 | `.pf-m-info` | `.pf-v6-c-modal-box`, `.pf-v6-c-modal-box__title` | Modifies for the info alert state. |
