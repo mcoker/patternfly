@@ -28,6 +28,7 @@
   background-color: var(--#{$backdrop}--BackgroundColor);
 
   &.pf-m-animate {
+    pointer-events: none;
     background-color: transparent;
 
     &::before {
@@ -43,11 +44,17 @@
     }
   }
 
-  &.pf-m-show::before {
-    opacity: var(--#{$backdrop}--m-animate--m-show--Opacity);
+  &.pf-m-show {
+    --#{$backdrop}--m-animate--TransitionDuration: var(--#{$backdrop}--m-animate--m-show--TransitionDuration);
 
-    @starting-style {
-      opacity: 0;
+    pointer-events: revert;
+
+    &::before {
+      opacity: var(--#{$backdrop}--m-animate--m-show--Opacity);
+
+      @starting-style {
+        opacity: 0;
+      }
     }
   }
 }
