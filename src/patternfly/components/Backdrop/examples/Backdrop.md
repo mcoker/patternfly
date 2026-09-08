@@ -11,6 +11,14 @@ cssPrefix: pf-v6-c-backdrop
 {{/backdrop}}
 ```
 
+### Animated
+Toggle the `.pf-m-show` class to see the show and hide animation.
+
+```hbs isFullscreen isBeta
+{{#> backdrop backdrop--IsAnimate=true backdrop--IsShow=true}}
+{{/backdrop}}
+```
+
 ## Documentation
 ### Overview
 This component puts a backdrop over the entire viewport.

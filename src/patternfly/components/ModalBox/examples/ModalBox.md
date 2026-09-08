@@ -308,6 +308,26 @@ The status modifier classes can be applied directly to the modal title element, 
 {{/modal-example}}
 ```
 
+### Animated
+Toggle the `.pf-m-open` class to see the entry and exit animation.
+
+```hbs isFullscreen isBeta
+{{#> modal-box modal-box--attribute='aria-labelledby="animated-modal-title" aria-describedby="animated-modal-description"' modal-box--IsAnimate=true modal-box--IsOpen=true}}
+  {{> modal-box-close}}
+  {{#> modal-box-header}}
+    {{#> modal-box-title modal-box-title--attribute='id="animated-modal-title"'}}
+      Modal title
+    {{/modal-box-title}}
+  {{/modal-box-header}}
+  {{#> modal-box-body modal-box-body--attribute='id="animated-modal-description"'}}
+    To support screen reader user awareness of the dialog text, the dialog text is wrapped in a div that is referenced by aria-describedby.
+  {{/modal-box-body}}
+  {{#> modal-box-footer}}
+    Modal footer
+  {{/modal-box-footer}}
+{{/modal-box}}
+```
+
 ## Documentation
 ### Overview
 A modal box is a generic rectangular container that can be used to build modals. A modal box can have the following sections: header, title, description, body, and footer. With normal use of the modal, a title or body is required. Alternatively, no child elements can be used, and the `.pf-v6-c-modal-box` container will  serve as a generic container with no padding for custom modal content. If no `.pf-v6-c-modal-box__title` is used, `aria-label="[title of modal]"` must be provided for `.pf-v6-c-modal-box`.
