@@ -3967,7 +3967,7 @@ This example shows the use of `.pf-m-sticky-header-base` and `.pf-m-sticky-heade
 
 ### Sticky footer with base and stuck
 
-This example uses `.pf-m-sticky-footer-base` for sticky positioning without sticky styling. `.pf-m-sticky-footer-stuck` can be applied dynamically as the table has scrolled to show the footer styling while it is stuck and floating above the table content.
+This example uses `.pf-m-sticky-footer-base` for sticky positioning without sticky styling. Apply `.pf-m-sticky-footer-stuck` dynamically while the footer is stuck and floating above the table content, and remove it when the footer reaches the bottom of the table so it returns to a normal row.
 
 ```hbs
 {{#> table table--IsGrid=true table--modifier="pf-m-grid-md" table--HasStickyFooterBase=true table--HasStickyFooterStuck=true table--attribute='aria-label="This is a table with a sticky footer using base and stuck"'}}
@@ -4040,7 +4040,7 @@ For sticky columns to function correctly, the parent table's width must be contr
 | `.pf-m-sticky-header-stuck` | `.pf-v6-c-table` | Applies sticky header styling to a table with `.pf-m-sticky-header-base`. |
 | `.pf-m-sticky-footer` | `.pf-v6-c-table` | Makes the `<tfoot>` sticky to the bottom of the table on scroll with sticky styling. |
 | `.pf-m-sticky-footer-base` | `.pf-v6-c-table` | Makes the `<tfoot>` sticky to the bottom of the table on scroll, but does not apply sticky styling. `.pf-m-sticky-footer-stuck` should be used to apply sticky styling. |
-| `.pf-m-sticky-footer-stuck` | `.pf-v6-c-table` | Applies sticky footer styling to a table with `.pf-m-sticky-footer-base`. |
+| `.pf-m-sticky-footer-stuck` | `.pf-v6-c-table` | Applies sticky footer styling to a table with `.pf-m-sticky-footer-base`. Remove it when the footer reaches the bottom of the table to restore normal row styling. |
 | `.pf-v6-c-scroll-outer-wrapper` | `<div>` | Initiates a table container sticky columns outer wrapper. |
 | `.pf-v6-c-scroll-inner-wrapper` | `<div>` | Initiates a table container sticky columns inner wrapper. |
 | `.pf-v6-c-table__sticky-cell` | `<th>`, `<td>` | Initiates a sticky table cell. |
