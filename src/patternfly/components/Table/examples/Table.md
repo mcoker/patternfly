@@ -3785,6 +3785,7 @@ This example shows the use of `.pf-m-sticky-header-base` and `.pf-m-sticky-heade
 
 ### Sticky footer
 ```hbs
+<div class="pf-v6-c-scroll-inner-wrapper">
 {{#> table table--id="table-sticky-footer" table--IsGrid=true table--modifier="pf-m-grid-md" table--HasStickyFooter=true table--attribute='aria-label="This is a table with a sticky footer"'}}
   {{#> table-thead}}
     {{#> table-tr}}
@@ -3963,25 +3964,193 @@ This example shows the use of `.pf-m-sticky-header-base` and `.pf-m-sticky-heade
     {{/table-tr}}
   {{/table-tfoot}}
 {{/table}}
+</div>
 ```
 
 ### Sticky footer with base and stuck
 
-This example uses `.pf-m-sticky-footer-base` for sticky positioning without sticky styling. Apply `.pf-m-sticky-footer-stuck` dynamically while the footer is stuck and floating above the table content, and remove it when the footer reaches the bottom of the table so it returns to a normal row.
+This example uses `.pf-m-sticky-footer-base` and `.pf-m-sticky-footer-stuck` for sticky positioning. Apply `.pf-m-sticky-footer-stuck` dynamically while the footer is stuck and floating above the table content, and remove it when the footer reaches the bottom of the table so it returns to a normal row.
 
 ```hbs
+<div class="pf-v6-c-scroll-inner-wrapper">
 {{#> table table--IsGrid=true table--modifier="pf-m-grid-md" table--HasStickyFooterBase=true table--HasStickyFooterStuck=true table--attribute='aria-label="This is a table with a sticky footer using base and stuck"'}}
+  {{#> table-thead}}
+    {{#> table-tr}}
+      {{#> table-th table-th--attribute='scope="col"'}}
+        Repositories
+      {{/table-th}}
+      {{#> table-th table-th--attribute='scope="col"'}}
+        Branches
+      {{/table-th}}
+      {{#> table-th table-th--attribute='scope="col"'}}
+        Pull requests
+      {{/table-th}}
+      {{#> table-th table-th--attribute='scope="col"'}}
+        Workspaces
+      {{/table-th}}
+      {{#> table-th table-th--attribute='scope="col"'}}
+        Last commit
+      {{/table-th}}
+    {{/table-tr}}
+  {{/table-thead}}
+
   {{#> table-tbody}}
     {{#> table-tr}}
-      {{#> table-td}}Table content{{/table-td}}
+      {{#> table-td table-td--data-label="Repository name"}}
+        Repository 1
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Branches"}}
+        10
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Pull requests"}}
+        25
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Workspaces"}}
+        5
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Last commit"}}
+        2 days ago
+      {{/table-td}}
+    {{/table-tr}}
+
+    {{#> table-tr}}
+      {{#> table-td table-td--data-label="Repository name"}}
+        Repository 2
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Branches"}}
+        10
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Pull requests"}}
+        25
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Workspaces"}}
+        5
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Last commit"}}
+        2 days ago
+      {{/table-td}}
+    {{/table-tr}}
+
+    {{#> table-tr}}
+      {{#> table-td table-td--data-label="Repository name"}}
+        Repository 3
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Branches"}}
+        10
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Pull requests"}}
+        25
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Workspaces"}}
+        5
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Last commit"}}
+        2 days ago
+      {{/table-td}}
+    {{/table-tr}}
+
+    {{#> table-tr}}
+      {{#> table-td table-td--data-label="Repository name"}}
+        Repository 4
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Branches"}}
+        10
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Pull requests"}}
+        25
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Workspaces"}}
+        5
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Last commit"}}
+        2 days ago
+      {{/table-td}}
+    {{/table-tr}}
+
+    {{#> table-tr}}
+      {{#> table-td table-td--data-label="Repository name"}}
+        Repository 5
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Branches"}}
+        10
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Pull requests"}}
+        25
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Workspaces"}}
+        5
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Last commit"}}
+        2 days ago
+      {{/table-td}}
+    {{/table-tr}}
+
+    {{#> table-tr}}
+      {{#> table-td table-td--data-label="Repository name"}}
+        Repository 6
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Branches"}}
+        10
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Pull requests"}}
+        25
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Workspaces"}}
+        5
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Last commit"}}
+        2 days ago
+      {{/table-td}}
+    {{/table-tr}}
+
+    {{#> table-tr}}
+      {{#> table-td table-td--data-label="Repository name"}}
+        Repository 7
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Branches"}}
+        10
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Pull requests"}}
+        25
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Workspaces"}}
+        5
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Last commit"}}
+        2 days ago
+      {{/table-td}}
+    {{/table-tr}}
+
+    {{#> table-tr}}
+      {{#> table-td table-td--data-label="Repository name"}}
+        Repository 8
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Branches"}}
+        10
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Pull requests"}}
+        25
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Workspaces"}}
+        5
+      {{/table-td}}
+      {{#> table-td table-td--data-label="Last commit"}}
+        2 days ago
+      {{/table-td}}
     {{/table-tr}}
   {{/table-tbody}}
   {{#> table-tfoot}}
     {{#> table-tr}}
-      {{#> table-th table-th--attribute='scope="row"'}}Total{{/table-th}}
+      {{#> table-th table-th--attribute='scope="row"'}}
+        Total
+      {{/table-th}}
+      {{#> table-td table-td--attribute='colspan="4"'}}
+        4
+      {{/table-td}}
     {{/table-tr}}
   {{/table-tfoot}}
 {{/table}}
+</div>
 ```
 
 ### Sticky column

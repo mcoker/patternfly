@@ -297,8 +297,8 @@
     --#{$table}--m-sticky-header--BoxShadow: var(--#{$table}--m-sticky-header--BoxShadow--glass);
     --#{$table}--m-sticky-header--BorderRadius: var(--#{$table}--m-sticky-header--BorderRadius--glass);
     --#{$table}--m-sticky-footer--BorderBlockStartWidth: 0;
-    --#{$table}--m-sticky-footer-stuck--BoxShadow: var(--#{$table}--m-sticky-footer--BoxShadow--glass);
-    --#{$table}--m-sticky-footer-stuck--BorderRadius: var(--#{$table}--m-sticky-footer--BorderRadius--glass);
+    --#{$table}--m-sticky-footer--BoxShadow: var(--#{$table}--m-sticky-footer--BoxShadow--glass);
+    --#{$table}--m-sticky-footer--BorderRadius: var(--#{$table}--m-sticky-footer--BorderRadius--glass);
   }
 }
 
@@ -357,7 +357,6 @@
         border-radius: var(--#{$table}--m-sticky-header--BorderRadius);
         box-shadow: var(--#{$table}--m-sticky-header--BoxShadow);
       }
-  
 
       .#{$table}__th::after {
         position: absolute;
@@ -427,6 +426,13 @@
   }
 
   &.pf-m-sticky-footer,
+  &.pf-m-sticky-footer-stuck {
+    > .#{$table}__tbody:last-of-type > .#{$table}__tr:last-of-type {
+      border-block-end-color: transparent;
+    }
+  }
+
+  &.pf-m-sticky-footer,
   &.pf-m-sticky-footer-base {
     > .#{$table}__tfoot {
       position: sticky;
@@ -434,7 +440,7 @@
       z-index: var(--#{$table}--m-sticky-footer--ZIndex);
       background: transparent;
 
-      &::before {
+      &::after {
         position: absolute;
         inset: 0;
         z-index: -1;
@@ -466,31 +472,6 @@
       :is(.#{$table}__th, .#{$table}__td):last-child::after {
         border-start-end-radius: var(--#{$table}--m-sticky-footer--BorderRadius);
         border-end-end-radius: var(--#{$table}--m-sticky-footer--BorderRadius);
-      }
-    }
-
-    > .#{$table}__tbody:last-of-type > .#{$table}__tr:last-of-type {
-      border-block-end: 0;
-    }
-  }
-
-  &.pf-m-sticky-footer-stuck {
-    --#{$table}--m-sticky-footer--BoxShadow: var(--#{$table}--m-sticky-footer-stuck--BoxShadow);
-    --#{$table}--m-sticky-footer--BorderRadius: var(--#{$table}--m-sticky-footer-stuck--BorderRadius);
-
-    > .#{$table}__tfoot::before {
-      opacity: 1;
-    }
-  }
-
-  &.pf-m-sticky-footer:not(.pf-m-sticky-footer-base) {
-    --#{$table}--m-sticky-footer--BoxShadow: var(--#{$table}--m-sticky-footer-stuck--BoxShadow);
-    --#{$table}--m-sticky-footer--BorderRadius: var(--#{$table}--m-sticky-footer-stuck--BorderRadius);
-
-    > .#{$table}__tfoot,
-    > .#{$table}__tfoot :is(.#{$table}__th, .#{$table}__td) {
-      &::after {
-        opacity: 1;
       }
     }
   }
