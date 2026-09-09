@@ -85,7 +85,7 @@
   --#{$modal-box}--m-animate--m-open--TransitionDuration: var(--pf-t--global--motion--duration--fade--default);
 
   @media screen and (prefers-reduced-motion: no-preference) {
-    --#{$modal-box}--m-animate--TranslateY: calc(-1 * var(--pf-t--global--spacer--lg));
+    --#{$modal-box}--m-animate--offset: var(--pf-t--global--spacer--lg);
     --#{$modal-box}--m-animate--TransitionProperty: opacity, translate, visibility;
   }
 }
@@ -127,7 +127,7 @@
     visibility: hidden;
     pointer-events: none;
     opacity: 0;
-    translate: 0 var(--#{$modal-box}--m-animate--TranslateY, 0);
+    translate: 0 var(--#{$modal-box}--m-animate--offset, 0);
     transition-delay: var(--#{$modal-box}--m-animate--TransitionDelay);
     transition-timing-function: var(--#{$modal-box}--m-animate--TransitionTimingFunction);
     transition-duration: var(--#{$modal-box}--m-animate--TransitionDuration);
@@ -145,7 +145,7 @@
 
     @starting-style {
       opacity: 0;
-      translate: 0 var(--#{$modal-box}--m-animate--TranslateY);
+      translate: 0 var(--#{$modal-box}--m-animate--offset);
     }
   }
 
