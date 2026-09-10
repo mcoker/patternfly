@@ -7,16 +7,14 @@ cssPrefix: pf-v6-c-backdrop
 ## Examples
 ### Basic
 ```hbs isFullscreen
-{{#> backdrop}}
-{{/backdrop}}
+{{> backdrop}}
 ```
 
 ### Animated
 Toggle the `.pf-m-show` class to see the show and hide animation.
 
 ```hbs isFullscreen isBeta
-{{#> backdrop backdrop--IsAnimate=true backdrop--IsShow=true}}
-{{/backdrop}}
+{{> backdrop backdrop--IsAnimate=true backdrop--IsShow=true}}
 ```
 
 ## Documentation
