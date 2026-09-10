@@ -78,15 +78,16 @@
   --#{$modal-box}__footer--c-button--MarginInlineEnd: var(--pf-t--global--spacer--gap--action-to-action--default);
   --#{$modal-box}__footer--c-button--sm--MarginInlineEnd: var(--pf-t--global--spacer--gap--action-to-action--default);
 
-  // Animate top
-  --#{$modal-box}--m-animate--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--decelerate);
-  --#{$modal-box}--m-animate--TransitionDelay: 0s, 0s, var(--#{$modal-box}--m-animate--TransitionDuration);
-  --#{$modal-box}--m-animate--TransitionDuration: var(--pf-t--global--motion--duration--fade--short), var(--pf-t--global--motion--duration--fade--short), 0s;
-  --#{$modal-box}--m-animate--m-open--TransitionDuration: var(--pf-t--global--motion--duration--fade--default);
+  // Animate
+  --#{$modal-box}--m-animate--TransitionProperty: opacity, visibility;
+  --#{$modal-box}--m-animate--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--accelerate);
+  --#{$modal-box}--m-animate--TransitionDuration: var(--pf-t--global--motion--duration--fade--short);
+  --#{$modal-box}--m-animate--m-open--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--decelerate);
+  --#{$modal-box}--m-animate--m-open--TransitionDuration: var(--pf-t--global--motion--duration--fade--default), 0s;
 
   @media screen and (prefers-reduced-motion: no-preference) {
-    --#{$modal-box}--m-animate--offset: var(--pf-t--global--spacer--lg);
     --#{$modal-box}--m-animate--TransitionProperty: opacity, translate, visibility;
+    --#{$modal-box}--m-animate--m-open--TransitionDuration: var(--pf-t--global--motion--duration--fade--default), var(--pf-t--global--motion--duration--fade--default), 0s;
   }
 }
 
@@ -123,20 +124,22 @@
     max-height: var(--#{$modal-box}--m-align-top--MaxHeight);
   }
 
+  @media screen and (prefers-reduced-motion: no-preference) {
+    translate: 0 #{pf-size-prem(24px)};
+  }
+
   &.pf-m-animate {
     visibility: hidden;
     pointer-events: none;
     opacity: 0;
-    translate: 0 var(--#{$modal-box}--m-animate--offset, 0);
-    transition-delay: var(--#{$modal-box}--m-animate--TransitionDelay);
     transition-timing-function: var(--#{$modal-box}--m-animate--TransitionTimingFunction);
     transition-duration: var(--#{$modal-box}--m-animate--TransitionDuration);
     transition-property: var(--#{$modal-box}--m-animate--TransitionProperty, none);
   }
 
   &.pf-m-open {
-    --#{$modal-box}--m-animate--TransitionDelay: 0s;
     --#{$modal-box}--m-animate--TransitionDuration: var(--#{$modal-box}--m-animate--m-open--TransitionDuration);
+    --#{$modal-box}--m-animate--TransitionTimingFunction: var(--#{$modal-box}--m-animate--m-open--TransitionTimingFunction);
 
     visibility: visible;
     pointer-events: revert;
@@ -145,7 +148,7 @@
 
     @starting-style {
       opacity: 0;
-      translate: 0 var(--#{$modal-box}--m-animate--offset);
+      translate: 0 #{pf-size-prem(24px)};
     }
   }
 

@@ -7,15 +7,12 @@
 
   // Animate top
   --#{$backdrop}--m-animate--Opacity: 0;
-  --#{$backdrop}--m-animate--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--decelerate);
-  --#{$backdrop}--m-animate--TransitionDelay: 0s;
+  --#{$backdrop}--m-animate--TransitionProperty: opacity, visibility;
+  --#{$backdrop}--m-animate--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--accelerate);
   --#{$backdrop}--m-animate--TransitionDuration: var(--pf-t--global--motion--duration--fade--short);
-  --#{$backdrop}--m-animate--m-show--TransitionDuration: var(--pf-t--global--motion--duration--fade--default);
+  --#{$backdrop}--m-animate--m-show--TransitionDuration: var(--pf-t--global--motion--duration--fade--default), 0s;
+  --#{$backdrop}--m-animate--m-show--TransitionTimingFunction: var(--pf-t--global--motion--timing-function--decelerate);
   --#{$backdrop}--m-animate--m-show--Opacity: 1;
-
-  @media screen and (prefers-reduced-motion: no-preference) {
-    --#{$backdrop}--m-animate--TransitionProperty: opacity;
-  }
 }
 
 .#{$backdrop} {
@@ -28,7 +25,7 @@
   background-color: var(--#{$backdrop}--BackgroundColor);
 
   &.pf-m-animate {
-    pointer-events: none;
+    visibility: hidden;
     background-color: transparent;
 
     &::before {
@@ -37,7 +34,6 @@
       content: "";
       background-color: var(--#{$backdrop}--BackgroundColor);
       opacity: var(--#{$backdrop}--m-animate--Opacity);
-      transition-delay: var(--#{$backdrop}--m-animate--TransitionDelay);
       transition-timing-function: var(--#{$backdrop}--m-animate--TransitionTimingFunction);
       transition-duration: var(--#{$backdrop}--m-animate--TransitionDuration);
       transition-property: var(--#{$backdrop}--m-animate--TransitionProperty, none);
@@ -46,8 +42,9 @@
 
   &.pf-m-show {
     --#{$backdrop}--m-animate--TransitionDuration: var(--#{$backdrop}--m-animate--m-show--TransitionDuration);
+    --#{$backdrop}--m-animate--TransitionTimingFunction: var(--#{$backdrop}--m-animate--m-show--TransitionTimingFunction);
 
-    pointer-events: revert;
+    visibility: visible;
 
     &::before {
       opacity: var(--#{$backdrop}--m-animate--m-show--Opacity);
